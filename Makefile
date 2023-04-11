@@ -1,0 +1,61 @@
+##
+## MY_RPG PROJECT, 2022
+## makefile
+## File description:
+## makefile
+##
+
+SRC	=	main.c 	\
+		src/open_window.c 	\
+		src/menu/menu_name.c	\
+		src/menu/click_first_menu.c	\
+		src/menu/button_history_op_play.c	\
+		src/menu/text_button_menu.c		\
+		src/menu/hover_his_play_op.c	\
+		src/menu/click_back.c	\
+		src/menu/option/click_option.c	\
+		src/menu/option/create_option_music.c	\
+		src/menu/option/create_option_effect.c	\
+		src/menu/option/effect_mute_button.c	\
+		src/menu/option/choose_volume.c		\
+		src/menu/option/create_resolution.c		\
+		src/menu/option/create_text_resolution.c 	\
+		src/menu/option/select_button_res.c		\
+		src/menu/option/create_button_fps.c		\
+		src/menu/option/create_text_fps.c		\
+		src/menu/option/select_fps.c		\
+		src/menu/credit/click_credit.c		\
+		src/menu/credit/txt_credit.c		\
+		src/menu/destroy_menu.c 	\
+		src/menu/load.c 	\
+		src/menu/option/draw_option_rect_text.c 	\
+		src/menu/main_menu.c	\
+		src/menu/option/select_mute.c	\
+		src/menu/option/which_chosen_res.c
+
+CC = gcc
+
+OBJ	=	$(SRC:.c=.o)
+
+CSFML = -lcsfml-system -lcsfml-graphics -lcsfml-audio -lcsfml-window -lm
+
+CFLAGS = -Wall -Wextra
+
+CPPFLAGS = -iquote./includes
+
+NAME	=	my_rpg
+
+all:	$(NAME)
+
+$(NAME):	$(OBJ)
+	$(CC) -o $(NAME) $(OBJ) $(CFLAGS) $(CPPFLAGS) $(CSFML)
+
+clean:
+	rm -f $(OBJ)
+
+fclean: clean
+	rm -f $(NAME)
+
+re:	 fclean all
+
+.PHONY : re clean fclean all
