@@ -33,7 +33,9 @@ SRC	=	main.c 	\
 		src/menu/option/select_mute.c	\
 		src/menu/option/which_chosen_res.c		\
 		src/menu/click_play.c		\
-		src/menu/is_on_button.c
+		src/menu/is_on_button.c							\
+		src/sprite/init_struct_sprite.c			\
+		src/sprite/move_sprite.c 					
 
 CC = gcc
 

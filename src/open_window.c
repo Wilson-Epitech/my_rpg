@@ -10,8 +10,9 @@
 #include "my.h"
 #include "menu.h"
 #include "maps.h"
+#include "sprite.h"
 
-void event_wdw(sfRenderWindow *wdw)
+void event_wdw(sfRenderWindow *wdw, StructSprite *struct_sprite)
 {
     sfEvent event;
 
@@ -19,6 +20,7 @@ void event_wdw(sfRenderWindow *wdw)
         if (event.type == sfEvtClosed) {
             sfRenderWindow_close(wdw);
         }
+            move_sprite(event, struct_sprite);
     }
 }
 
@@ -50,6 +52,7 @@ void main_menu(sfRenderWindow *wdw, menu_t *menu, maps_t *map)
 
 void open_wdw(menu_t *menu, maps_t *map)
 {
+    StructSprite struct_sprite;
     int play_check = 0;
     sfRenderWindow *wdw;
     sfVideoMode mode = {1920, 1080, 32};
@@ -58,12 +61,14 @@ void open_wdw(menu_t *menu, maps_t *map)
     menu->volume = 100.0;
     load_menu(menu);
     init_maps(map);
+    init_struct_sprite(&struct_sprite);
 
     while (sfRenderWindow_isOpen(wdw)) {
         sfRenderWindow_clear(wdw, sfBlack);
         main_menu(wdw, menu, map);
+        sfRenderWindow_drawSprite(wdw, struct_sprite.sprite, NULL);
+        event_wdw(wdw, &struct_sprite);
         sfRenderWindow_display(wdw);
-        event_wdw(wdw);
     }
     destroy_menu(menu);
     sfSprite_destroy(map->map1_spr);
