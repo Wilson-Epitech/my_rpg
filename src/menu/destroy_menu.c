@@ -50,7 +50,7 @@ void destroy_rect_menu(menu_t *menu)
     sfRectangleShape_destroy(menu->rect_name);
 }
 
-void destroy_menu(menu_t *menu, sfRenderWindow *wdw)
+void destroy_menu(menu_t *menu)
 {
     sfTexture_destroy(menu->bk_menu_img);
     sfSprite_destroy(menu->bk_menu_img_sprite);
@@ -66,5 +66,4 @@ void destroy_menu(menu_t *menu, sfRenderWindow *wdw)
     sfTexture_destroy(menu->mute_txt);
     destroy_text_menu(menu);
     destroy_rect_menu(menu);
-    sfRenderWindow_destroy(wdw);
 }

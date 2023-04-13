@@ -31,7 +31,9 @@ SRC	=	main.c 	\
 		src/menu/option/draw_option_rect_text.c 	\
 		src/menu/main_menu.c	\
 		src/menu/option/select_mute.c	\
-		src/menu/option/which_chosen_res.c
+		src/menu/option/which_chosen_res.c		\
+		src/menu/click_play.c		\
+		src/menu/is_on_button.c
 
 CC = gcc
 

@@ -27,8 +27,7 @@ void while_deselect(menu_t *menu)
 void select_mute(menu_t *menu)
 {
     sfVector2f scale_big = {0.5, 0.5};
-    if (menu->mouse_menu.x > 1550 && menu->mouse_menu.x < 1750
-    && menu->mouse_menu.y > 190 && menu->mouse_menu.y < 300) {
+    if (is_on_button(menu, menu->mute_spr)) {
         sfSprite_setScale(menu->mute_spr, scale_big);
         if (sfMouse_isButtonPressed(0) && menu->check_mute == 0) {
             while_select(menu);
@@ -44,8 +43,7 @@ void select_mute(menu_t *menu)
 void deselect_mute(menu_t *menu)
 {
     sfVector2f scale_big = {0.5, 0.5};
-    if (menu->mouse_menu.x > 1550 && menu->mouse_menu.x < 1750
-    && menu->mouse_menu.y > 190 && menu->mouse_menu.y < 300) {
+    if (is_on_button(menu, menu->mute_spr)) {
         sfSprite_setScale(menu->mute_spr, scale_big);
         if (sfMouse_isButtonPressed(0) && menu->check_mute == 1) {
             while_deselect(menu);

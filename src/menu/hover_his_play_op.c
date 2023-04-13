@@ -12,8 +12,7 @@
 
 void hover_history(menu_t *menu)
 {
-    if (menu->mouse_menu.x > 200 && menu->mouse_menu.x < 570
-    && menu->mouse_menu.y > 250 && menu->mouse_menu.y < 350) {
+    if (is_on_button(menu, menu->button_history_spr)) {
         sfText_setColor(menu->history, sfRed);
     } else {
         sfText_setColor(menu->history, sfBlack);
@@ -22,8 +21,7 @@ void hover_history(menu_t *menu)
 
 void hover_play(menu_t *menu)
 {
-    if (menu->mouse_menu.x > 825 && menu->mouse_menu.x < 1170
-    && menu->mouse_menu.y > 250 && menu->mouse_menu.y < 350) {
+    if (is_on_button(menu, menu->button_play_spr)) {
         sfText_setColor(menu->play, sfRed);
     } else {
         sfText_setColor(menu->play, sfBlack);
@@ -32,8 +30,7 @@ void hover_play(menu_t *menu)
 
 void hover_option(menu_t *menu)
 {
-    if (menu->mouse_menu.x > 1400 && menu->mouse_menu.x < 1770
-    && menu->mouse_menu.y > 250 && menu->mouse_menu.y < 350) {
+    if (is_on_button(menu, menu->button_option_spr)) {
         sfText_setColor(menu->option, sfRed);
     } else {
         sfText_setColor(menu->option, sfBlack);
@@ -42,8 +39,7 @@ void hover_option(menu_t *menu)
 
 void hover_credit(menu_t *menu)
 {
-    if (menu->mouse_menu.x > 825 && menu->mouse_menu.x < 1170
-    && menu->mouse_menu.y > 750 && menu->mouse_menu.y < 850) {
+    if (is_on_button(menu, menu->button_credit_spr)) {
         sfText_setColor(menu->credit, sfRed);
     } else {
         sfText_setColor(menu->credit, sfBlack);
@@ -52,8 +48,7 @@ void hover_credit(menu_t *menu)
 
 void hover_back(menu_t *menu)
 {
-    if (menu->mouse_menu.x > 60 && menu->mouse_menu.x < 250
-    && menu->mouse_menu.y > 50 && menu->mouse_menu.y < 100) {
+    if (is_on_button(menu, menu->button_back_spr)) {
         sfText_setColor(menu->back, sfRed);
     } else {
         sfText_setColor(menu->back, sfBlack);

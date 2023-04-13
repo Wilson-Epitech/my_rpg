@@ -32,5 +32,7 @@ void click_first_menu(menu_t *menu)
         if (sfMouse_isButtonPressed(0) && menu->check_first_menu == 1) {
             menu->check_first_menu = 2;
         }
+        while (sfMouse_isButtonPressed(0)) {
+        }
     }
 }

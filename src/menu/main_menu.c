@@ -33,13 +33,13 @@ void menu_snd_page(sfRenderWindow *wdw, menu_t *menu)
         sfRenderWindow_drawText(wdw, menu->credit, NULL);
         sfRenderWindow_drawText(wdw, menu->back, NULL);
         hover_history(menu);
-        hover_play(menu);
-        hover_option(menu);
+        hover_play(menu); hover_option(menu);
         hover_credit(menu);
         hover_back(menu);
         click_back(menu);
         option_click(menu);
         credit_click(menu);
+        click_play(menu);
     }
 }
 

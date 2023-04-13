@@ -12,8 +12,7 @@
 
 void option_click(menu_t *menu)
 {
-    if (menu->mouse_menu.x > 1400 && menu->mouse_menu.x < 1770
-    && menu->mouse_menu.y > 250 && menu->mouse_menu.y < 350) {
+    if (is_on_button(menu, menu->button_option_spr)) {
         if (sfMouse_isButtonPressed(0)) {
             menu->check_first_menu = 3;
         }

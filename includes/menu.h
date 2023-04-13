@@ -155,7 +155,7 @@ void check_choosen_fps(menu_t *menu, sfRenderWindow *wdw);
 void credit_click(menu_t *menu);
 void create_txt_credit(menu_t *menu);
 void create_rect_credit(menu_t *menu);
-void destroy_menu(menu_t *menu, sfRenderWindow *wdw);
+void destroy_menu(menu_t *menu);
 void load_menu(menu_t *menu);
 void draw_rect_option(sfRenderWindow *wdw, menu_t *menu);
 void draw_text_option(sfRenderWindow *wdw, menu_t *menu);
@@ -166,5 +166,7 @@ void credit_page(sfRenderWindow *wdw, menu_t *menu);
 void choosen_high(sfRenderWindow *wdw, menu_t *menu);
 void choosen_med(sfRenderWindow *wdw, menu_t *menu);
 void choosen_small(sfRenderWindow *wdw, menu_t *menu);
+void click_play(menu_t *menu);
+sfBool is_on_button(menu_t *menu, sfSprite *sprite);
 
 #endif /* !MENU_H_ */

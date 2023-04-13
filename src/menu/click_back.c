@@ -12,8 +12,7 @@
 
 void click_back(menu_t *menu)
 {
-    if (menu->mouse_menu.x > 60 && menu->mouse_menu.x < 250
-    && menu->mouse_menu.y > 50 && menu->mouse_menu.y < 100) {
+    if (is_on_button(menu, menu->button_back_spr)) {
         if (sfMouse_isButtonPressed(0)) {
             menu->check_first_menu = 1;
         }
@@ -29,8 +28,7 @@ void click_back(menu_t *menu)
 
 void click_back_option(menu_t *menu)
 {
-    if (menu->mouse_menu.x > 60 && menu->mouse_menu.x < 250
-    && menu->mouse_menu.y > 50 && menu->mouse_menu.y < 100) {
+    if (is_on_button(menu, menu->button_back_spr)) {
         if (sfMouse_isButtonPressed(0)) {
             menu->check_first_menu = 2;
         }

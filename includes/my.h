@@ -6,10 +6,11 @@
 */
 
 #include "menu.h"
+#include "maps.h"
 
 #ifndef MY_H_
     #define MY_H_
 
-    void open_wdw(menu_t *menu);
+    void open_wdw(menu_t *menu, maps_t *map);
 
 #endif /* !MY_H_ */
