@@ -7,7 +7,6 @@
 
 #include "sprite.h"
 #include<stdio.h>
-#define TAILLE_TILE 32
 
 static void move_rect(sfIntRect *rect, sfClock *clock)
 {
@@ -27,60 +26,50 @@ static void move_rect(sfIntRect *rect, sfClock *clock)
     }
 }
 
-//left top width height
-static sfIntRect rect1 = {0, 97, 24, 32};
-static sfIntRect rect2 = {0, 32, 24, 32};
-static sfIntRect rect3 = {0, 0, 24, 32};
-static sfIntRect rect4 = {0, 64, 24, 32};
-
-static int move_sprite_left_right(sfEvent event, StructSprite *struct_sprite)
+static void move_sprite_left_right(StructSprite *struct_sprite)
 {
-    if (event.type == sfEvtKeyPressed) {
-        switch (event.key.code) {
-            case sfKeyLeft:
-                move_rect(&rect1, struct_sprite->clock);
-                sfSprite_setTextureRect(struct_sprite->sprite, rect1);
-                sfSprite_move(struct_sprite->sprite,
-                    (sfVector2f){-TAILLE_TILE / 4, 0});
-                break;
-            case sfKeyRight:
-                move_rect(&rect2, struct_sprite->clock);
-                sfSprite_setTextureRect(struct_sprite->sprite, rect2);
-                sfSprite_move(struct_sprite->sprite,
-                    (sfVector2f){TAILLE_TILE / 4, 0});
-                break;
-            default:
-                return 0;
-        }
+    static sfIntRect rect1 = {0, 97, 24, 32};
+    static sfIntRect rect2 = {0, 32, 24, 32};
+
+    if (sfKeyboard_isKeyPressed(sfKeyLeft)
+    && (struct_sprite->sprite_pos.x + (-8)) > 0) {
+        move_rect(&rect1, struct_sprite->clock);
+        sfSprite_setTextureRect(struct_sprite->sprite, rect1);
+        sfSprite_move(struct_sprite->sprite,
+        (sfVector2f){-TAILLE_TILE / 4, 0});
     }
-    return 0;
+    if (sfKeyboard_isKeyPressed(sfKeyRight)
+    && (struct_sprite->sprite_pos.x + (8)) < 1920) {
+        move_rect(&rect2, struct_sprite->clock);
+        sfSprite_setTextureRect(struct_sprite->sprite, rect2);
+        sfSprite_move(struct_sprite->sprite,
+        (sfVector2f){TAILLE_TILE / 4, 0});
+    }
 }
 
-static int move_sprite_up_down(sfEvent event, StructSprite *struct_sprite)
+static void move_sprite_up_down(StructSprite *struct_sprite)
 {
-    if (event.type == sfEvtKeyPressed) {
-        switch (event.key.code) {
-            case sfKeyUp:
-                move_rect(&rect3, struct_sprite->clock);
-                sfSprite_setTextureRect(struct_sprite->sprite, rect3);
-                sfSprite_move(struct_sprite->sprite,
-                    (sfVector2f){0, -TAILLE_TILE / 4});
-                break;
-            case sfKeyDown:
-                move_rect(&rect4, struct_sprite->clock);
-                sfSprite_setTextureRect(struct_sprite->sprite, rect4);
-                sfSprite_move(struct_sprite->sprite,
-                    (sfVector2f){0, TAILLE_TILE / 4});
-                break;
-            default:
-                return 0;
-        }
+    static sfIntRect rect3 = {0, 0, 24, 32};
+    static sfIntRect rect4 = {0, 64, 24, 32};
+
+    if (sfKeyboard_isKeyPressed(sfKeyUp)
+    && (struct_sprite->sprite_pos.y + (-8)) > 0) {
+        move_rect(&rect3, struct_sprite->clock);
+        sfSprite_setTextureRect(struct_sprite->sprite, rect3);
+        sfSprite_move(struct_sprite->sprite,
+        (sfVector2f){0, -TAILLE_TILE / 4});
     }
-    return 0;
+    if (sfKeyboard_isKeyPressed(sfKeyDown)
+    && (struct_sprite->sprite_pos.y + (8)) < 1080) {
+        move_rect(&rect4, struct_sprite->clock);
+        sfSprite_setTextureRect(struct_sprite->sprite, rect4);
+        sfSprite_move(struct_sprite->sprite,
+        (sfVector2f){0, TAILLE_TILE / 4});
+    }
 }
 
-void move_sprite(sfEvent event, StructSprite *struct_sprite)
+void move_sprite(StructSprite *struct_sprite)
 {
-    move_sprite_left_right(event, struct_sprite);
-    move_sprite_up_down(event, struct_sprite);
+    move_sprite_left_right(struct_sprite);
+    move_sprite_up_down(struct_sprite);
 }

@@ -10,7 +10,7 @@
 void init_struct_sprite(StructSprite *struct_sprite)
 {
     struct_sprite->texture_sprite =
-        sfTexture_createFromFile("src/sprite/Fumiko.png", NULL);
+        sfTexture_createFromFile("textures/characters/Fumiko.png", NULL);
     struct_sprite->sprite = sfSprite_create();
     struct_sprite->rect = (sfIntRect){0, 0, 15, 30};
     sfSprite_setTexture(struct_sprite->sprite,
