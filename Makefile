@@ -44,6 +44,13 @@ SRC	=	main.c 										\
 		src/maps/destroy_maps.c						\
 		src/maps/check_collision.c					\
 		src/maps/collision.c						\
+		src/maps/get_color_map1.c					\
+		src/quest/help.c 							\
+		src/quest/press_enter.c						\
+		src/quest/main_quest.c						\
+		src/quest/current_quest.c					\
+		src/quest/init_quest.c						\
+		src/quest/destroy_quest.c						\
 
 CC = gcc
 

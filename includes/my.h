@@ -11,11 +11,13 @@
 
     #include "menu.h"
     #include "maps.h"
+    #include "quest.h"
 
 typedef struct game_s {
     sfEvent event;
 } game_t;
 
-void open_wdw(menu_t *menu, maps_t *map, StructSprite *struct_sprite);
+void open_wdw(menu_t *menu, maps_t *map,
+StructSprite *struct_sprite, quest_t *quest);
 
 #endif /* !MY_H_ */

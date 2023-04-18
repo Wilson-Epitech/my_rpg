@@ -13,6 +13,7 @@ int main(void)
     menu_t *menu = malloc(sizeof(menu_t));
     maps_t *map = malloc(sizeof(maps_t));
     StructSprite *struct_sprite = malloc(sizeof(StructSprite));
-    open_wdw(menu, map, struct_sprite);
+    quest_t *quest = malloc(sizeof(quest_t));
+    open_wdw(menu, map, struct_sprite, quest);
     return 0;
 }

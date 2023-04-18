@@ -12,6 +12,7 @@
 #ifndef MAPS_H_
     #define MAPS_H_
 
+    #include "quest.h"
 
 typedef struct maps_s {
     sfImage *map1;
@@ -32,6 +33,8 @@ typedef struct maps_s {
     sfVector2f mouse_img;
     int check_path_map;
     int on_map;
+    sfView *view_combat;
+    float dezoom;;
 } maps_t;
 
 enum map_checker {
@@ -47,7 +50,8 @@ enum map_checker {
     MAP_3_TO_4,
     MAP_4_TO_3,
     MAP_4_TO_1,
-    MAP_DRAG_TO_0
+    MAP_DRAG_TO_0,
+    MAP_5_TO_COMBAT
 };
 
 enum map {
@@ -59,13 +63,14 @@ enum map {
 };
 
 void init_maps(maps_t *map);
-void draw_current_map(sfRenderWindow *wdw,
-maps_t *map, StructSprite *struct_sprite);
-void get_color_map1(maps_t *map, StructSprite *struct_sprite);
+void draw_current_map(sfRenderWindow *wdw, maps_t *map,
+StructSprite *struct_sprite, quest_t *quest, menu_t *menu);
+void get_color_map1(maps_t *map, StructSprite *struct_sprite, quest_t *quest);
 void get_color_map2(maps_t *map, StructSprite *struct_sprite);
-void get_color_map3(maps_t *map, StructSprite *struct_sprite);
+void get_color_map3(maps_t *map, StructSprite *struct_sprite, quest_t *quest);
 void get_color_map4(maps_t *map, StructSprite *struct_sprite);
-void get_color_map5(maps_t *map, StructSprite *struct_sprite);
+void get_color_map5(sfRenderWindow *wdw, maps_t *map,
+StructSprite *struct_sprite, menu_t *menu);
 void tp_map1(StructSprite *struct_sprite, maps_t *map);
 void tp_map2(StructSprite *struct_sprite, maps_t *map);
 void tp_map3(StructSprite *struct_sprite, maps_t *map);
@@ -78,5 +83,7 @@ void check_next_col(StructSprite *struct_sprite);
 void check_next_uncol(StructSprite *struct_sprite);
 int check_color_col(StructSprite *struct_sprite, sfImage *img);
 int uncollision_char(StructSprite *struct_sprite, sfImage *img);
+void init_quest(StructSprite *struct_sprite,\
+quest_t *quest, menu_t *menu, maps_t *map);
 
 #endif /* !MAPS_H_ */

@@ -24,4 +24,5 @@ void destroy_maps(maps_t *map)
     sfSprite_destroy(map->map5_spr);
     sfTexture_destroy(map->map5_txr);
     sfImage_destroy(map->map5);
+    sfView_destroy(map->view_combat);
 }
