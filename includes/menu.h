@@ -90,14 +90,32 @@ typedef struct menu_s {
     sfVector2f size_rect_name;
 } menu_t;
 
+typedef struct history_s {
+    sfEvent event;
+    sfIntRect menu_history;
+    sfTexture* texture_history;
+    sfSprite* sprite_history;
+    sfIntRect menu_history_end;
+    sfTexture* texture_history_end;
+    sfSprite* sprite_history_end;
+    sfClock* clock_history;
+    int anim_finished1;
+    int anim_finished2;
+}history_t;
+
 int create_background_img(menu_t *menu);
+int create_history(history_t *history);
+int create_history_end(history_t *history);
 void print_name_menu(menu_t *menu);
 int load_menu_music(menu_t *menu);
+void load_history(history_t *history);
 void click_first_menu(menu_t *menu);
 void print_click_to_play(menu_t *menu);
 void get_mouse_pos_menu(sfRenderWindow *wdw, menu_t *menu);
 void hover_click_to_play(menu_t *menu);
 int button_menu_history(menu_t *menu);
+void motion_history(history_t *history);
+void motion_history_end(history_t *history);
 void motion_menu_bk(menu_t *menu);
 int button_menu_option(menu_t *menu);
 int button_menu_play(menu_t *menu);
@@ -156,9 +174,10 @@ void credit_click(menu_t *menu);
 void create_txt_credit(menu_t *menu);
 void create_rect_credit(menu_t *menu);
 void destroy_menu(menu_t *menu);
-void load_menu(menu_t *menu);
+void load_menu(history_t *history, menu_t *menu);
 void draw_rect_option(sfRenderWindow *wdw, menu_t *menu);
 void draw_text_option(sfRenderWindow *wdw, menu_t *menu);
+void destroy_history(history_t *history);
 void menu_first_page(sfRenderWindow *wdw, menu_t *menu);
 void menu_snd_page(sfRenderWindow *wdw, menu_t *menu);
 void menu_option_page(sfRenderWindow *wdw, menu_t *menu);
@@ -167,6 +186,8 @@ void choosen_high(sfRenderWindow *wdw, menu_t *menu);
 void choosen_med(sfRenderWindow *wdw, menu_t *menu);
 void choosen_small(sfRenderWindow *wdw, menu_t *menu);
 void click_play(menu_t *menu);
+int click_history(history_t *history, menu_t *menu);
+void check_history(history_t *history,  menu_t *menu);
 sfBool is_on_button(menu_t *menu, sfSprite *sprite);
 
 #endif /* !MENU_H_ */

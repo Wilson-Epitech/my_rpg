@@ -17,7 +17,9 @@ typedef struct game_s {
     sfEvent event;
 } game_t;
 
-void open_wdw(menu_t *menu, maps_t *map,
+void open_wdw(history_t *history, menu_t *menu, maps_t *map,
+StructSprite *struct_sprite, quest_t *quest);
+void destroy_all(history_t *history, menu_t *menu, maps_t *map,
 StructSprite *struct_sprite, quest_t *quest);
 
 #endif /* !MY_H_ */
