@@ -41,10 +41,12 @@ void load_option(menu_t *menu)
     create_txt_framelimit(menu);
 }
 
-void load_menu(menu_t *menu)
+void load_menu(history_t *history, menu_t *menu)
 {
     load_menu_music(menu);
     create_background_img(menu);
+    create_history(history);
+    create_history_end(history);
     print_name_menu(menu);
     print_click_to_play(menu);
     button_menu_history(menu);
@@ -61,4 +63,9 @@ void load_menu(menu_t *menu)
     create_txt_credit(menu);
     create_rect_credit(menu);
     menu->clock = sfClock_create();
+}
+
+void load_history(history_t *history)
+{
+    history->clock_history = sfClock_create();
 }

@@ -67,3 +67,12 @@ void destroy_menu(menu_t *menu)
     destroy_text_menu(menu);
     destroy_rect_menu(menu);
 }
+
+void destroy_history(history_t *history)
+{
+    sfSprite_destroy(history->sprite_history);
+    sfTexture_destroy(history->texture_history);
+    sfSprite_destroy(history->sprite_history_end);
+    sfTexture_destroy(history->texture_history_end);
+    sfClock_destroy(history->clock_history);
+}

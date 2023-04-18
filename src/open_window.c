@@ -29,6 +29,19 @@ StructSprite *struct_sprite, int check_black)
     }
 }
 
+static void main_history(sfRenderWindow* wdw, history_t *history,
+menu_t *menu)
+{
+    if (history->anim_finished1 == 2) {
+        motion_history(history);
+        sfRenderWindow_drawSprite(wdw, history->sprite_history, NULL);
+    }
+    if (history->anim_finished2 == 2) {
+        motion_history_end(history);
+        sfRenderWindow_drawSprite(wdw, history->sprite_history_end, NULL);
+    }
+}
+
 static void main_game(sfRenderWindow *wdw, menu_t *menu,
 maps_t *map, StructSprite *struct_sprite, quest_t *quest)
 {
@@ -53,21 +66,25 @@ maps_t *map, StructSprite *struct_sprite, quest_t *quest)
     }
 }
 
-static void main_menu(sfRenderWindow *wdw, menu_t *menu)
+static void main_menu(sfRenderWindow *wdw, menu_t *menu, history_t *history)
 {
     get_mouse_pos_menu(wdw, menu);
     motion_menu_bk(menu);
     if (menu->check_first_menu < 6) {
-        sfRenderWindow_drawSprite(wdw, menu->bk_menu_img_sprite, NULL);
+        main_history(wdw, history, menu);
+        if (menu->check_first_menu < 5)
+            sfRenderWindow_drawSprite(wdw, menu->bk_menu_img_sprite, NULL);
         menu_first_page(wdw, menu);
         menu_snd_page(wdw, menu);
         menu_option_page(wdw, menu);
         credit_page(wdw, menu);
         click_first_menu(menu);
+        check_history(history, menu);
+        click_history(history, menu);
     }
 }
 
-void open_wdw(menu_t *menu, maps_t *map,
+void open_wdw(history_t *history, menu_t *menu, maps_t *map,
 StructSprite *struct_sprite, quest_t *quest)
 {
     sfRenderWindow *wdw;
@@ -75,19 +92,18 @@ StructSprite *struct_sprite, quest_t *quest)
     wdw =
     sfRenderWindow_create(mode, "Dragon's Burden", sfResize | sfClose, NULL);
     menu->volume = 100.0;
-    load_menu(menu);
+    load_menu(history, menu);
+    load_history(history);
     init_maps(map);
     init_quest(struct_sprite, quest, menu, map);
     int check_black = 0;
     while (sfRenderWindow_isOpen(wdw)) {
         sfRenderWindow_clear(wdw, sfBlack);
-        main_menu(wdw, menu);
+        main_menu(wdw, menu, history);
         main_game(wdw, menu, map, struct_sprite, quest);
         event_wdw(wdw, menu, struct_sprite, check_black);
         sfRenderWindow_display(wdw);
     }
-    destroy_menu(menu);
-    destroy_maps(map);
-    destroy_quest(struct_sprite, quest);
+    destroy_all(history, menu, map, struct_sprite, quest);
     sfRenderWindow_destroy(wdw);
 }
