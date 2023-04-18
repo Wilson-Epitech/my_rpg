@@ -12,7 +12,7 @@ void tp_map1(StructSprite *struct_sprite, maps_t *map)
 {
     sfVector2f from_map2 = {1850 , 0};
     sfVector2f from_map4 = {400, 800};
-    sfVector2f from_map5 = {-270 , -950};
+    sfVector2f from_map5 = {-270 , -900};
 
     if (map->check_path_map == MAP_2_TO_1UPPER) {
         map->check_path_map = NO_PATH_TAKEN;
@@ -54,7 +54,7 @@ void tp_map2(StructSprite *struct_sprite, maps_t *map)
 void tp_map3(StructSprite *struct_sprite, maps_t *map)
 {
     sfVector2f from_map2 = {-250 , -950};
-    sfVector2f from_map4 = {-1870 , 500};
+    sfVector2f from_map4 = {-1800 , 500};
 
     if (map->check_path_map == MAP_2_TO_3) {
         map->check_path_map = NO_PATH_TAKEN;
@@ -68,7 +68,7 @@ void tp_map3(StructSprite *struct_sprite, maps_t *map)
 
 void tp_map4(StructSprite *struct_sprite, maps_t *map)
 {
-    sfVector2f from_map3 = {1870, -500};
+    sfVector2f from_map3 = {1800, -500};
     sfVector2f from_map1 = {-400 , -900};
 
     if (map->check_path_map == MAP_3_TO_4) {
@@ -83,7 +83,7 @@ void tp_map4(StructSprite *struct_sprite, maps_t *map)
 
 void tp_map5(StructSprite *struct_sprite, maps_t *map)
 {
-    sfVector2f from_map1 = {270, 950};
+    sfVector2f from_map1 = {270, 900};
 
     if (map->check_path_map == MAP_1_TO_DRAG) {
         map->check_path_map = NO_PATH_TAKEN;
