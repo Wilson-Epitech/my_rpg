@@ -7,6 +7,7 @@
 
 SRC	=	main.c 										\
 		src/open_window.c 							\
+		src/destroy.c 								\
 		src/menu/menu_name.c						\
 		src/menu/click_first_menu.c					\
 		src/menu/button_history_op_play.c			\
@@ -50,7 +51,9 @@ SRC	=	main.c 										\
 		src/quest/main_quest.c						\
 		src/quest/current_quest.c					\
 		src/quest/init_quest.c						\
-		src/quest/destroy_quest.c						\
+		src/quest/destroy_quest.c					\
+		src/history/create_motion_history.c			\
+		src/history/history_menu.c
 
 CC = gcc
 
@@ -58,7 +61,7 @@ OBJ	=	$(SRC:.c=.o)
 
 CSFML = -lcsfml-system -lcsfml-graphics -lcsfml-audio -lcsfml-window -lm
 
-CFLAGS = -Wall -Wextra
+CFLAGS = -Wall -Wextra -g3
 
 CPPFLAGS = -iquote./includes
 
