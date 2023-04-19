@@ -12,9 +12,11 @@
 #include "maps.h"
 #include "sprite.h"
 #include "quest.h"
+#include "inventory_menu.h"
 
 static void event_wdw(sfRenderWindow *wdw, menu_t *menu,
-StructSprite *struct_sprite, int check_black)
+StructSprite *struct_sprite, int check_black,
+InventoryMenu_t *inventory_menu)
 {
     sfEvent event;
 
@@ -25,6 +27,13 @@ StructSprite *struct_sprite, int check_black)
         if (menu->check_first_menu == 6 && check_black == 1) {
             move_sprite(struct_sprite);
             check_black = 1;
+        }
+        if (event.type == sfEvtKeyPressed &&
+        sfKeyboard_isKeyPressed(sfKeyI) == sfTrue && menu->check_first_menu == 6) {
+            if (inventory_menu->keyI_pressed == 1)
+                inventory_menu->keyI_pressed = 0;
+            else if (inventory_menu->keyI_pressed == 0)
+                inventory_menu->keyI_pressed = 1;
         }
     }
 }
@@ -42,7 +51,8 @@ static void main_history(sfRenderWindow* wdw, history_t *history)
 }
 
 static void main_game(sfRenderWindow *wdw, menu_t *menu,
-maps_t *map, StructSprite *struct_sprite, quest_t *quest)
+maps_t *map, StructSprite *struct_sprite, quest_t *quest,
+InventoryMenu_t *inventory_menu)
 {
     int check_black = 1;
 
@@ -52,7 +62,7 @@ maps_t *map, StructSprite *struct_sprite, quest_t *quest)
         tp_all_maps(map, struct_sprite);
         get_pos_char(struct_sprite);
         check_black = col_which_map(map, struct_sprite, check_black);
-        event_wdw(wdw, menu, struct_sprite, check_black);
+        event_wdw(wdw, menu, struct_sprite, check_black, inventory_menu);
         draw_current_map(wdw, map, struct_sprite, quest, menu);
         sfRenderWindow_drawSprite(wdw, struct_sprite->sprite, NULL);
         sfRenderWindow_drawRectangleShape(wdw, quest->rect_current_quest, NULL);
@@ -62,6 +72,8 @@ maps_t *map, StructSprite *struct_sprite, quest_t *quest)
             sfRenderWindow_drawText(wdw, quest->current_quest_shaolin, NULL);
         if (quest->main_quest == 2)
             sfRenderWindow_drawText(wdw, quest->current_quest_dragon, NULL);
+        if (inventory_menu->keyI_pressed == 1)
+            inventory_menu_func(wdw, inventory_menu);
     }
 }
 
@@ -84,7 +96,7 @@ static void main_menu(sfRenderWindow *wdw, menu_t *menu, history_t *history)
 }
 
 void open_wdw(history_t *history, menu_t *menu, maps_t *map,
-StructSprite *struct_sprite, quest_t *quest)
+StructSprite *struct_sprite, quest_t *quest, InventoryMenu_t *inventory_menu)
 {
     sfRenderWindow *wdw;
     sfVideoMode mode = {1920, 1080, 32};
@@ -99,8 +111,8 @@ StructSprite *struct_sprite, quest_t *quest)
     while (sfRenderWindow_isOpen(wdw)) {
         sfRenderWindow_clear(wdw, sfBlack);
         main_menu(wdw, menu, history);
-        main_game(wdw, menu, map, struct_sprite, quest);
-        event_wdw(wdw, menu, struct_sprite, check_black);
+        main_game(wdw, menu, map, struct_sprite, quest, inventory_menu);
+        event_wdw(wdw, menu, struct_sprite, check_black, inventory_menu);
         sfRenderWindow_display(wdw);
     }
     destroy_all(history, menu, map, struct_sprite, quest);

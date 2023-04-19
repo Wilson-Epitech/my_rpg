@@ -53,7 +53,10 @@ SRC	=	main.c 										\
 		src/quest/init_quest.c						\
 		src/quest/destroy_quest.c					\
 		src/history/create_motion_history.c			\
-		src/history/history_menu.c
+		src/history/history_menu.c					\
+		src/inventory_menu/inventory_menu.c 		\
+		src/inventory_menu/init_inventory_struct.c	\
+		src/inventory_menu/destroy_menu.c
 
 CC = gcc
 
