@@ -9,7 +9,7 @@
 #include "menu.h"
 #include "maps.h"
 
-int click_history(history_t *history, menu_t *menu)
+void click_history(history_t *history, menu_t *menu)
 {
     if (is_on_button(menu, menu->button_history_spr)) {
         if (menu->check_first_menu == 2 && sfMouse_isButtonPressed(0)) {

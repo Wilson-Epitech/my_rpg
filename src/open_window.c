@@ -29,8 +29,7 @@ StructSprite *struct_sprite, int check_black)
     }
 }
 
-static void main_history(sfRenderWindow* wdw, history_t *history,
-menu_t *menu)
+static void main_history(sfRenderWindow* wdw, history_t *history)
 {
     if (history->anim_finished1 == 2) {
         motion_history(history);
@@ -71,7 +70,7 @@ static void main_menu(sfRenderWindow *wdw, menu_t *menu, history_t *history)
     get_mouse_pos_menu(wdw, menu);
     motion_menu_bk(menu);
     if (menu->check_first_menu < 6) {
-        main_history(wdw, history, menu);
+        main_history(wdw, history);
         if (menu->check_first_menu < 5)
             sfRenderWindow_drawSprite(wdw, menu->bk_menu_img_sprite, NULL);
         menu_first_page(wdw, menu);

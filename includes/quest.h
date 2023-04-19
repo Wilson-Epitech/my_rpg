@@ -32,6 +32,14 @@ typedef struct quest_s {
     int npc;
 } quest_t;
 
+typedef struct player_s {
+    int hp;
+    int xp;
+    int level;
+    int def;
+    int atk;
+} player_t;
+
 enum npc {
     NO_NPC,
     GRANDMA,

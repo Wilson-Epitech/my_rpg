@@ -186,7 +186,7 @@ void choosen_high(sfRenderWindow *wdw, menu_t *menu);
 void choosen_med(sfRenderWindow *wdw, menu_t *menu);
 void choosen_small(sfRenderWindow *wdw, menu_t *menu);
 void click_play(menu_t *menu);
-int click_history(history_t *history, menu_t *menu);
+void click_history(history_t *history, menu_t *menu);
 void check_history(history_t *history,  menu_t *menu);
 sfBool is_on_button(menu_t *menu, sfSprite *sprite);
 
