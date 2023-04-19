@@ -29,11 +29,9 @@ InventoryMenu_t *inventory_menu)
             check_black = 1;
         }
         if (event.type == sfEvtKeyPressed &&
-        sfKeyboard_isKeyPressed(sfKeyI) == sfTrue && menu->check_first_menu == 6) {
-            if (inventory_menu->keyI_pressed == 1)
-                inventory_menu->keyI_pressed = 0;
-            else if (inventory_menu->keyI_pressed == 0)
-                inventory_menu->keyI_pressed = 1;
+        sfKeyboard_isKeyPressed(sfKeyI) == sfTrue
+        && menu->check_first_menu == 6) {
+            press_inventory(inventory_menu);
         }
     }
 }
@@ -66,12 +64,7 @@ InventoryMenu_t *inventory_menu)
         draw_current_map(wdw, map, struct_sprite, quest, menu);
         sfRenderWindow_drawSprite(wdw, struct_sprite->sprite, NULL);
         sfRenderWindow_drawRectangleShape(wdw, quest->rect_current_quest, NULL);
-        if (quest->main_quest == 0)
-            sfRenderWindow_drawText(wdw, quest->current_quest_grandma, NULL);
-        if (quest->main_quest == 1)
-            sfRenderWindow_drawText(wdw, quest->current_quest_shaolin, NULL);
-        if (quest->main_quest == 2)
-            sfRenderWindow_drawText(wdw, quest->current_quest_dragon, NULL);
+        draw_current_text(wdw, quest);
         if (inventory_menu->keyI_pressed == 1)
             inventory_menu_func(wdw, inventory_menu);
     }
@@ -103,7 +96,7 @@ StructSprite *struct_sprite, quest_t *quest, InventoryMenu_t *inventory_menu)
     wdw =
     sfRenderWindow_create(mode, "Dragon's Burden", sfResize | sfClose, NULL);
     menu->volume = 100.0;
-    load_menu(history, menu);
+    load_menu(wdw, history, menu);
     load_history(history);
     init_maps(map);
     init_quest(struct_sprite, quest, menu, map);

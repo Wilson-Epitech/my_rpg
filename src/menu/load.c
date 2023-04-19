@@ -25,7 +25,7 @@ void load_forms_option(menu_t *menu)
     create_300_button(menu);
 }
 
-void load_option(menu_t *menu)
+static void load_option(sfRenderWindow *wdw, menu_t *menu)
 {
     load_forms_option(menu);
     create_full_txt(menu);
@@ -39,9 +39,10 @@ void load_option(menu_t *menu)
     create_txt_mid_fps(menu);
     create_txt_high_fps(menu);
     create_txt_framelimit(menu);
+    sfRenderWindow_setFramerateLimit(wdw, 90);
 }
 
-void load_menu(history_t *history, menu_t *menu)
+void load_menu(sfRenderWindow *wdw, history_t *history, menu_t *menu)
 {
     load_menu_music(menu);
     create_background_img(menu);
@@ -59,7 +60,7 @@ void load_menu(history_t *history, menu_t *menu)
     button_credit_text(menu);
     button_back_text(menu);
     button_menu_back(menu);
-    load_option(menu);
+    load_option(wdw, menu);
     create_txt_credit(menu);
     create_rect_credit(menu);
     menu->clock = sfClock_create();

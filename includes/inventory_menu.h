@@ -21,4 +21,5 @@
 void inventory_menu_func(sfRenderWindow *wdw, InventoryMenu_t *inventory_menu);
 void destroy_inventory_menu(InventoryMenu_t *inventory_menu);
 void init_inventory_menu(InventoryMenu_t *inventory_menu);
+void press_inventory(InventoryMenu_t *inventory_menu);
 #endif /* !INVENTORY_MENU_H_ */

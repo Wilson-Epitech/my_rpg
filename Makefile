@@ -50,6 +50,7 @@ SRC	=	main.c 										\
 		src/quest/press_enter.c						\
 		src/quest/main_quest.c						\
 		src/quest/current_quest.c					\
+		src/quest/draw_text_current.c				\
 		src/quest/init_quest.c						\
 		src/quest/destroy_quest.c					\
 		src/history/create_motion_history.c			\

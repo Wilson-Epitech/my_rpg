@@ -174,7 +174,7 @@ void credit_click(menu_t *menu);
 void create_txt_credit(menu_t *menu);
 void create_rect_credit(menu_t *menu);
 void destroy_menu(menu_t *menu);
-void load_menu(history_t *history, menu_t *menu);
+void load_menu(sfRenderWindow *wdw, history_t *history, menu_t *menu);
 void draw_rect_option(sfRenderWindow *wdw, menu_t *menu);
 void draw_text_option(sfRenderWindow *wdw, menu_t *menu);
 void destroy_history(history_t *history);

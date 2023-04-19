@@ -61,4 +61,6 @@ void init_text_talk_grand(quest_t *quest, menu_t *menu);
 void init_text_talk_shao(quest_t *quest, menu_t *menu);
 void init_text_dragon(quest_t *quest, menu_t *menu);
 void destroy_quest(StructSprite *struct_sprite, quest_t *quest);
+void draw_current_text(sfRenderWindow *wdw, quest_t *quest);
+
 #endif /* !QUEST_H_ */
