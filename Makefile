@@ -57,7 +57,13 @@ SRC	=	main.c 										\
 		src/history/history_menu.c					\
 		src/inventory_menu/inventory_menu.c 		\
 		src/inventory_menu/init_inventory_struct.c	\
-		src/inventory_menu/destroy_menu.c
+		src/inventory_menu/destroy_menu.c			\
+		lib/my_putchar.c 							\
+		lib/my_putstr.c 							\
+		lib/my_strlen.c 							\
+		lib/my_strncmp.c 							\
+		lib/my_revstr.c 							\
+		lib/my_int_to_str.c  						\
 
 CC = gcc
 
