@@ -5,52 +5,49 @@
 ** hover_his_play_op
 */
 
-#include <SFML/Audio.h>
-#include <SFML/Graphics.h>
-#include "my.h"
-#include "menu.h"
+#include "all_struct.h"
 
-void hover_history(menu_t *menu)
+void hover_history(RPG_t *rpg)
 {
-    if (is_on_button(menu, menu->button_history_spr)) {
-        sfText_setColor(menu->history, sfRed);
+    if (is_on_button(rpg, rpg->menu.button_history_spr)) {
+        sfText_setColor(rpg->menu.history, sfRed);
     } else {
-        sfText_setColor(menu->history, sfBlack);
+        sfText_setColor(rpg->menu.history, sfBlack);
     }
 }
 
-void hover_play(menu_t *menu)
+void hover_play(RPG_t *rpg)
 {
-    if (is_on_button(menu, menu->button_play_spr)) {
-        sfText_setColor(menu->play, sfRed);
+    if (is_on_button(rpg, rpg->menu.button_play_spr)) {
+        sfText_setColor(rpg->menu.play, sfRed);
     } else {
-        sfText_setColor(menu->play, sfBlack);
+        sfText_setColor(rpg->menu.play, sfBlack);
     }
 }
 
-void hover_option(menu_t *menu)
+void hover_option(RPG_t *rpg)
 {
-    if (is_on_button(menu, menu->button_option_spr)) {
-        sfText_setColor(menu->option, sfRed);
+    if (is_on_button(rpg, rpg->menu.button_option_spr)) {
+        sfText_setColor(rpg->menu.option, sfRed);
     } else {
-        sfText_setColor(menu->option, sfBlack);
+        sfText_setColor(rpg->menu.option, sfBlack);
     }
 }
 
-void hover_credit(menu_t *menu)
+void hover_credit(RPG_t *rpg)
 {
-    if (is_on_button(menu, menu->button_credit_spr)) {
-        sfText_setColor(menu->credit, sfRed);
+    if (is_on_button(rpg, rpg->menu.button_credit_spr)) {
+        sfText_setColor(rpg->menu.credit, sfRed);
     } else {
-        sfText_setColor(menu->credit, sfBlack);
+        sfText_setColor(rpg->menu.credit, sfBlack);
     }
 }
 
-void hover_back(menu_t *menu)
+void hover_back(RPG_t *rpg)
 {
-    if (is_on_button(menu, menu->button_back_spr)) {
-        sfText_setColor(menu->back, sfRed);
+    if (is_on_button(rpg, rpg->menu.button_back_spr)) {
+        sfText_setColor(rpg->menu.back, sfRed);
     } else {
-        sfText_setColor(menu->back, sfBlack);
+        sfText_setColor(rpg->menu.back, sfBlack);
     }
 }

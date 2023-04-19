@@ -5,18 +5,18 @@
 ** press_enter
 */
 
-#include "quest.h"
+#include "all_struct.h"
 
-void press_enter_help(quest_t *quest)
+void press_enter_help(RPG_t *rpg)
 {
     if (sfKeyboard_isKeyPressed(sfKeyEnter)) {
-        quest->help += 1;
+        rpg->quest.help += 1;
     }
 }
 
-void press_enter_main(quest_t *quest)
+void press_enter_main(RPG_t *rpg)
 {
     if (sfKeyboard_isKeyPressed(sfKeyEnter)) {
-        quest->main_quest += 1;
+        rpg->quest.main_quest += 1;
     }
 }

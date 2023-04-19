@@ -5,68 +5,65 @@
 ** load
 */
 
-#include <SFML/Audio.h>
-#include <SFML/Graphics.h>
-#include "my.h"
-#include "menu.h"
+#include "all_struct.h"
 
-void load_forms_option(menu_t *menu)
+void load_forms_option(RPG_t *rpg)
 {
-    create_mute_sprite(menu);
-    create_bar_music(menu);
-    create_slider_music(menu);
-    create_music_txt(menu);
-    create_bar_effect(menu);
-    create_slider_effect(menu);
-    create_effect_txt(menu);
-    create_trans_mute(menu);
-    create_fullscreen_button(menu);
-    create_1300_button(menu);
-    create_300_button(menu);
+    create_mute_sprite(rpg);
+    create_bar_music(rpg);
+    create_slider_music(rpg);
+    create_music_txt(rpg);
+    create_bar_effect(rpg);
+    create_slider_effect(rpg);
+    create_effect_txt(rpg);
+    create_trans_mute(rpg);
+    create_fullscreen_button(rpg);
+    create_1300_button(rpg);
+    create_300_button(rpg);
 }
 
-static void load_option(sfRenderWindow *wdw, menu_t *menu)
+static void load_option(sfRenderWindow *wdw, RPG_t *rpg)
 {
-    load_forms_option(menu);
-    create_full_txt(menu);
-    create_1300_txt(menu);
-    create_300_txt(menu);
-    resolutions(menu);
-    create_30_fps(menu);
-    create_60_fps(menu);
-    create_90_fps(menu);
-    create_txt_min_fps(menu);
-    create_txt_mid_fps(menu);
-    create_txt_high_fps(menu);
-    create_txt_framelimit(menu);
+    load_forms_option(rpg);
+    create_full_txt(rpg);
+    create_1300_txt(rpg);
+    create_300_txt(rpg);
+    resolutions(rpg);
+    create_30_fps(rpg);
+    create_60_fps(rpg);
+    create_90_fps(rpg);
+    create_txt_min_fps(rpg);
+    create_txt_mid_fps(rpg);
+    create_txt_high_fps(rpg);
+    create_txt_framelimit(rpg);
     sfRenderWindow_setFramerateLimit(wdw, 90);
 }
 
-void load_menu(sfRenderWindow *wdw, history_t *history, menu_t *menu)
+void load_menu(sfRenderWindow *wdw, RPG_t *rpg)
 {
-    load_menu_music(menu);
-    create_background_img(menu);
-    create_history(history);
-    create_history_end(history);
-    print_name_menu(menu);
-    print_click_to_play(menu);
-    button_menu_history(menu);
-    button_menu_option(menu);
-    button_menu_play(menu);
-    button_menu_credit(menu);
-    button_history_text(menu);
-    button_play_text(menu);
-    button_option_text(menu);
-    button_credit_text(menu);
-    button_back_text(menu);
-    button_menu_back(menu);
-    load_option(wdw, menu);
-    create_txt_credit(menu);
-    create_rect_credit(menu);
-    menu->clock = sfClock_create();
+    load_menu_music(rpg);
+    create_background_img(rpg);
+    create_history(rpg);
+    create_history_end(rpg);
+    print_name_menu(rpg);
+    print_click_to_play(rpg);
+    button_menu_history(rpg);
+    button_menu_option(rpg);
+    button_menu_play(rpg);
+    button_menu_credit(rpg);
+    button_history_text(rpg);
+    button_play_text(rpg);
+    button_option_text(rpg);
+    button_credit_text(rpg);
+    button_back_text(rpg);
+    button_menu_back(rpg);
+    load_option(wdw, rpg);
+    create_txt_credit(rpg);
+    create_rect_credit(rpg);
+    rpg->menu.clock = sfClock_create();
 }
 
-void load_history(history_t *history)
+void load_history(RPG_t *rpg)
 {
-    history->clock_history = sfClock_create();
+    rpg->history.clock_history = sfClock_create();
 }

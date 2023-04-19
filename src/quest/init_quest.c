@@ -5,27 +5,23 @@
 ** init_quest
 */
 
-#include "menu.h"
-#include "maps.h"
-#include "sprite.h"
-#include "quest.h"
+#include "all_struct.h"
 
-void init_quest(StructSprite *struct_sprite,
-quest_t *quest, menu_t *menu, maps_t *map)
+void init_quest(RPG_t *rpg)
 {
-    init_struct_sprite(struct_sprite);
-    init_grandma_sprite(struct_sprite);
-    init_shaolin_sprite(struct_sprite);
-    init_help_rect(quest);
-    init_text_help(quest, menu);
-    init_text_help2(quest, menu);
-    init_text_main_quest(quest, menu);
-    init_text_main_quest2(quest, menu);
-    init_exclam(quest);
-    init_rect_current_quest(quest);
-    init_text_talk_grand(quest, menu);
-    init_text_talk_shao(quest, menu);
-    init_text_dragon(quest, menu);
-    map->view_combat = sfView_create();
-    map->dezoom = 1;
+    init_struct_sprite(rpg);
+    init_grandma_sprite(rpg);
+    init_shaolin_sprite(rpg);
+    init_help_rect(rpg);
+    init_text_help(rpg);
+    init_text_help2(rpg);
+    init_text_main_quest(rpg);
+    init_text_main_quest2(rpg);
+    init_exclam(rpg);
+    init_rect_current_quest(rpg);
+    init_text_talk_grand(rpg);
+    init_text_talk_shao(rpg);
+    init_text_dragon(rpg);
+    rpg->map.view_combat = sfView_create();
+    rpg->map.dezoom = 1;
 }

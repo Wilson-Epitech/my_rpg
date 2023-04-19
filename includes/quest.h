@@ -46,21 +46,4 @@ enum npc {
     SHAOLIN
 };
 
-void init_help_rect(quest_t *quest);
-void init_text_help(quest_t *quest, menu_t *menu);
-void init_text_help2(quest_t *quest, menu_t *menu);
-void init_text_main_quest(quest_t *quest, menu_t *menu);
-void init_text_main_quest2(quest_t *quest, menu_t *menu);
-void press_enter_help(quest_t *quest);
-void press_enter_main(quest_t *quest);
-void init_exclam(quest_t *quest);
-void talk_to_grandma(quest_t *quest, sfRenderWindow *wdw);
-void talk_to_shaolin(quest_t *quest, sfRenderWindow *wdw);
-void init_rect_current_quest(quest_t *quest);
-void init_text_talk_grand(quest_t *quest, menu_t *menu);
-void init_text_talk_shao(quest_t *quest, menu_t *menu);
-void init_text_dragon(quest_t *quest, menu_t *menu);
-void destroy_quest(StructSprite *struct_sprite, quest_t *quest);
-void draw_current_text(sfRenderWindow *wdw, quest_t *quest);
-
 #endif /* !QUEST_H_ */

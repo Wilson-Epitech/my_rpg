@@ -5,74 +5,71 @@
 ** destroy_menu
 */
 
-#include <SFML/Audio.h>
-#include <SFML/Graphics.h>
-#include "my.h"
-#include "menu.h"
+#include "all_struct.h"
 
-void destroy_text_menu(menu_t *menu)
+void destroy_text_menu(RPG_t *rpg)
 {
-    sfText_destroy(menu->text_game_name);
-    sfText_destroy(menu->click_to_play);
-    sfText_destroy(menu->history);
-    sfText_destroy(menu->play);
-    sfText_destroy(menu->option);
-    sfText_destroy(menu->credit);
-    sfText_destroy(menu->back);
-    sfText_destroy(menu->music);
-    sfText_destroy(menu->effect);
-    sfText_destroy(menu->fullscreen);
-    sfText_destroy(menu->middle_screen);
-    sfText_destroy(menu->small_screen);
-    sfText_destroy(menu->resolutions);
-    sfText_destroy(menu->min_fps);
-    sfText_destroy(menu->mid_fps);
-    sfText_destroy(menu->high_fps);
-    sfText_destroy(menu->fps);
-    sfText_destroy(menu->credit_name);
-    sfFont_destroy(menu->game_name_font);
-    sfFont_destroy(menu->game_number_font);
+    sfText_destroy(rpg->menu.text_game_name);
+    sfText_destroy(rpg->menu.click_to_play);
+    sfText_destroy(rpg->menu.history);
+    sfText_destroy(rpg->menu.play);
+    sfText_destroy(rpg->menu.option);
+    sfText_destroy(rpg->menu.credit);
+    sfText_destroy(rpg->menu.back);
+    sfText_destroy(rpg->menu.music);
+    sfText_destroy(rpg->menu.effect);
+    sfText_destroy(rpg->menu.fullscreen);
+    sfText_destroy(rpg->menu.middle_screen);
+    sfText_destroy(rpg->menu.small_screen);
+    sfText_destroy(rpg->menu.resolutions);
+    sfText_destroy(rpg->menu.min_fps);
+    sfText_destroy(rpg->menu.mid_fps);
+    sfText_destroy(rpg->menu.high_fps);
+    sfText_destroy(rpg->menu.fps);
+    sfText_destroy(rpg->menu.credit_name);
+    sfFont_destroy(rpg->menu.game_name_font);
+    sfFont_destroy(rpg->menu.game_number_font);
 }
 
-void destroy_rect_menu(menu_t *menu)
+void destroy_rect_menu(RPG_t *rpg)
 {
-    sfRectangleShape_destroy(menu->music_bar);
-    sfRectangleShape_destroy(menu->slider_music);
-    sfRectangleShape_destroy(menu->effect_bar);
-    sfRectangleShape_destroy(menu->slider_effect);
-    sfRectangleShape_destroy(menu->mute_effect);
-    sfRectangleShape_destroy(menu->button_full_rect);
-    sfRectangleShape_destroy(menu->button_1300_rect);
-    sfRectangleShape_destroy(menu->button_300_rect);
-    sfRectangleShape_destroy(menu->button_min_fps);
-    sfRectangleShape_destroy(menu->button_middle_fps);
-    sfRectangleShape_destroy(menu->button_high_fps);
-    sfRectangleShape_destroy(menu->rect_name);
+    sfRectangleShape_destroy(rpg->menu.music_bar);
+    sfRectangleShape_destroy(rpg->menu.slider_music);
+    sfRectangleShape_destroy(rpg->menu.effect_bar);
+    sfRectangleShape_destroy(rpg->menu.slider_effect);
+    sfRectangleShape_destroy(rpg->menu.mute_effect);
+    sfRectangleShape_destroy(rpg->menu.button_full_rect);
+    sfRectangleShape_destroy(rpg->menu.button_1300_rect);
+    sfRectangleShape_destroy(rpg->menu.button_300_rect);
+    sfRectangleShape_destroy(rpg->menu.button_min_fps);
+    sfRectangleShape_destroy(rpg->menu.button_middle_fps);
+    sfRectangleShape_destroy(rpg->menu.button_high_fps);
+    sfRectangleShape_destroy(rpg->menu.rect_name);
 }
 
-void destroy_menu(menu_t *menu)
+void destroy_menu(RPG_t *rpg)
 {
-    sfTexture_destroy(menu->bk_menu_img);
-    sfSprite_destroy(menu->bk_menu_img_sprite);
-    sfTexture_destroy(menu->button_history_txt);
-    sfSprite_destroy(menu->button_history_spr);
-    sfSprite_destroy(menu->button_play_spr);
-    sfSprite_destroy(menu->button_option_spr);
-    sfSprite_destroy(menu->button_credit_spr);
-    sfSprite_destroy(menu->button_back_spr);
-    sfSprite_destroy(menu->mute_spr);
-    sfMusic_destroy(menu->back_music);
-    sfClock_destroy(menu->clock);
-    sfTexture_destroy(menu->mute_txt);
-    destroy_text_menu(menu);
-    destroy_rect_menu(menu);
+    sfTexture_destroy(rpg->menu.bk_menu_img);
+    sfSprite_destroy(rpg->menu.bk_menu_img_sprite);
+    sfTexture_destroy(rpg->menu.button_history_txt);
+    sfSprite_destroy(rpg->menu.button_history_spr);
+    sfSprite_destroy(rpg->menu.button_play_spr);
+    sfSprite_destroy(rpg->menu.button_option_spr);
+    sfSprite_destroy(rpg->menu.button_credit_spr);
+    sfSprite_destroy(rpg->menu.button_back_spr);
+    sfSprite_destroy(rpg->menu.mute_spr);
+    sfMusic_destroy(rpg->menu.back_music);
+    sfClock_destroy(rpg->menu.clock);
+    sfTexture_destroy(rpg->menu.mute_txt);
+    destroy_text_menu(rpg);
+    destroy_rect_menu(rpg);
 }
 
-void destroy_history(history_t *history)
+void destroy_history(RPG_t *rpg)
 {
-    sfSprite_destroy(history->sprite_history);
-    sfTexture_destroy(history->texture_history);
-    sfSprite_destroy(history->sprite_history_end);
-    sfTexture_destroy(history->texture_history_end);
-    sfClock_destroy(history->clock_history);
+    sfSprite_destroy(rpg->history.sprite_history);
+    sfTexture_destroy(rpg->history.texture_history);
+    sfSprite_destroy(rpg->history.sprite_history_end);
+    sfTexture_destroy(rpg->history.texture_history_end);
+    sfClock_destroy(rpg->history.clock_history);
 }

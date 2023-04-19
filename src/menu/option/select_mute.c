@@ -5,52 +5,49 @@
 ** select_mute
 */
 
-#include <SFML/Audio.h>
-#include <SFML/Graphics.h>
-#include "my.h"
-#include "menu.h"
+#include "all_struct.h"
 
-void while_select(menu_t *menu)
+void while_select(RPG_t *rpg)
 {
     while (sfMouse_isButtonPressed(0)) {
-        menu->check_mute = 1;
+        rpg->menu.check_mute = 1;
     }
 }
 
-void while_deselect(menu_t *menu)
+void while_deselect(RPG_t *rpg)
 {
     while (sfMouse_isButtonPressed(0)) {
-        menu->check_mute = 0;
+        rpg->menu.check_mute = 0;
     }
 }
 
-void select_mute(menu_t *menu)
+void select_mute(RPG_t *rpg)
 {
     sfVector2f scale_big = {0.5, 0.5};
-    if (is_on_button(menu, menu->mute_spr)) {
-        sfSprite_setScale(menu->mute_spr, scale_big);
-        if (sfMouse_isButtonPressed(0) && menu->check_mute == 0) {
-            while_select(menu);
+    if (is_on_button(rpg, rpg->menu.mute_spr)) {
+        sfSprite_setScale(rpg->menu.mute_spr, scale_big);
+        if (sfMouse_isButtonPressed(0) && rpg->menu.check_mute == 0) {
+            while_select(rpg);
         }
     }
     if (sfKeyboard_isKeyPressed(sfKeySpace)) {
-        menu->check_mute = 1;
+        rpg->menu.check_mute = 1;
         while (sfKeyboard_isKeyPressed(sfKeySpace)) {
         }
     }
 }
 
-void deselect_mute(menu_t *menu)
+void deselect_mute(RPG_t *rpg)
 {
     sfVector2f scale_big = {0.5, 0.5};
-    if (is_on_button(menu, menu->mute_spr)) {
-        sfSprite_setScale(menu->mute_spr, scale_big);
-        if (sfMouse_isButtonPressed(0) && menu->check_mute == 1) {
-            while_deselect(menu);
+    if (is_on_button(rpg, rpg->menu.mute_spr)) {
+        sfSprite_setScale(rpg->menu.mute_spr, scale_big);
+        if (sfMouse_isButtonPressed(0) && rpg->menu.check_mute == 1) {
+            while_deselect(rpg);
         }
     }
     if (sfKeyboard_isKeyPressed(sfKeySpace)) {
-        menu->check_mute = 0;
+        rpg->menu.check_mute = 0;
         while (sfKeyboard_isKeyPressed(sfKeySpace)) {
         }
     }

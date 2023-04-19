@@ -5,16 +5,13 @@
 ** click_play
 */
 
-#include <SFML/Audio.h>
-#include <SFML/Graphics.h>
-#include "my.h"
-#include "menu.h"
+#include "all_struct.h"
 
-void click_play(menu_t *menu)
+void click_play(RPG_t *rpg)
 {
-    if (is_on_button(menu, menu->button_play_spr)) {
+    if (is_on_button(rpg, rpg->menu.button_play_spr)) {
         if (sfMouse_isButtonPressed(0)) {
-            menu->check_first_menu = 6;
+            rpg->menu.check_first_menu = 6;
         }
     }
 }

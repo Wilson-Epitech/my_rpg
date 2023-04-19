@@ -5,26 +5,24 @@
 ** history on !
 */
 
-#include "my.h"
-#include "menu.h"
-#include "maps.h"
+#include "all_struct.h"
 
-void click_history(history_t *history, menu_t *menu)
+void click_history(RPG_t *rpg)
 {
-    if (is_on_button(menu, menu->button_history_spr)) {
-        if (menu->check_first_menu == 2 && sfMouse_isButtonPressed(0)) {
-            menu->check_first_menu = 5;
-            history->anim_finished1 = 2;
+    if (is_on_button(rpg, rpg->menu.button_history_spr)) {
+        if (rpg->menu.check_first_menu == 2 && sfMouse_isButtonPressed(0)) {
+            rpg->menu.check_first_menu = 5;
+            rpg->history.anim_finished1 = 2;
         }
     }
-    if (sfKeyboard_isKeyPressed(sfKeyLeft) && history->anim_finished1 == 3) {
-        history->anim_finished2 = 2;
+    if (sfKeyboard_isKeyPressed(sfKeyLeft) && rpg->history.anim_finished1 == 3) {
+        rpg->history.anim_finished2 = 2;
     }
 }
 
-void check_history(history_t *history,  menu_t *menu)
+void check_history(RPG_t *rpg)
 {
-    if (history->anim_finished2 == 3 && menu->check_first_menu == 5) {
-        menu->check_first_menu = 2;
+    if (rpg->history.anim_finished2 == 3 && rpg->menu.check_first_menu == 5) {
+        rpg->menu.check_first_menu = 2;
     }
 }

@@ -5,32 +5,29 @@
 ** click_first_menu
 */
 
-#include <SFML/Audio.h>
-#include <SFML/Graphics.h>
-#include "my.h"
-#include "menu.h"
+#include "all_struct.h"
 
-void get_mouse_pos_menu(sfRenderWindow *wdw, menu_t *menu)
+void get_mouse_pos_menu(sfRenderWindow *wdw, RPG_t *rpg)
 {
-    menu->mouse_menu = sfMouse_getPositionRenderWindow(wdw);
+    rpg->menu.mouse_menu = sfMouse_getPositionRenderWindow(wdw);
 }
 
-void hover_click_to_play(menu_t *menu)
+void hover_click_to_play(RPG_t *rpg)
 {
-    if (menu->mouse_menu.x > 900 && menu->mouse_menu.x < 1450
-    && menu->mouse_menu.y > 300 && menu->mouse_menu.y < 350) {
-        sfText_setColor(menu->click_to_play, sfRed);
-    } else if (menu->check_first_menu == 1) {
-        sfText_setColor(menu->click_to_play, sfBlack);
+    if (rpg->menu.mouse_menu.x > 900 && rpg->menu.mouse_menu.x < 1450
+    && rpg->menu.mouse_menu.y > 300 && rpg->menu.mouse_menu.y < 350) {
+        sfText_setColor(rpg->menu.click_to_play, sfRed);
+    } else if (rpg->menu.check_first_menu == 1) {
+        sfText_setColor(rpg->menu.click_to_play, sfBlack);
     }
 }
 
-void click_first_menu(menu_t *menu)
+void click_first_menu(RPG_t *rpg)
 {
-    if (menu->mouse_menu.x > 900 && menu->mouse_menu.x < 1450
-    && menu->mouse_menu.y > 300 && menu->mouse_menu.y < 350) {
-        if (sfMouse_isButtonPressed(0) && menu->check_first_menu == 1) {
-            menu->check_first_menu = 2;
+    if (rpg->menu.mouse_menu.x > 900 && rpg->menu.mouse_menu.x < 1450
+    && rpg->menu.mouse_menu.y > 300 && rpg->menu.mouse_menu.y < 350) {
+        if (sfMouse_isButtonPressed(0) && rpg->menu.check_first_menu == 1) {
+            rpg->menu.check_first_menu = 2;
         }
         while (sfMouse_isButtonPressed(0)) {
         }

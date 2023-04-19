@@ -5,19 +5,12 @@
 ** destroy
 */
 
-#include <SFML/Audio.h>
-#include <SFML/Graphics.h>
-#include "my.h"
-#include "menu.h"
-#include "maps.h"
-#include "sprite.h"
-#include "quest.h"
+#include "all_struct.h"
 
-void destroy_all(history_t *history, menu_t *menu, maps_t *map,
-StructSprite *struct_sprite, quest_t *quest)
+void destroy_all(RPG_t *rpg)
 {
-    destroy_history(history);
-    destroy_menu(menu);
-    destroy_maps(map);
-    destroy_quest(struct_sprite, quest);
+    destroy_history(rpg);
+    destroy_menu(rpg);
+    destroy_maps(rpg);
+    destroy_quest(rpg);
 }

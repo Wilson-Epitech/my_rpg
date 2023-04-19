@@ -5,34 +5,31 @@
 ** txt_credit
 */
 
-#include <SFML/Audio.h>
-#include <SFML/Graphics.h>
-#include "my.h"
-#include "menu.h"
+#include "all_struct.h"
 
-void create_rect_credit(menu_t *menu)
+void create_rect_credit(RPG_t *rpg)
 {
-    menu->rect_name = sfRectangleShape_create();
-    menu->size_rect_name.x = 1000;
-    menu->size_rect_name.y = 925;
-    menu->pos_rect_name.x = 350;
-    menu->pos_rect_name.y = 80;
+    rpg->menu.rect_name = sfRectangleShape_create();
+    rpg->menu.size_rect_name.x = 1000;
+    rpg->menu.size_rect_name.y = 925;
+    rpg->menu.pos_rect_name.x = 350;
+    rpg->menu.pos_rect_name.y = 80;
 
-    sfRectangleShape_setSize(menu->rect_name, menu->size_rect_name);
-    sfRectangleShape_setPosition(menu->rect_name, menu->pos_rect_name);
-    sfRectangleShape_setFillColor(menu->rect_name,
+    sfRectangleShape_setSize(rpg->menu.rect_name, rpg->menu.size_rect_name);
+    sfRectangleShape_setPosition(rpg->menu.rect_name, rpg->menu.pos_rect_name);
+    sfRectangleShape_setFillColor(rpg->menu.rect_name,
     sfColor_fromRGBA(0, 0, 0, 100));
 }
 
-void create_txt_credit(menu_t *menu)
+void create_txt_credit(RPG_t *rpg)
 {
     sfVector2f pos = {500, 100};
     char *str = "Thank You For Playing\n\n\n\nDevelopment Team\n\n\n"
     "Yanis Harkouk\n\nVaea Seyed Saleh\n\nWilson Bordichon\n\nEva Legrand";
-    menu->credit_name = sfText_create();
-    sfText_setFont(menu->credit_name, menu->game_name_font);
-    sfText_setString(menu->credit_name, str);
-    sfText_setCharacterSize(menu->credit_name, 50);
-    sfText_setPosition(menu->credit_name, pos);
-    sfText_setColor(menu->credit_name, sfYellow);
+    rpg->menu.credit_name = sfText_create();
+    sfText_setFont(rpg->menu.credit_name, rpg->menu.game_name_font);
+    sfText_setString(rpg->menu.credit_name, str);
+    sfText_setCharacterSize(rpg->menu.credit_name, 50);
+    sfText_setPosition(rpg->menu.credit_name, pos);
+    sfText_setColor(rpg->menu.credit_name, sfYellow);
 }

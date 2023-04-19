@@ -5,17 +5,18 @@
 ** inventory_menu
 */
 
-#include "inventory_menu.h"
+// #include "inventory_menu.h"
+#include "all_struct.h"
 
-void inventory_menu_func(sfRenderWindow *wdw, InventoryMenu_t *inventory_menu)
+void inventory_menu_func(sfRenderWindow *wdw, RPG_t *rpg)
 {
-    sfRenderWindow_drawSprite(wdw, inventory_menu->menu, NULL);
+    sfRenderWindow_drawSprite(wdw, rpg->inventory_menu.menu, NULL);
 }
 
-void press_inventory(InventoryMenu_t *inventory_menu)
+void press_inventory(RPG_t *rpg)
 {
-    if (inventory_menu->keyI_pressed == 1)
-        inventory_menu->keyI_pressed = 0;
-    else if (inventory_menu->keyI_pressed == 0)
-        inventory_menu->keyI_pressed = 1;
+    if (rpg->inventory_menu.keyI_pressed == 1)
+        rpg->inventory_menu.keyI_pressed = 0;
+    else if (rpg->inventory_menu.keyI_pressed == 0)
+        rpg->inventory_menu.keyI_pressed = 1;
 }

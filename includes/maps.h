@@ -62,28 +62,4 @@ enum map {
     MAP5
 };
 
-void init_maps(maps_t *map);
-void draw_current_map(sfRenderWindow *wdw, maps_t *map,
-StructSprite *struct_sprite, quest_t *quest, menu_t *menu);
-void get_color_map1(maps_t *map, StructSprite *struct_sprite, quest_t *quest);
-void get_color_map2(maps_t *map, StructSprite *struct_sprite);
-void get_color_map3(maps_t *map, StructSprite *struct_sprite, quest_t *quest);
-void get_color_map4(maps_t *map, StructSprite *struct_sprite);
-void get_color_map5(sfRenderWindow *wdw, maps_t *map,
-StructSprite *struct_sprite, menu_t *menu);
-void tp_map1(StructSprite *struct_sprite, maps_t *map);
-void tp_map2(StructSprite *struct_sprite, maps_t *map);
-void tp_map3(StructSprite *struct_sprite, maps_t *map);
-void tp_map4(StructSprite *struct_sprite, maps_t *map);
-void tp_map5(StructSprite *struct_sprite, maps_t *map);
-void tp_all_maps(maps_t *map, StructSprite *struct_sprite);
-void destroy_maps(maps_t *map);
-int col_which_map(maps_t *map, StructSprite *struct_sprite, int check_black);
-void check_next_col(StructSprite *struct_sprite);
-void check_next_uncol(StructSprite *struct_sprite);
-int check_color_col(StructSprite *struct_sprite, sfImage *img);
-int uncollision_char(StructSprite *struct_sprite, sfImage *img);
-void init_quest(StructSprite *struct_sprite,\
-quest_t *quest, menu_t *menu, maps_t *map);
-
 #endif /* !MAPS_H_ */

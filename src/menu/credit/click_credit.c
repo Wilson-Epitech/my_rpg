@@ -6,16 +6,13 @@
 */
 
 
-#include <SFML/Audio.h>
-#include <SFML/Graphics.h>
-#include "my.h"
-#include "menu.h"
+#include "all_struct.h"
 
-void credit_click(menu_t *menu)
+void credit_click(RPG_t *rpg)
 {
-    if (is_on_button(menu, menu->button_credit_spr)) {
+    if (is_on_button(rpg, rpg->menu.button_credit_spr)) {
         if (sfMouse_isButtonPressed(0)) {
-            menu->check_first_menu = 4;
+            rpg->menu.check_first_menu = 4;
         }
     }
 }

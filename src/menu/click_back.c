@@ -5,38 +5,35 @@
 ** click_back
 */
 
-#include <SFML/Audio.h>
-#include <SFML/Graphics.h>
-#include "my.h"
-#include "menu.h"
+#include "all_struct.h"
 
-void click_back(menu_t *menu)
+void click_back(RPG_t *rpg)
 {
-    if (is_on_button(menu, menu->button_back_spr)) {
+    if (is_on_button(rpg, rpg->menu.button_back_spr)) {
         if (sfMouse_isButtonPressed(0)) {
-            menu->check_first_menu = 1;
+            rpg->menu.check_first_menu = 1;
         }
         while (sfMouse_isButtonPressed(0)) {
         }
     }
     if (sfKeyboard_isKeyPressed(sfKeyEscape)) {
-        menu->check_first_menu = 1;
+        rpg->menu.check_first_menu = 1;
         while (sfKeyboard_isKeyPressed(sfKeyEscape)) {
         }
     }
 }
 
-void click_back_option(menu_t *menu)
+void click_back_option(RPG_t *rpg)
 {
-    if (is_on_button(menu, menu->button_back_spr)) {
+    if (is_on_button(rpg, rpg->menu.button_back_spr)) {
         if (sfMouse_isButtonPressed(0)) {
-            menu->check_first_menu = 2;
+            rpg->menu.check_first_menu = 2;
         }
         while (sfMouse_isButtonPressed(0)) {
         }
     }
     if (sfKeyboard_isKeyPressed(sfKeyEscape)) {
-        menu->check_first_menu = 2;
+        rpg->menu.check_first_menu = 2;
         while (sfKeyboard_isKeyPressed(sfKeyEscape)) {
         }
     }

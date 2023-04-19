@@ -5,18 +5,9 @@
 ** open_window
 */
 
-#include <SFML/Audio.h>
-#include <SFML/Graphics.h>
-#include "my.h"
-#include "menu.h"
-#include "maps.h"
-#include "sprite.h"
-#include "quest.h"
-#include "inventory_menu.h"
+#include "all_struct.h"
 
-static void event_wdw(sfRenderWindow *wdw, menu_t *menu,
-StructSprite *struct_sprite, int check_black,
-InventoryMenu_t *inventory_menu)
+static void event_wdw(sfRenderWindow *wdw, int check_black, RPG_t *rpg)
 {
     sfEvent event;
 
@@ -24,90 +15,87 @@ InventoryMenu_t *inventory_menu)
         if (event.type == sfEvtClosed) {
             sfRenderWindow_close(wdw);
         }
-        if (menu->check_first_menu == 6 && check_black == 1) {
-            move_sprite(struct_sprite);
+        if (rpg->menu.check_first_menu == 6 && check_black == 1) {
+            move_sprite(rpg);
             check_black = 1;
         }
         if (event.type == sfEvtKeyPressed &&
         sfKeyboard_isKeyPressed(sfKeyI) == sfTrue
-        && menu->check_first_menu == 6) {
-            press_inventory(inventory_menu);
+        && rpg->menu.check_first_menu == 6) {
+            press_inventory(rpg);
         }
     }
 }
 
-static void main_history(sfRenderWindow* wdw, history_t *history)
+static void main_history(sfRenderWindow* wdw, RPG_t *rpg)
 {
-    if (history->anim_finished1 == 2) {
-        motion_history(history);
-        sfRenderWindow_drawSprite(wdw, history->sprite_history, NULL);
+    if (rpg->history.anim_finished1 == 2) {
+        motion_history(rpg);
+        sfRenderWindow_drawSprite(wdw, rpg->history.sprite_history, NULL);
     }
-    if (history->anim_finished2 == 2) {
-        motion_history_end(history);
-        sfRenderWindow_drawSprite(wdw, history->sprite_history_end, NULL);
+    if (rpg->history.anim_finished2 == 2) {
+        motion_history_end(rpg);
+        sfRenderWindow_drawSprite(wdw, rpg->history.sprite_history_end, NULL);
     }
 }
 
-static void main_game(sfRenderWindow *wdw, menu_t *menu,
-maps_t *map, StructSprite *struct_sprite, quest_t *quest,
-InventoryMenu_t *inventory_menu)
+static void main_game(sfRenderWindow *wdw, RPG_t *rpg)
 {
     int check_black = 1;
 
-    if (menu->check_first_menu == 6) {
-        map->mouse_img =
-        sfRenderWindow_mapPixelToCoords(wdw,menu->mouse_menu, NULL);
-        tp_all_maps(map, struct_sprite);
-        get_pos_char(struct_sprite);
-        check_black = col_which_map(map, struct_sprite, check_black);
-        event_wdw(wdw, menu, struct_sprite, check_black, inventory_menu);
-        draw_current_map(wdw, map, struct_sprite, quest, menu);
-        sfRenderWindow_drawSprite(wdw, struct_sprite->sprite, NULL);
-        sfRenderWindow_drawRectangleShape(wdw, quest->rect_current_quest, NULL);
-        draw_current_text(wdw, quest);
-        if (inventory_menu->keyI_pressed == 1)
-            inventory_menu_func(wdw, inventory_menu);
+    if (rpg->menu.check_first_menu == 6) {
+        rpg->map.mouse_img =
+        sfRenderWindow_mapPixelToCoords(wdw, rpg->menu.mouse_menu, NULL);
+        tp_all_maps(rpg);
+        get_pos_char(rpg);
+        check_black = col_which_map(rpg, check_black);
+        event_wdw(wdw, check_black, rpg);
+        draw_current_map(wdw, rpg);
+        sfRenderWindow_drawSprite(wdw, rpg->struct_sprite.sprite, NULL);
+        sfRenderWindow_drawRectangleShape(wdw, rpg->quest.rect_current_quest, NULL);
+        draw_current_text(wdw, rpg);
+        if (rpg->inventory_menu.keyI_pressed == 1)
+            inventory_menu_func(wdw, rpg);
     }
 }
 
-static void main_menu(sfRenderWindow *wdw, menu_t *menu, history_t *history)
+static void main_menu(sfRenderWindow *wdw, RPG_t *rpg)
 {
-    get_mouse_pos_menu(wdw, menu);
-    motion_menu_bk(menu);
-    if (menu->check_first_menu < 6) {
-        main_history(wdw, history);
-        if (menu->check_first_menu < 5)
-            sfRenderWindow_drawSprite(wdw, menu->bk_menu_img_sprite, NULL);
-        menu_first_page(wdw, menu);
-        menu_snd_page(wdw, menu);
-        menu_option_page(wdw, menu);
-        credit_page(wdw, menu);
-        click_first_menu(menu);
-        check_history(history, menu);
-        click_history(history, menu);
+    get_mouse_pos_menu(wdw, rpg);
+    motion_menu_bk(rpg);
+    if (rpg->menu.check_first_menu < 6) {
+        main_history(wdw, rpg);
+        if (rpg->menu.check_first_menu < 5)
+            sfRenderWindow_drawSprite(wdw, rpg->menu.bk_menu_img_sprite, NULL);
+        menu_first_page(wdw, rpg);
+        menu_snd_page(wdw, rpg);
+        menu_option_page(wdw, rpg);
+        credit_page(wdw, rpg);
+        click_first_menu(rpg);
+        check_history(rpg);
+        click_history(rpg);
     }
 }
 
-void open_wdw(history_t *history, menu_t *menu, maps_t *map,
-StructSprite *struct_sprite, quest_t *quest, InventoryMenu_t *inventory_menu)
+void open_wdw(RPG_t *rpg)
 {
     sfRenderWindow *wdw;
     sfVideoMode mode = {1920, 1080, 32};
     wdw =
     sfRenderWindow_create(mode, "Dragon's Burden", sfResize | sfClose, NULL);
-    menu->volume = 100.0;
-    load_menu(wdw, history, menu);
-    load_history(history);
-    init_maps(map);
-    init_quest(struct_sprite, quest, menu, map);
+    rpg->menu.volume = 100.0;
+    load_menu(wdw, rpg);
+    load_history(rpg);
+    init_maps(rpg);
+    init_quest(rpg);
     int check_black = 0;
     while (sfRenderWindow_isOpen(wdw)) {
         sfRenderWindow_clear(wdw, sfBlack);
-        main_menu(wdw, menu, history);
-        main_game(wdw, menu, map, struct_sprite, quest, inventory_menu);
-        event_wdw(wdw, menu, struct_sprite, check_black, inventory_menu);
+        main_menu(wdw, rpg);
+        main_game(wdw, rpg);
+        event_wdw(wdw, check_black, rpg);
         sfRenderWindow_display(wdw);
     }
-    destroy_all(history, menu, map, struct_sprite, quest);
+    destroy_all(rpg);
     sfRenderWindow_destroy(wdw);
 }

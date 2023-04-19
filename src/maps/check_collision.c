@@ -5,78 +5,78 @@
 ** check_collision_map1
 */
 
-#include <SFML/Audio.h>
-#include <SFML/Graphics.h>
-#include "maps.h"
+// #include <SFML/Audio.h>
+// #include <SFML/Graphics.h>
+#include "all_struct.h"
 
-void check_next_col(StructSprite *struct_sprite)
+void check_next_col(RPG_t *rpg)
 {
     if (sfKeyboard_isKeyPressed(sfKeyUp)
-    && struct_sprite->sprite_pos.y - 0 > 0)
-        struct_sprite->sprite_pos.y -= 0;
+    && rpg->struct_sprite.sprite_pos.y - 0 > 0)
+        rpg->struct_sprite.sprite_pos.y -= 0;
     if (sfKeyboard_isKeyPressed(sfKeyDown)
-    && struct_sprite->sprite_pos.y + 50 < 1080)
-        struct_sprite->sprite_pos.y += 50;
+    && rpg->struct_sprite.sprite_pos.y + 50 < 1080)
+        rpg->struct_sprite.sprite_pos.y += 50;
     if (sfKeyboard_isKeyPressed(sfKeyRight)
-    && struct_sprite->sprite_pos.x + 20 < 1920)
-        struct_sprite->sprite_pos.x += 20;
+    && rpg->struct_sprite.sprite_pos.x + 20 < 1920)
+        rpg->struct_sprite.sprite_pos.x += 20;
     if (sfKeyboard_isKeyPressed(sfKeyLeft)
-    && struct_sprite->sprite_pos.x - 20 > 0)
-        struct_sprite->sprite_pos.x -= 20;
+    && rpg->struct_sprite.sprite_pos.x - 20 > 0)
+        rpg->struct_sprite.sprite_pos.x -= 20;
 }
 
-void check_next_uncol(StructSprite *struct_sprite)
+void check_next_uncol(RPG_t *rpg)
 {
     if (sfKeyboard_isKeyPressed(sfKeyUp)
-    && struct_sprite->sprite_pos.y - 0 > 0)
-        struct_sprite->sprite_pos.y -= 0;
+    && rpg->struct_sprite.sprite_pos.y - 0 > 0)
+        rpg->struct_sprite.sprite_pos.y -= 0;
     if (sfKeyboard_isKeyPressed(sfKeyDown)
-    && struct_sprite->sprite_pos.y + 50 < 1080)
-        struct_sprite->sprite_pos.y += 50;
+    && rpg->struct_sprite.sprite_pos.y + 50 < 1080)
+        rpg->struct_sprite.sprite_pos.y += 50;
     if (sfKeyboard_isKeyPressed(sfKeyRight)
-    && struct_sprite->sprite_pos.x + 20 < 1920)
-        struct_sprite->sprite_pos.x += 20;
+    && rpg->struct_sprite.sprite_pos.x + 20 < 1920)
+        rpg->struct_sprite.sprite_pos.x += 20;
     if (sfKeyboard_isKeyPressed(sfKeyLeft)
-    && struct_sprite->sprite_pos.x - 20 > 0)
-        struct_sprite->sprite_pos.x -= 20;
+    && rpg->struct_sprite.sprite_pos.x - 20 > 0)
+        rpg->struct_sprite.sprite_pos.x -= 20;
 }
 
-int check_color_col(StructSprite *struct_sprite, sfImage *img)
+int check_color_col(RPG_t *rpg, sfImage *img)
 {
     sfColor col;
 
-    check_next_col(struct_sprite);
-    col = sfImage_getPixel(img, struct_sprite->sprite_pos.x,
-    struct_sprite->sprite_pos.y);
+    check_next_col(rpg);
+    col = sfImage_getPixel(img, rpg->struct_sprite.sprite_pos.x,
+    rpg->struct_sprite.sprite_pos.y);
     if (col.r > 5 && col.g > 5 && col.b > 5)
         return 1;
     if (sfKeyboard_isKeyPressed(sfKeyUp))
-        struct_sprite->sprite_pos.y += 0;
+        rpg->struct_sprite.sprite_pos.y += 0;
     if (sfKeyboard_isKeyPressed(sfKeyDown))
-        struct_sprite->sprite_pos.y -= 50;
+        rpg->struct_sprite.sprite_pos.y -= 50;
     if (sfKeyboard_isKeyPressed(sfKeyRight))
-        struct_sprite->sprite_pos.x -= 20;
+        rpg->struct_sprite.sprite_pos.x -= 20;
     if (sfKeyboard_isKeyPressed(sfKeyLeft))
-        struct_sprite->sprite_pos.x += 20;
+        rpg->struct_sprite.sprite_pos.x += 20;
     return 0;
 }
 
-int uncollision_char(StructSprite *struct_sprite, sfImage *img)
+int uncollision_char(RPG_t *rpg, sfImage *img)
 {
     sfColor col;
 
-    check_next_uncol(struct_sprite);
-    col = sfImage_getPixel(img, struct_sprite->sprite_pos.x,
-    struct_sprite->sprite_pos.y);
+    check_next_uncol(rpg);
+    col = sfImage_getPixel(img, rpg->struct_sprite.sprite_pos.x,
+    rpg->struct_sprite.sprite_pos.y);
     if (col.r > 5 && col.g > 5 && col.b > 5)
         return 1;
     if (sfKeyboard_isKeyPressed(sfKeyUp))
-        struct_sprite->sprite_pos.y += 0;
+        rpg->struct_sprite.sprite_pos.y += 0;
     if (sfKeyboard_isKeyPressed(sfKeyDown))
-        struct_sprite->sprite_pos.y -= 50;
+        rpg->struct_sprite.sprite_pos.y -= 50;
     if (sfKeyboard_isKeyPressed(sfKeyRight))
-        struct_sprite->sprite_pos.x -= 20;
+        rpg->struct_sprite.sprite_pos.x -= 20;
     if (sfKeyboard_isKeyPressed(sfKeyLeft))
-        struct_sprite->sprite_pos.x += 20;
+        rpg->struct_sprite.sprite_pos.x += 20;
     return 0;
 }

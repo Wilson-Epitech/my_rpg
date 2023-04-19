@@ -25,11 +25,4 @@ typedef struct {
     sfVector2f sprite_pos;
     int save_key;
 } StructSprite;
-
-void init_struct_sprite(StructSprite *struct_sprite);
-void move_sprite(StructSprite *struct_sprite);
-void get_pos_char(StructSprite *struct_sprite);
-void init_grandma_sprite(StructSprite *struct_sprite);
-void init_shaolin_sprite(StructSprite *struct_sprite);
-
 #endif /* !SPRITE_H_ */

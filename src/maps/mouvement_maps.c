@@ -5,63 +5,57 @@
 ** mouvement_maps
 */
 
-#include "maps.h"
-#include "quest.h"
+#include "all_struct.h"
 
-static void draw_map1(sfRenderWindow *wdw,
-maps_t *map, StructSprite *struct_sprite, quest_t *quest)
+static void draw_map1(sfRenderWindow *wdw, RPG_t *rpg)
 {
-    if (map->on_map == MAP1) {
-        sfRenderWindow_drawSprite(wdw, map->map1_spr, NULL);
-        sfRenderWindow_drawSprite(wdw, struct_sprite->grandma_spt, NULL);
-        talk_to_grandma(quest, wdw);
-        get_color_map1(map, struct_sprite, quest);
+    if (rpg->map.on_map == MAP1) {
+        sfRenderWindow_drawSprite(wdw, rpg->map.map1_spr, NULL);
+        sfRenderWindow_drawSprite(wdw, rpg->struct_sprite.grandma_spt, NULL);
+        talk_to_grandma(rpg, wdw);
+        get_color_map1(rpg);
         return;
     }
 }
 
-static void draw_map2(sfRenderWindow *wdw,
-maps_t *map, StructSprite *struct_sprite)
+static void draw_map2(sfRenderWindow *wdw, RPG_t *rpg)
 {
-    if (map->on_map == MAP2) {
-        sfRenderWindow_drawSprite(wdw, map->map2_spr, NULL);
-        get_color_map2(map, struct_sprite);
+    if (rpg->map.on_map == MAP2) {
+        sfRenderWindow_drawSprite(wdw, rpg->map.map2_spr, NULL);
+        get_color_map2(rpg);
         return;
     }
 }
 
-static void draw_map3(sfRenderWindow *wdw,
-maps_t *map, StructSprite *struct_sprite, quest_t *quest)
+static void draw_map3(sfRenderWindow *wdw, RPG_t *rpg)
 {
-    if (map->on_map == MAP3) {
-        sfRenderWindow_drawSprite(wdw, map->map3_spr, NULL);
-        sfRenderWindow_drawSprite(wdw, struct_sprite->shaolin_spt, NULL);
-        talk_to_shaolin(quest, wdw);
-        get_color_map3(map, struct_sprite, quest);
+    if (rpg->map.on_map == MAP3) {
+        sfRenderWindow_drawSprite(wdw, rpg->map.map3_spr, NULL);
+        sfRenderWindow_drawSprite(wdw, rpg->struct_sprite.shaolin_spt, NULL);
+        talk_to_shaolin(rpg, wdw);
+        get_color_map3(rpg);
         return;
     }
 }
 
-static void draw_map4_map5(sfRenderWindow *wdw,
-maps_t *map, StructSprite *struct_sprite, menu_t *menu)
+static void draw_map4_map5(sfRenderWindow *wdw, RPG_t *rpg)
 {
-    if (map->on_map == MAP4) {
-        sfRenderWindow_drawSprite(wdw, map->map4_spr, NULL);
-        get_color_map4(map, struct_sprite);
+    if (rpg->map.on_map == MAP4) {
+        sfRenderWindow_drawSprite(wdw, rpg->map.map4_spr, NULL);
+        get_color_map4(rpg);
         return;
     }
-    if (map->on_map == MAP5) {
-        sfRenderWindow_drawSprite(wdw, map->map5_spr, NULL);
-        get_color_map5(wdw, map, struct_sprite, menu);
+    if (rpg->map.on_map == MAP5) {
+        sfRenderWindow_drawSprite(wdw, rpg->map.map5_spr, NULL);
+        get_color_map5(wdw, rpg);
         return;
     }
 }
 
-void draw_current_map(sfRenderWindow *wdw,
-maps_t *map, StructSprite *struct_sprite, quest_t *quest, menu_t *menu)
+void draw_current_map(sfRenderWindow *wdw, RPG_t *rpg)
 {
-    draw_map1(wdw, map, struct_sprite, quest);
-    draw_map2(wdw, map, struct_sprite);
-    draw_map3(wdw, map, struct_sprite, quest);
-    draw_map4_map5(wdw, map, struct_sprite, menu);
+    draw_map1(wdw, rpg);
+    draw_map2(wdw, rpg);
+    draw_map3(wdw, rpg);
+    draw_map4_map5(wdw, rpg);
 }
