@@ -109,6 +109,7 @@ static void main_menu(RPG_t *rpg)
 void open_wdw(RPG_t *rpg)
 {
     init_window(rpg);
+    rpg->menu.volume = 100;
     load_menu(rpg);
     rpg->history.clock_history = sfClock_create();
     init_maps(rpg);
