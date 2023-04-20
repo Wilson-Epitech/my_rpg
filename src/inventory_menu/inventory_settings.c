@@ -17,6 +17,7 @@ void draw_rect_setting_game(RPG_t *rpg)
     sfRectangleShape_setPosition(rpg->inventory_menu.rect_setting, pos);
     sfRectangleShape_setFillColor(rpg->inventory_menu.rect_setting,
     sfColor_fromRGBA(80, 80, 80, 200));
-    sfRectangleShape_setOutlineColor(rpg->inventory_menu.rect_setting, sfYellow);
+    sfRectangleShape_setOutlineColor(rpg->inventory_menu.rect_setting,
+    sfYellow);
     sfRectangleShape_setOutlineThickness(rpg->inventory_menu.rect_setting, 10);
 }

@@ -13,7 +13,7 @@ static void init_bush(RPG_t *rpg)
     sfVector2f bush_ld = {1057, 715};
     sfVector2f bush_rt = {737, 820};
     sfVector2f bush_rd = {1057, 820};
-    
+
     rpg->dimension.bush
     = sfTexture_createFromFile("textures/maps/bush_map1.png", NULL);
     rpg->dimension.bush_lt = sfSprite_create();
@@ -46,15 +46,18 @@ static void init_roof_house(RPG_t *rpg)
     sfVector2f roof_1 = {615, -3};
     sfVector2f roof_2 = {997, -3};
     sfVector2f roof_3 = {1385, -3};
-    
+
     rpg->dimension.roof_top_red
     = sfTexture_createFromFile("textures/maps/roof_house_top_map1.png", NULL);
     rpg->dimension.roof_1_map1 = sfSprite_create();
     rpg->dimension.roof_2_map1 = sfSprite_create();
     rpg->dimension.roof_3_map1 = sfSprite_create();
-    sfSprite_setTexture(rpg->dimension.roof_1_map1, rpg->dimension.roof_top_red, sfTrue);
-    sfSprite_setTexture(rpg->dimension.roof_2_map1, rpg->dimension.roof_top_red, sfTrue);
-    sfSprite_setTexture(rpg->dimension.roof_3_map1, rpg->dimension.roof_top_red, sfTrue);
+    sfSprite_setTexture(rpg->dimension.roof_1_map1,
+    rpg->dimension.roof_top_red, sfTrue);
+    sfSprite_setTexture(rpg->dimension.roof_2_map1,
+    rpg->dimension.roof_top_red, sfTrue);
+    sfSprite_setTexture(rpg->dimension.roof_3_map1,
+    rpg->dimension.roof_top_red, sfTrue);
     sfSprite_setPosition(rpg->dimension.roof_1_map1, roof_1);
     sfSprite_setPosition(rpg->dimension.roof_2_map1, roof_2);
     sfSprite_setPosition(rpg->dimension.roof_3_map1, roof_3);
@@ -64,11 +67,12 @@ static void init_main_house_tent(RPG_t *rpg)
 {
     sfVector2f big_house = {723, 325};
     sfVector2f tent = {1655, 730};
-    
+
     rpg->dimension.roof_big_house
     = sfTexture_createFromFile("textures/maps/roof_big_house_map1.png", NULL);
     rpg->dimension.big_house_map1 = sfSprite_create();
-    sfSprite_setTexture(rpg->dimension.big_house_map1, rpg->dimension.roof_big_house, sfTrue);
+    sfSprite_setTexture(rpg->dimension.big_house_map1,
+    rpg->dimension.roof_big_house, sfTrue);
     sfSprite_setPosition(rpg->dimension.big_house_map1, big_house);
     rpg->dimension.tent
     = sfTexture_createFromFile("textures/maps/tent_map1.png", NULL);

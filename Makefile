@@ -54,6 +54,8 @@ SRC	=	main.c 										\
 		src/maps/init_map2_3d.c 					\
 		src/maps/init_map3_3d.c 					\
 		src/maps/init_map4_3d.c 					\
+		src/maps/destroy_sprite_maps.c 				\
+		src/maps/draw_sprites_maps.c 				\
 		src/quest/help.c 							\
 		src/quest/press_enter.c						\
 		src/quest/main_quest.c						\
@@ -73,6 +75,7 @@ SRC	=	main.c 										\
 		src/inventory_menu/create_button_loading.c 	\
 		src/inventory_menu/create_button_settings.c	\
 		src/inventory_menu/inventory_settings.c   	\
+		src/inventory_menu/draw_inventory.c 		\
 		lib/my_int_to_str.c  						\
 		lib/my_putchar.c 							\
 		lib/my_putstr.c 							\

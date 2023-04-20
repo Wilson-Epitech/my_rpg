@@ -11,7 +11,7 @@ void init_inventory_txt(RPG_t *rpg)
 {
     char *str_inven = "Inventory";
     sfVector2f pos_inv = {180, 190};
-    
+
     rpg->inventory_menu.inventory = sfText_create();
     sfText_setFont(rpg->inventory_menu.inventory, rpg->menu.game_name_font);
     sfText_setString(rpg->inventory_menu.inventory, str_inven);

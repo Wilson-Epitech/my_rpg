@@ -12,5 +12,6 @@ void destroy_all(RPG_t *rpg)
     destroy_history(rpg);
     destroy_menu(rpg);
     destroy_maps(rpg);
+    destroy_sprites_maps(rpg);
     destroy_quest(rpg);
 }

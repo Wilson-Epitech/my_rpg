@@ -32,6 +32,11 @@ void inventory_menu_func(RPG_t *rpg);
 void init_inventory_menu(RPG_t *rpg);
 void destroy_inventory_menu(RPG_t *rpg);
 int press_inventory(RPG_t *rpg, int menu_game);
+void draw_fps(RPG_t *rpg);
+void draw_setting_inventory(RPG_t *rpg);
+void click_back_setting(RPG_t *rpg);
+void draw_buttons_inventory(RPG_t *rpg);
+void draw_inventory_stat(RPG_t *rpg);
 void draw_inventory(RPG_t *rpg);
 void draw_buttons_inventory(RPG_t *rpg);
 void init_rect_characteristic(RPG_t *rpg);
@@ -179,6 +184,7 @@ void hover_settings(RPG_t *rpg);
 
 //MAPS.h//
 void init_maps(RPG_t *rpg);
+void draw_all_sprites_maps(RPG_t *rpg);
 void draw_current_map(RPG_t *rpg);
 void get_color_map1(RPG_t *rpg);
 void get_color_map2(RPG_t *rpg);
@@ -202,6 +208,7 @@ void init_map1_3d(RPG_t *rpg);
 void init_map2_3d(RPG_t *rpg);
 void init_map3_3d(RPG_t *rpg);
 void init_map4_3d(RPG_t *rpg);
+void destroy_sprites_maps(RPG_t *rpg);
 
 //MY.h//
 int check_error(int ac, char **env);
