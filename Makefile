@@ -50,6 +50,8 @@ SRC	=	main.c 										\
 		src/maps/check_collision.c					\
 		src/maps/collision.c						\
 		src/maps/get_color_map1.c					\
+		src/maps/init_map1_3d.c 					\
+		src/maps/init_map2_3d.c 					\
 		src/quest/help.c 							\
 		src/quest/press_enter.c						\
 		src/quest/main_quest.c						\
@@ -68,6 +70,7 @@ SRC	=	main.c 										\
 		src/inventory_menu/create_button_saving.c 	\
 		src/inventory_menu/create_button_loading.c 	\
 		src/inventory_menu/create_button_settings.c	\
+		src/inventory_menu/inventory_settings.c   	\
 		lib/my_int_to_str.c  						\
 		lib/my_putchar.c 							\
 		lib/my_putstr.c 							\

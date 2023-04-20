@@ -17,7 +17,8 @@ static void event_wdw(int check_black, RPG_t *rpg)
             sfRenderWindow_close(rpg->window.wdw);
         }
         if (rpg->menu.check_first_menu == 6
-        && check_black == 1 && menu_game != 1) {
+        && check_black == 1 && menu_game != 1
+        && menu_game != 2) {
             move_sprite(rpg);
             check_black = 1;
         }
@@ -57,9 +58,28 @@ static void main_game(RPG_t *rpg)
         draw_current_map(rpg);
         sfRenderWindow_drawSprite(rpg->window.wdw,
             rpg->struct_sprite.sprite, NULL);
-        if (rpg->map.on_map == MAP1)
-            sfRenderWindow_drawSprite(rpg->window.wdw,
-                rpg->map.map1_3d_spr, NULL);
+        if (rpg->map.on_map == MAP1) {
+            sfRenderWindow_drawSprite(rpg->window.wdw, rpg->dimension.bush_lt, NULL);
+            sfRenderWindow_drawSprite(rpg->window.wdw, rpg->dimension.bush_ld, NULL);
+            sfRenderWindow_drawSprite(rpg->window.wdw, rpg->dimension.bush_rt, NULL);
+            sfRenderWindow_drawSprite(rpg->window.wdw, rpg->dimension.bush_rd, NULL);
+            sfRenderWindow_drawSprite(rpg->window.wdw, rpg->dimension.well_map1, NULL);
+            sfRenderWindow_drawSprite(rpg->window.wdw, rpg->dimension.roof_1_map1, NULL);
+            sfRenderWindow_drawSprite(rpg->window.wdw, rpg->dimension.roof_2_map1, NULL);
+            sfRenderWindow_drawSprite(rpg->window.wdw, rpg->dimension.roof_3_map1, NULL);
+            sfRenderWindow_drawSprite(rpg->window.wdw, rpg->dimension.big_house_map1, NULL);
+            sfRenderWindow_drawSprite(rpg->window.wdw, rpg->dimension.tent_map1, NULL);
+        }
+        if (rpg->map.on_map == MAP2) {
+            sfRenderWindow_drawSprite(rpg->window.wdw, rpg->dimension.tent_map2, NULL);
+            sfRenderWindow_drawSprite(rpg->window.wdw, rpg->dimension.tree_top_map2, NULL);
+            sfRenderWindow_drawSprite(rpg->window.wdw, rpg->dimension.tree_bot_map2, NULL);
+            sfRenderWindow_drawSprite(rpg->window.wdw, rpg->dimension.green_house_map2, NULL);
+            sfRenderWindow_drawSprite(rpg->window.wdw, rpg->dimension.red_house_map2, NULL);
+            sfRenderWindow_drawSprite(rpg->window.wdw, rpg->dimension.honey_house_map2, NULL);
+            sfRenderWindow_drawSprite(rpg->window.wdw, rpg->dimension.medical_house_map2, NULL);
+            sfRenderWindow_drawSprite(rpg->window.wdw, rpg->dimension.asian_house_map2, NULL);
+        }
         sfRenderWindow_drawRectangleShape(rpg->window.wdw,
         rpg->quest.rect_current_quest, NULL);
         draw_current_text(rpg);
@@ -93,8 +113,10 @@ void open_wdw(RPG_t *rpg)
     rpg->history.clock_history = sfClock_create();
     init_maps(rpg);
     init_map1_3d(rpg);
+    init_map2_3d(rpg);
     init_quest(rpg);
     init_inventory_menu(rpg);
+    draw_rect_setting_game(rpg);
     int check_black = 0;
     while (sfRenderWindow_isOpen(rpg->window.wdw)) {
         sfRenderWindow_clear(rpg->window.wdw, sfBlack);
@@ -104,5 +126,32 @@ void open_wdw(RPG_t *rpg)
         sfRenderWindow_display(rpg->window.wdw);
     }
     destroy_all(rpg);
+    sfTexture_destroy(rpg->dimension.bush);
+    sfTexture_destroy(rpg->dimension.well);
+    sfTexture_destroy(rpg->dimension.roof_top_red);
+    sfTexture_destroy(rpg->dimension.roof_big_house);
+    sfTexture_destroy(rpg->dimension.tent);
+    sfTexture_destroy(rpg->dimension.tree);
+    sfTexture_destroy(rpg->dimension.green_house);
+    sfTexture_destroy(rpg->dimension.red_house);
+    sfTexture_destroy(rpg->dimension.medical_house);
+    sfTexture_destroy(rpg->dimension.honey_house);
+    sfSprite_destroy(rpg->dimension.bush_lt);
+    sfSprite_destroy(rpg->dimension.bush_ld);
+    sfSprite_destroy(rpg->dimension.bush_rt);
+    sfSprite_destroy(rpg->dimension.bush_rd);
+    sfSprite_destroy(rpg->dimension.well_map1);
+    sfSprite_destroy(rpg->dimension.roof_1_map1);
+    sfSprite_destroy(rpg->dimension.roof_2_map1);
+    sfSprite_destroy(rpg->dimension.roof_3_map1);
+    sfSprite_destroy(rpg->dimension.big_house_map1);
+    sfSprite_destroy(rpg->dimension.tent_map1);
+    sfSprite_destroy(rpg->dimension.tent_map2);
+    sfSprite_destroy(rpg->dimension.tree_top_map2);
+    sfSprite_destroy(rpg->dimension.tree_bot_map2);
+    sfSprite_destroy(rpg->dimension.green_house_map2);
+    sfSprite_destroy(rpg->dimension.red_house_map2);
+    sfSprite_destroy(rpg->dimension.honey_house_map2);
+    sfSprite_destroy(rpg->dimension.medical_house_map2);
     sfRenderWindow_destroy(rpg->window.wdw);
 }

@@ -24,6 +24,7 @@
         quest_t quest;
         player_t player;
         StructSprite struct_sprite;
+        dimension_t dimension;
     } RPG_t;
 
 void init_window(RPG_t *rpg);
@@ -40,6 +41,8 @@ void  init_xp_txt(RPG_t *rpg);
 void init_level_txt(RPG_t *rpg);
 void init_def_txt(RPG_t *rpg);
 void init_atk_txt(RPG_t *rpg);
+void init_inventory_txt(RPG_t *rpg);
+void draw_rect_setting_game(RPG_t *rpg);
 
 //SPRITE.H//
 void init_struct_sprite(RPG_t *rpg);
@@ -196,6 +199,7 @@ int check_color_col(RPG_t *rpg, sfImage *img);
 int uncollision_char(RPG_t *rpg, sfImage *img);
 void init_quest(RPG_t *rpg);
 void init_map1_3d(RPG_t *rpg);
+void init_map2_3d(RPG_t *rpg);
 
 //MY.h//
 int check_error(int ac, char **env);

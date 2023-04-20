@@ -13,5 +13,7 @@ void option_click(RPG_t *rpg)
         if (sfMouse_isButtonPressed(0)) {
             rpg->menu.check_first_menu = 3;
         }
+        while (sfMouse_isButtonPressed(0)) {
+        }
     }
 }

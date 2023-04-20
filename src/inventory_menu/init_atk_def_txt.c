@@ -7,6 +7,19 @@
 
 #include "all_struct.h"
 
+void init_inventory_txt(RPG_t *rpg)
+{
+    char *str_inven = "Inventory";
+    sfVector2f pos_inv = {180, 190};
+    
+    rpg->inventory_menu.inventory = sfText_create();
+    sfText_setFont(rpg->inventory_menu.inventory, rpg->menu.game_name_font);
+    sfText_setString(rpg->inventory_menu.inventory, str_inven);
+    sfText_setCharacterSize(rpg->inventory_menu.inventory, 40);
+    sfText_setPosition(rpg->inventory_menu.inventory, pos_inv);
+    sfText_setColor(rpg->inventory_menu.inventory, sfYellow);
+}
+
 void init_atk_txt(RPG_t *rpg)
 {
     char *str_atk = my_int_to_str(rpg->player.atk);

@@ -35,9 +35,39 @@ typedef struct maps_s {
     int on_map;
     sfView *view_combat;
     float dezoom;
-    sfTexture *map1_3d_txr;
-    sfSprite *map1_3d_spr;
 } maps_t;
+
+typedef struct dimension_s {
+    sfTexture *bush;
+    sfTexture *well;
+    sfTexture *roof_top_red;
+    sfTexture *roof_big_house;
+    sfTexture *tent;
+    sfTexture *tree;
+    sfTexture *green_house;
+    sfTexture *red_house;
+    sfTexture *medical_house;
+    sfTexture *honey_house;
+    sfTexture *asian_house;
+    sfSprite *bush_lt;
+    sfSprite *bush_rt;
+    sfSprite *bush_ld;
+    sfSprite *bush_rd;
+    sfSprite *well_map1;
+    sfSprite *roof_1_map1;
+    sfSprite *roof_2_map1;
+    sfSprite *roof_3_map1;
+    sfSprite *big_house_map1;
+    sfSprite *tent_map1;
+    sfSprite *tent_map2;
+    sfSprite *tree_top_map2;
+    sfSprite *tree_bot_map2;
+    sfSprite *green_house_map2;
+    sfSprite *red_house_map2;
+    sfSprite *medical_house_map2;
+    sfSprite *honey_house_map2;
+    sfSprite *asian_house_map2;
+} dimension_t;
 
 enum map_checker {
     NO_PATH_TAKEN,

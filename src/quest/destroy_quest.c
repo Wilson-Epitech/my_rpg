@@ -22,6 +22,7 @@ static void destroy_txt_quest(RPG_t *rpg)
     sfText_destroy(rpg->inventory_menu.level);
     sfText_destroy(rpg->inventory_menu.atk);
     sfText_destroy(rpg->inventory_menu.def);
+     sfText_destroy(rpg->inventory_menu.inventory);
 }
 
 void destroy_quest(RPG_t *rpg)

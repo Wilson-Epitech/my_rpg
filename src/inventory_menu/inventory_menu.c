@@ -27,6 +27,44 @@ int press_inventory(RPG_t *rpg, int menu_game)
     return 0;
 }
 
+void click_back_setting(RPG_t *rpg)
+{
+    if (is_on_button(rpg, rpg->menu.button_back_spr)) {
+        if (sfMouse_isButtonPressed(0)) {
+            rpg->inventory_menu.keyI_pressed = 1;;
+        }
+        while (sfMouse_isButtonPressed(0)) {
+        }
+    }
+    if (sfKeyboard_isKeyPressed(sfKeyEscape)) {
+            rpg->inventory_menu.keyI_pressed = 1;;
+    }
+}
+
+static void draw_setting_inventory(RPG_t *rpg)
+{
+    if (rpg->inventory_menu.keyI_pressed == 2) {
+        sfRenderWindow_drawRectangleShape(rpg->window.wdw, rpg->inventory_menu.rect_setting, NULL);
+        draw_rect_option(rpg);
+        draw_text_option(rpg);
+        select_volume(rpg);
+        select_volume_effect(rpg);
+        hover_back(rpg);
+        click_back_setting(rpg);
+        display_rect_mute(rpg);
+        select_mute(rpg);
+        deselect_mute(rpg);
+        select_button_full(rpg);
+        select_button_middle(rpg);
+        select_button_small(rpg);
+        check_choosen_res(rpg);
+        select_min_fps(rpg);
+        select_mid_fps(rpg);
+        select_high_fps(rpg);
+        check_choosen_fps(rpg);
+    }
+}
+
 void draw_buttons_inventory(RPG_t *rpg)
 {
     sfRenderWindow_drawSprite(rpg->window.wdw,

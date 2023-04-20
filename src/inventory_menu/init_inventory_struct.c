@@ -25,4 +25,5 @@ void init_inventory_menu(RPG_t *rpg)
     init_level_txt(rpg);
     init_def_txt(rpg);
     init_atk_txt(rpg);
+    init_inventory_txt(rpg);
 }

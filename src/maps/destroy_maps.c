@@ -25,6 +25,4 @@ void destroy_maps(RPG_t *rpg)
     sfTexture_destroy(rpg->map.map5_txr);
     sfImage_destroy(rpg->map.map5);
     sfView_destroy(rpg->map.view_combat);
-    sfSprite_destroy(rpg->map.map1_3d_spr);
-    sfTexture_destroy(rpg->map.map1_3d_txr);
 }

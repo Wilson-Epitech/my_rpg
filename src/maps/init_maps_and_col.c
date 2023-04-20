@@ -46,14 +46,3 @@ void init_maps(RPG_t *rpg)
     rpg->map.map5_spr = sfSprite_create();
     sfSprite_setTexture(rpg->map.map5_spr, rpg->map.map5_txr, sfTrue);
 }
-
-void init_map1_3d(RPG_t *rpg)
-{
-    sfVector2f pos_map1 = {672, 5};
-
-    rpg->map.map1_3d_txr
-    = sfTexture_createFromFile("textures/maps/map1_3d.png", NULL);
-    rpg->map.map1_3d_spr = sfSprite_create();
-    sfSprite_setTexture(rpg->map.map1_3d_spr, rpg->map.map1_3d_txr, sfTrue);
-    sfSprite_setPosition(rpg->map.map1_3d_spr, pos_map1);
-}

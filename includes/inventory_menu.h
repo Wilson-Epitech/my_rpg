@@ -17,6 +17,8 @@
         sfSprite *menu;
         int keyI_pressed;
         sfRectangleShape *rect_char_menu;
+        sfRectangleShape *rect_setting;
+        sfText *inventory;
         sfText *stat;
         sfText *health;
         sfText *xp;

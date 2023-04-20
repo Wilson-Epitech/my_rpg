@@ -39,4 +39,6 @@ void check_history(RPG_t *rpg)
         rpg->history.menu_history.top = 30;
         rpg->history.menu_history_end.top = 30;
     }
+    while (sfKeyboard_isKeyPressed(sfKeyEscape)) {
+    }
 }
