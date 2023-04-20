@@ -7,14 +7,14 @@
 
 #include "all_struct.h"
 
-static void event_wdw(sfRenderWindow *wdw, int check_black, RPG_t *rpg)
+static void event_wdw(int check_black, RPG_t *rpg)
 {
     sfEvent event;
     static int menu_game = 0;
 
-    while (sfRenderWindow_pollEvent(wdw, &event)) {
+    while (sfRenderWindow_pollEvent(rpg->window.wdw, &event)) {
         if (event.type == sfEvtClosed || rpg->menu.quit_nb == 1) {
-            sfRenderWindow_close(wdw);
+            sfRenderWindow_close(rpg->window.wdw);
         }
         if (rpg->menu.check_first_menu == 6
         && check_black == 1 && menu_game != 1) {
@@ -29,52 +29,52 @@ static void event_wdw(sfRenderWindow *wdw, int check_black, RPG_t *rpg)
     }
 }
 
-static void main_history(sfRenderWindow* wdw, RPG_t *rpg)
+static void main_history(RPG_t *rpg)
 {
-    if (rpg->history.anim_finished1 == 2) {
+    if (rpg->history.anim_finished1 == 9) {
         motion_history(rpg);
-        sfRenderWindow_drawSprite(wdw, rpg->history.sprite_history, NULL);
-    }
-    if (rpg->history.anim_finished2 == 2) {
-        motion_history_end(rpg);
-        sfRenderWindow_drawSprite(wdw, rpg->history.sprite_history_end, NULL);
+        sfRenderWindow_drawSprite(rpg->window.wdw,
+            rpg->history.sprite_history, NULL);
     }
 }
 
-static void main_game(sfRenderWindow *wdw, RPG_t *rpg)
+static void main_game(RPG_t *rpg)
 {
     int check_black = 1;
-
     if (rpg->menu.check_first_menu == 6) {
         rpg->map.mouse_img =
-        sfRenderWindow_mapPixelToCoords(wdw, rpg->menu.mouse_menu, NULL);
+        sfRenderWindow_mapPixelToCoords(rpg->window.wdw,
+            rpg->menu.mouse_menu, NULL);
         tp_all_maps(rpg);
         get_pos_char(rpg);
         check_black = col_which_map(rpg, check_black);
-        event_wdw(wdw, check_black, rpg);
-        draw_current_map(wdw, rpg);
-        sfRenderWindow_drawSprite(wdw, rpg->struct_sprite.sprite, NULL);
+        event_wdw(check_black, rpg);
+        draw_current_map(rpg);
+        sfRenderWindow_drawSprite(rpg->window.wdw,
+            rpg->struct_sprite.sprite, NULL);
         if (rpg->map.on_map == MAP1)
-            sfRenderWindow_drawSprite(wdw, rpg->map.map1_3d_spr, NULL);
-        sfRenderWindow_drawRectangleShape(wdw,
+            sfRenderWindow_drawSprite(rpg->window.wdw,
+                rpg->map.map1_3d_spr, NULL);
+        sfRenderWindow_drawRectangleShape(rpg->window.wdw,
         rpg->quest.rect_current_quest, NULL);
-        draw_current_text(wdw, rpg);
-        draw_inventory(wdw, rpg);
+        draw_current_text(rpg);
+        draw_inventory(rpg);
     }
 }
 
-static void main_menu(sfRenderWindow *wdw, RPG_t *rpg)
+static void main_menu(RPG_t *rpg)
 {
-    get_mouse_pos_menu(wdw, rpg);
+    get_mouse_pos_menu(rpg);
     motion_menu_bk(rpg);
     if (rpg->menu.check_first_menu < 6) {
-        main_history(wdw, rpg);
+        main_history(rpg);
         if (rpg->menu.check_first_menu < 5)
-            sfRenderWindow_drawSprite(wdw, rpg->menu.bk_menu_img_sprite, NULL);
-        menu_first_page(wdw, rpg);
-        menu_snd_page(wdw, rpg);
-        menu_option_page(wdw, rpg);
-        credit_page(wdw, rpg);
+            sfRenderWindow_drawSprite(rpg->window.wdw,
+                rpg->menu.bk_menu_img_sprite, NULL);
+        menu_first_page(rpg);
+        menu_snd_page(rpg);
+        menu_option_page(rpg);
+        credit_page(rpg);
         click_first_menu(rpg);
         check_history(rpg);
         click_history(rpg);
@@ -83,24 +83,21 @@ static void main_menu(sfRenderWindow *wdw, RPG_t *rpg)
 
 void open_wdw(RPG_t *rpg)
 {
-    sfRenderWindow *wdw;
-    sfVideoMode mode = {1920, 1080, 32};
-    wdw =
-    sfRenderWindow_create(mode, "Dragon's Burden", sfResize | sfClose, NULL);
-    load_menu(wdw, rpg);
+    init_window(rpg);
+    load_menu(rpg);
     load_history(rpg);
     init_maps(rpg);
     init_map1_3d(rpg);
     init_quest(rpg);
     init_inventory_menu(rpg);
     int check_black = 0;
-    while (sfRenderWindow_isOpen(wdw)) {
-        sfRenderWindow_clear(wdw, sfBlack);
-        main_menu(wdw, rpg);
-        main_game(wdw, rpg);
-        event_wdw(wdw, check_black, rpg);
-        sfRenderWindow_display(wdw);
+    while (sfRenderWindow_isOpen(rpg->window.wdw)) {
+        sfRenderWindow_clear(rpg->window.wdw, sfBlack);
+        main_menu(rpg);
+        main_game(rpg);
+        event_wdw(check_black, rpg);
+        sfRenderWindow_display(rpg->window.wdw);
     }
     destroy_all(rpg);
-    sfRenderWindow_destroy(wdw);
+    sfRenderWindow_destroy(rpg->window.wdw);
 }

@@ -23,12 +23,13 @@ void create_trans_mute(RPG_t *rpg)
     sfColor_fromRGBA(0, 0, 0, 100));
 }
 
-void display_rect_mute(RPG_t *rpg, sfRenderWindow *wdw)
+void display_rect_mute(RPG_t *rpg)
 {
     sfVector2f scale_small = {0.4, 0.4};
 
     if (rpg->menu.check_mute == 1) {
-        sfRenderWindow_drawRectangleShape(wdw, rpg->menu.mute_effect, NULL);
+        sfRenderWindow_drawRectangleShape(rpg->window.wdw,
+            rpg->menu.mute_effect, NULL);
         rpg->menu.volume = 0;
         rpg->menu.volume_effect = 0;
         sfMusic_setVolume(rpg->menu.back_music, rpg->menu.volume);

@@ -46,9 +46,9 @@ void select_button_small(RPG_t *rpg)
     }
 }
 
-void check_choosen_res(RPG_t *rpg, sfRenderWindow *wdw)
+void check_choosen_res(RPG_t *rpg)
 {
-    choosen_small(wdw, rpg);
-    choosen_med(wdw, rpg);
-    choosen_high(wdw, rpg);
+    choosen_small(rpg);
+    choosen_med(rpg);
+    choosen_high(rpg);
 }

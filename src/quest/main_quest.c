@@ -37,7 +37,7 @@ void init_text_main_quest2(RPG_t *rpg)
     sfText_setColor(rpg->quest.main_quest_2, sfYellow);
 }
 
-void talk_to_shaolin(RPG_t *rpg, sfRenderWindow *wdw)
+void talk_to_shaolin(RPG_t *rpg)
 {
     sfVector2f size = {800, 300};
     sfVector2f pos_rect = {1000, 50};
@@ -45,12 +45,14 @@ void talk_to_shaolin(RPG_t *rpg, sfRenderWindow *wdw)
 
     if (rpg->quest.npc != SHAOLIN && rpg->quest.main_quest == 1) {
         sfSprite_setPosition(rpg->quest.exclam_quest_spr, pos_excla);
-        sfRenderWindow_drawSprite(wdw, rpg->quest.exclam_quest_spr, NULL);
+        sfRenderWindow_drawSprite(rpg->window.wdw,
+            rpg->quest.exclam_quest_spr, NULL);
     }
     if (rpg->quest.npc == SHAOLIN && rpg->quest.main_quest > 0) {
         sfRectangleShape_setSize(rpg->quest.rect_help, size);
         sfRectangleShape_setPosition(rpg->quest.rect_help, pos_rect);
-        sfRenderWindow_drawRectangleShape(wdw, rpg->quest.rect_help, NULL);
-        is_shao(wdw, rpg);
+        sfRenderWindow_drawRectangleShape(rpg->window.wdw,
+            rpg->quest.rect_help, NULL);
+        is_shao(rpg);
     }
 }

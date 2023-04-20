@@ -22,7 +22,7 @@ void load_forms_option(RPG_t *rpg)
     create_300_button(rpg);
 }
 
-static void load_option(sfRenderWindow *wdw, RPG_t *rpg)
+static void load_option(RPG_t *rpg)
 {
     load_forms_option(rpg);
     create_full_txt(rpg);
@@ -36,7 +36,7 @@ static void load_option(sfRenderWindow *wdw, RPG_t *rpg)
     create_txt_mid_fps(rpg);
     create_txt_high_fps(rpg);
     create_txt_framelimit(rpg);
-    sfRenderWindow_setFramerateLimit(wdw, 60);
+    sfRenderWindow_setFramerateLimit(rpg->window.wdw, 60);
 }
 
 static void load_buttons(RPG_t *rpg)
@@ -55,16 +55,15 @@ static void load_buttons(RPG_t *rpg)
     init_txt_quit(rpg);
 }
 
-void load_menu(sfRenderWindow *wdw, RPG_t *rpg)
+void load_menu(RPG_t *rpg)
 {
     load_menu_music(rpg);
     create_background_img(rpg);
     create_history(rpg);
-    create_history_end(rpg);
     print_name_menu(rpg);
     print_click_to_play(rpg);
     load_buttons(rpg);
-    load_option(wdw, rpg);
+    load_option(rpg);
     create_txt_credit(rpg);
     create_rect_credit(rpg);
     rpg->menu.clock = sfClock_create();

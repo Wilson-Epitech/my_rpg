@@ -8,9 +8,9 @@
 // #include "inventory_menu.h"
 #include "all_struct.h"
 
-void inventory_menu_func(sfRenderWindow *wdw, RPG_t *rpg)
+void inventory_menu_func(RPG_t *rpg)
 {
-    sfRenderWindow_drawSprite(wdw, rpg->inventory_menu.menu, NULL);
+    sfRenderWindow_drawSprite(rpg->window.wdw, rpg->inventory_menu.menu, NULL);
 }
 
 int press_inventory(RPG_t *rpg, int menu_game)
@@ -27,17 +27,22 @@ int press_inventory(RPG_t *rpg, int menu_game)
     return 0;
 }
 
-void draw_inventory(sfRenderWindow *wdw, RPG_t *rpg)
+void draw_inventory(RPG_t *rpg)
 {
     if (rpg->inventory_menu.keyI_pressed == 1) {
-        inventory_menu_func(wdw, rpg);
-        sfRenderWindow_drawRectangleShape(wdw,
+        inventory_menu_func(rpg);
+        sfRenderWindow_drawRectangleShape(rpg->window.wdw,
         rpg->inventory_menu.rect_char_menu, NULL);
-        sfRenderWindow_drawText(wdw, rpg->inventory_menu.stat, NULL);
-        sfRenderWindow_drawText(wdw, rpg->inventory_menu.health, NULL);
-        sfRenderWindow_drawText(wdw, rpg->inventory_menu.xp, NULL);
-        sfRenderWindow_drawText(wdw, rpg->inventory_menu.level, NULL);
-        sfRenderWindow_drawText(wdw, rpg->inventory_menu.atk, NULL);
-        sfRenderWindow_drawText(wdw, rpg->inventory_menu.def, NULL);
+        sfRenderWindow_drawText(rpg->window.wdw,
+            rpg->inventory_menu.stat, NULL);
+        sfRenderWindow_drawText(rpg->window.wdw,
+            rpg->inventory_menu.health, NULL);
+        sfRenderWindow_drawText(rpg->window.wdw, rpg->inventory_menu.xp, NULL);
+        sfRenderWindow_drawText(rpg->window.wdw,
+            rpg->inventory_menu.level, NULL);
+        sfRenderWindow_drawText(rpg->window.wdw,
+            rpg->inventory_menu.atk, NULL);
+        sfRenderWindow_drawText(rpg->window.wdw,
+            rpg->inventory_menu.def, NULL);
     }
 }

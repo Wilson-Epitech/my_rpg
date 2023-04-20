@@ -7,9 +7,9 @@
 
 #include "all_struct.h"
 
-void get_mouse_pos_menu(sfRenderWindow *wdw, RPG_t *rpg)
+void get_mouse_pos_menu(RPG_t *rpg)
 {
-    rpg->menu.mouse_menu = sfMouse_getPositionRenderWindow(wdw);
+    rpg->menu.mouse_menu = sfMouse_getPositionRenderWindow(rpg->window.wdw);
 }
 
 void hover_click_to_play(RPG_t *rpg)

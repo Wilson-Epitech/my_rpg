@@ -67,12 +67,14 @@ void init_exclam(RPG_t *rpg)
     sfSprite_setScale(rpg->quest.exclam_quest_spr, size);
 }
 
-void talk_to_grandma(RPG_t *rpg, sfRenderWindow *wdw)
+void talk_to_grandma(RPG_t *rpg)
 {
     if (rpg->quest.npc != GRANDMA && rpg->quest.help == 0)
-        sfRenderWindow_drawSprite(wdw, rpg->quest.exclam_quest_spr, NULL);
+        sfRenderWindow_drawSprite(rpg->window.wdw,
+            rpg->quest.exclam_quest_spr, NULL);
     if (rpg->quest.npc == GRANDMA) {
-        sfRenderWindow_drawRectangleShape(wdw, rpg->quest.rect_help, NULL);
-        is_grandma(wdw, rpg);
+        sfRenderWindow_drawRectangleShape(rpg->window.wdw,
+            rpg->quest.rect_help, NULL);
+        is_grandma(rpg);
     }
 }

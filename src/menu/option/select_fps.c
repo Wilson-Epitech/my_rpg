@@ -46,24 +46,24 @@ void select_high_fps(RPG_t *rpg)
     }
 }
 
-void check_90fps(sfRenderWindow *wdw, RPG_t *rpg)
+void check_90fps(RPG_t *rpg)
 {
     if (rpg->menu.check_fps == 3) {
         sfRectangleShape_setFillColor(rpg->menu.button_high_fps,
         sfColor_fromRGBA(0, 0, 0, 50));
-        sfRenderWindow_setFramerateLimit(wdw, 90);
+        sfRenderWindow_setFramerateLimit(rpg->window.wdw, 90);
     } else {
         sfRectangleShape_setFillColor(rpg->menu.button_high_fps,
         sfColor_fromRGBA(0, 0, 0, 0));
     }
 }
 
-void check_choosen_fps(RPG_t *rpg, sfRenderWindow *wdw)
+void check_choosen_fps(RPG_t *rpg)
 {
     if (rpg->menu.check_fps == 1) {
         sfRectangleShape_setFillColor(rpg->menu.button_min_fps,
         sfColor_fromRGBA(0, 0, 0, 50));
-        sfRenderWindow_setFramerateLimit(wdw, 30);
+        sfRenderWindow_setFramerateLimit(rpg->window.wdw, 30);
     } else {
         sfRectangleShape_setFillColor(rpg->menu.button_min_fps,
         sfColor_fromRGBA(0, 0, 0, 0));
@@ -71,10 +71,10 @@ void check_choosen_fps(RPG_t *rpg, sfRenderWindow *wdw)
     if (rpg->menu.check_fps == 2) {
         sfRectangleShape_setFillColor(rpg->menu.button_middle_fps,
         sfColor_fromRGBA(0, 0, 0, 50));
-        sfRenderWindow_setFramerateLimit(wdw, 60);
+        sfRenderWindow_setFramerateLimit(rpg->window.wdw, 60);
     } else {
         sfRectangleShape_setFillColor(rpg->menu.button_middle_fps,
         sfColor_fromRGBA(0, 0, 0, 0));
     }
-    check_90fps(wdw, rpg);
+    check_90fps(rpg);
 }

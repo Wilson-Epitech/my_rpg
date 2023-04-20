@@ -6,6 +6,7 @@
 ##
 
 SRC	=	main.c 										\
+		src/init_window.c							\
 		src/open_window.c 							\
 		src/destroy.c 								\
 		src/menu/menu_name.c						\
@@ -72,7 +73,7 @@ OBJ	=	$(SRC:.c=.o)
 
 CSFML = -lcsfml-system -lcsfml-graphics -lcsfml-audio -lcsfml-window -lm
 
-CFLAGS = -Wall -Wextra -g3
+CFLAGS = -Wall -Wextra
 
 CPPFLAGS = -iquote./includes
 

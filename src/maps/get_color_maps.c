@@ -61,7 +61,7 @@ void get_color_map4(RPG_t *rpg)
     }
 }
 
-void get_color_map5(sfRenderWindow *wdw, RPG_t *rpg)
+void get_color_map5(RPG_t *rpg)
 {
     sfColor portal;
     portal = sfImage_getPixel(rpg->map.map5,
@@ -75,7 +75,7 @@ void get_color_map5(sfRenderWindow *wdw, RPG_t *rpg)
                 rpg->map.dezoom += 0.0001;
                 sfView_rotate(rpg->map.view_combat, rpg->map.dezoom);
                 sfView_zoom(rpg->map.view_combat, rpg->map.dezoom);
-                sfRenderWindow_setView(wdw, rpg->map.view_combat);
+                sfRenderWindow_setView(rpg->window.wdw, rpg->map.view_combat);
             }
             if (rpg->map.dezoom > 1.9) {
                 rpg->map.check_path_map = MAP_5_TO_COMBAT;
