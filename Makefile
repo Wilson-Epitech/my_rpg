@@ -65,6 +65,9 @@ SRC	=	main.c 										\
 		src/inventory_menu/destroy_menu.c			\
 		src/inventory_menu/display_char.c			\
 		src/inventory_menu/init_atk_def_txt.c		\
+		src/inventory_menu/create_button_saving.c 	\
+		src/inventory_menu/create_button_loading.c 	\
+		src/inventory_menu/create_button_settings.c	\
 		lib/my_int_to_str.c  						\
 		lib/my_putchar.c 							\
 		lib/my_putstr.c 							\
@@ -87,7 +90,7 @@ NAME	=	my_rpg
 all:	$(NAME)
 
 $(NAME):	$(OBJ)
-	$(CC) -o $(NAME) $(OBJ) $(CFLAGS) $(CPPFLAGS) $(CSFML) -g3
+	$(CC) -o $(NAME) $(OBJ) $(CFLAGS) $(CPPFLAGS) $(CSFML)
 
 clean:
 	rm -f $(OBJ)
