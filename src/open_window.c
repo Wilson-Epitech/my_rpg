@@ -36,6 +36,11 @@ static void main_history(RPG_t *rpg)
         sfRenderWindow_drawSprite(rpg->window.wdw,
             rpg->history.sprite_history, NULL);
     }
+    if (rpg->history.anim_finished1 == 2) {
+        motion_history_end(rpg);
+        sfRenderWindow_drawSprite(rpg->window.wdw,
+        rpg->history.sprite_history_end, NULL);
+    }
 }
 
 static void main_game(RPG_t *rpg)

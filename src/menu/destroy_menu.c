@@ -73,5 +73,7 @@ void destroy_history(RPG_t *rpg)
 {
     sfSprite_destroy(rpg->history.sprite_history);
     sfTexture_destroy(rpg->history.texture_history);
+    sfSprite_destroy(rpg->history.sprite_history_end);
+    sfTexture_destroy(rpg->history.texture_history_end);
     sfClock_destroy(rpg->history.clock_history);
 }

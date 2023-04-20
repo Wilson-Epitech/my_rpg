@@ -60,6 +60,7 @@ void load_menu(RPG_t *rpg)
     load_menu_music(rpg);
     create_background_img(rpg);
     create_history(rpg);
+    create_history_end(rpg);
     print_name_menu(rpg);
     print_click_to_play(rpg);
     load_buttons(rpg);

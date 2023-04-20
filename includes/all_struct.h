@@ -72,6 +72,7 @@ void is_shao(RPG_t *rpg);
 //MENU.h
 int create_background_img(RPG_t *rpg);
 int create_history(RPG_t *rpg);
+int create_history_end(RPG_t *rpg);
 void print_name_menu(RPG_t *rpg);
 int load_menu_music(RPG_t *rpg);
 void load_history(RPG_t *rpg);
@@ -81,6 +82,7 @@ void get_mouse_pos_menu(RPG_t *rpg);
 void hover_click_to_play(RPG_t *rpg);
 int button_menu_history(RPG_t *rpg);
 void motion_history(RPG_t *rpg);
+void motion_history_end(RPG_t *rpg);
 void motion_menu_bk(RPG_t *rpg);
 int button_menu_option(RPG_t *rpg);
 int button_menu_play(RPG_t *rpg);

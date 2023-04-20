@@ -28,7 +28,8 @@ void click_history(RPG_t *rpg)
 
 void check_history(RPG_t *rpg)
 {
-    if (rpg->history.anim_finished1 == 2 &&
+    if (sfKeyboard_isKeyPressed(sfKeyEscape) &&
+    rpg->history.anim_finished1 == 2 &&
     rpg->menu.check_first_menu == 5) {
         rpg->menu.check_first_menu = 2;
     }
@@ -36,5 +37,6 @@ void check_history(RPG_t *rpg)
         rpg->history.anim_finished1 = 0;
         rpg->history.anim_finished2 = 0;
         rpg->history.menu_history.top = 30;
+        rpg->history.menu_history_end.top = 30;
     }
 }
