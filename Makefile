@@ -52,6 +52,8 @@ SRC	=	main.c 										\
 		src/maps/get_color_map1.c					\
 		src/maps/init_map1_3d.c 					\
 		src/maps/init_map2_3d.c 					\
+		src/maps/init_map3_3d.c 					\
+		src/maps/init_map4_3d.c 					\
 		src/quest/help.c 							\
 		src/quest/press_enter.c						\
 		src/quest/main_quest.c						\

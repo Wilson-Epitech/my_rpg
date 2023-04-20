@@ -49,6 +49,11 @@ typedef struct dimension_s {
     sfTexture *medical_house;
     sfTexture *honey_house;
     sfTexture *asian_house;
+    sfTexture *big_house_brick;
+    sfTexture *big_house_white;
+    sfTexture *long_tree;
+    sfTexture *house_owl;
+    sfTexture *easter;
     sfSprite *bush_lt;
     sfSprite *bush_rt;
     sfSprite *bush_ld;
@@ -67,6 +72,16 @@ typedef struct dimension_s {
     sfSprite *medical_house_map2;
     sfSprite *honey_house_map2;
     sfSprite *asian_house_map2;
+    sfSprite *big_house_brick_map3;
+    sfSprite *big_house_white_map3;
+    sfSprite *long_tree_map3;
+    sfSprite *red_house_map3;
+    sfSprite *house_owl_map3;
+    sfSprite *tree_map3;
+    sfSprite *blue_house_map4;
+    sfSprite *well_mp4;
+    sfSprite *easter_mp4;
+    sfSprite *tent_mp4;
 } dimension_t;
 
 enum map_checker {

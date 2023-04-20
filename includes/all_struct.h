@@ -200,6 +200,8 @@ int uncollision_char(RPG_t *rpg, sfImage *img);
 void init_quest(RPG_t *rpg);
 void init_map1_3d(RPG_t *rpg);
 void init_map2_3d(RPG_t *rpg);
+void init_map3_3d(RPG_t *rpg);
+void init_map4_3d(RPG_t *rpg);
 
 //MY.h//
 int check_error(int ac, char **env);

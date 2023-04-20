@@ -80,6 +80,22 @@ static void main_game(RPG_t *rpg)
             sfRenderWindow_drawSprite(rpg->window.wdw, rpg->dimension.medical_house_map2, NULL);
             sfRenderWindow_drawSprite(rpg->window.wdw, rpg->dimension.asian_house_map2, NULL);
         }
+        //add to repo
+        if (rpg->map.on_map == MAP3) {
+            sfRenderWindow_drawSprite(rpg->window.wdw, rpg->dimension.big_house_brick_map3, NULL);
+            sfRenderWindow_drawSprite(rpg->window.wdw, rpg->dimension.big_house_white_map3, NULL);
+            sfRenderWindow_drawSprite(rpg->window.wdw, rpg->dimension.long_tree_map3, NULL);
+            sfRenderWindow_drawSprite(rpg->window.wdw, rpg->dimension.red_house_map3, NULL);
+            sfRenderWindow_drawSprite(rpg->window.wdw, rpg->dimension.house_owl_map3, NULL);
+            sfRenderWindow_drawSprite(rpg->window.wdw, rpg->dimension.tree_map3, NULL);
+        }
+        if (rpg->map.on_map == MAP4) {
+            sfRenderWindow_drawSprite(rpg->window.wdw, rpg->dimension.blue_house_map4, NULL);
+            sfRenderWindow_drawSprite(rpg->window.wdw, rpg->dimension.well_mp4, NULL);
+            sfRenderWindow_drawSprite(rpg->window.wdw, rpg->dimension.easter_mp4, NULL);
+            sfRenderWindow_drawSprite(rpg->window.wdw, rpg->dimension.tent_mp4, NULL);
+        }
+        //end
         sfRenderWindow_drawRectangleShape(rpg->window.wdw,
         rpg->quest.rect_current_quest, NULL);
         draw_current_text(rpg);
@@ -115,6 +131,10 @@ void open_wdw(RPG_t *rpg)
     init_maps(rpg);
     init_map1_3d(rpg);
     init_map2_3d(rpg);
+    //add to repo
+    init_map3_3d(rpg);
+    init_map4_3d(rpg);
+    // end
     init_quest(rpg);
     init_inventory_menu(rpg);
     draw_rect_setting_game(rpg);
@@ -154,5 +174,22 @@ void open_wdw(RPG_t *rpg)
     sfSprite_destroy(rpg->dimension.red_house_map2);
     sfSprite_destroy(rpg->dimension.honey_house_map2);
     sfSprite_destroy(rpg->dimension.medical_house_map2);
+    //add to new rep
+    sfTexture_destroy(rpg->dimension.big_house_brick);
+    sfTexture_destroy(rpg->dimension.big_house_white);
+    sfTexture_destroy(rpg->dimension.long_tree);
+    sfTexture_destroy(rpg->dimension.house_owl);
+    sfTexture_destroy(rpg->dimension.easter);
+    sfSprite_destroy(rpg->dimension.big_house_brick_map3);
+    sfSprite_destroy(rpg->dimension.big_house_white_map3);
+    sfSprite_destroy(rpg->dimension.long_tree_map3);
+    sfSprite_destroy(rpg->dimension.red_house_map3);
+    sfSprite_destroy(rpg->dimension.house_owl_map3);
+    sfSprite_destroy(rpg->dimension.tree_map3);
+    sfSprite_destroy(rpg->dimension.blue_house_map4);
+    sfSprite_destroy(rpg->dimension.well_mp4);
+    sfSprite_destroy(rpg->dimension.easter_mp4);
+    sfSprite_destroy(rpg->dimension.tent_mp4);
+    // end
     sfRenderWindow_destroy(rpg->window.wdw);
 }
