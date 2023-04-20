@@ -48,7 +48,7 @@ void draw_buttons_inventory(RPG_t *rpg)
 
 void draw_inventory(RPG_t *rpg)
 {
-    if (sfMouse_isButtonPressed(0)) {
+    if (rpg->inventory_menu.keyI_pressed == 1) {
         inventory_menu_func(rpg);
         sfRenderWindow_drawRectangleShape(rpg->window.wdw,
         rpg->inventory_menu.rect_char_menu, NULL);
