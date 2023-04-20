@@ -32,6 +32,7 @@ void init_inventory_menu(RPG_t *rpg);
 void destroy_inventory_menu(RPG_t *rpg);
 int press_inventory(RPG_t *rpg, int menu_game);
 void draw_inventory(RPG_t *rpg);
+void draw_buttons_inventory(RPG_t *rpg);
 void init_rect_characteristic(RPG_t *rpg);
 void init_text_stat(RPG_t *rpg);
 void init_health_txt(RPG_t *rpg);
@@ -162,7 +163,16 @@ void hover_quit(RPG_t *rpg);
 void click_quit(RPG_t *rpg);
 void init_button_resume(RPG_t *rpg);
 void init_txt_resume(RPG_t *rpg);
+void init_button_saving(RPG_t *rpg);
+void init_txt_saving(RPG_t *rpg);
+void init_button_loading(RPG_t *rpg);
+void init_button_settings(RPG_t *rpg);
+void init_txt_loading(RPG_t *rpg);
+void init_txt_settings(RPG_t *rpg);
 void hover_resume(RPG_t *rpg);
+void hover_loading(RPG_t *rpg);
+void hover_saving(RPG_t *rpg);
+void hover_settings(RPG_t *rpg);
 
 //MAPS.h//
 void init_maps(RPG_t *rpg);

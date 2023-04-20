@@ -27,9 +27,28 @@ int press_inventory(RPG_t *rpg, int menu_game)
     return 0;
 }
 
+void draw_buttons_inventory(RPG_t *rpg)
+{
+    sfRenderWindow_drawSprite(rpg->window.wdw,
+        rpg->inventory_menu.button_saving, NULL);
+    sfRenderWindow_drawText(rpg->window.wdw,
+        rpg->inventory_menu.saving, NULL);
+    hover_saving(rpg);
+    sfRenderWindow_drawSprite(rpg->window.wdw,
+        rpg->inventory_menu.button_loading, NULL);
+    sfRenderWindow_drawText(rpg->window.wdw,
+        rpg->inventory_menu.loading, NULL);
+    hover_loading(rpg);
+    sfRenderWindow_drawSprite(rpg->window.wdw,
+        rpg->inventory_menu.button_settings, NULL);
+    sfRenderWindow_drawText(rpg->window.wdw,
+        rpg->inventory_menu.settings, NULL);
+    hover_settings(rpg);
+}
+
 void draw_inventory(RPG_t *rpg)
 {
-    if (rpg->inventory_menu.keyI_pressed == 1) {
+    if (sfMouse_isButtonPressed(0)) {
         inventory_menu_func(rpg);
         sfRenderWindow_drawRectangleShape(rpg->window.wdw,
         rpg->inventory_menu.rect_char_menu, NULL);
@@ -44,5 +63,6 @@ void draw_inventory(RPG_t *rpg)
             rpg->inventory_menu.atk, NULL);
         sfRenderWindow_drawText(rpg->window.wdw,
             rpg->inventory_menu.def, NULL);
+        draw_buttons_inventory(rpg);
     }
 }

@@ -23,6 +23,12 @@
         sfText *atk;
         sfText *def;
         sfText *level;
+        sfSprite *button_saving;
+        sfText *saving;
+        sfSprite *button_loading;
+        sfText *loading;
+        sfSprite *button_settings;
+        sfText *settings;
     } InventoryMenu_t;
 
 #endif /* !INVENTORY_MENU_H_ */

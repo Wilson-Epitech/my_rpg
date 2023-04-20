@@ -45,7 +45,7 @@ void draw_text_option(RPG_t *rpg)
     sfRenderWindow_drawText(rpg->window.wdw, rpg->menu.music, NULL);
     sfRenderWindow_drawText(rpg->window.wdw, rpg->menu.effect, NULL);
     sfRenderWindow_drawText(rpg->window.wdw, rpg->menu.fullscreen, NULL);
-    sfRenderWindow_drawText(rpg->window.wdw, rpg->menu.middle_screen, NULL);
+    (rpg->window.wdw, rpg->menu.middle_screen, NULL);
     sfRenderWindow_drawText(rpg->window.wdw, rpg->menu.small_screen, NULL);
     sfRenderWindow_drawText(rpg->window.wdw, rpg->menu.resolutions, NULL);
     sfRenderWindow_drawText(rpg->window.wdw, rpg->menu.min_fps, NULL);
