@@ -21,7 +21,6 @@
         maps_t  map;
         menu_t  menu;
         history_t history;
-        game_t game;
         quest_t quest;
         player_t player;
         StructSprite struct_sprite;
@@ -40,10 +39,6 @@ void  init_xp_txt(RPG_t *rpg);
 void init_level_txt(RPG_t *rpg);
 void init_def_txt(RPG_t *rpg);
 void init_atk_txt(RPG_t *rpg);
-char *my_int_to_str(int nb);
-char *my_revstr(char *str);
-int my_strlen(char const *str);
-
 
 //SPRITE.H//
 void init_struct_sprite(RPG_t *rpg);
@@ -191,6 +186,7 @@ void init_quest(RPG_t *rpg);
 void init_map1_3d(RPG_t *rpg);
 
 //MY.h//
+int check_error(int ac, char **env);
 void open_wdw(RPG_t *rpg);
 void destroy_all(RPG_t *rpg);
 

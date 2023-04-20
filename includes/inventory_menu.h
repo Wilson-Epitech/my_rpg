@@ -25,8 +25,4 @@
         sfText *level;
     } InventoryMenu_t;
 
-// void inventory_menu_func(sfRenderWindow *wdw, RPG_t *rpg);
-// void init_inventory_menu(RPG_t *rpg);
-// void destroy_inventory_menu(RPG_t *rpg);
-// void press_inventory(InventoryMenu_t *inventory_menu);
 #endif /* !INVENTORY_MENU_H_ */

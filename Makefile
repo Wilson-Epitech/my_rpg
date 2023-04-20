@@ -6,6 +6,7 @@
 ##
 
 SRC	=	main.c 										\
+		src/check_error.c 							\
 		src/init_window.c							\
 		src/open_window.c 							\
 		src/destroy.c 								\
@@ -64,9 +65,12 @@ SRC	=	main.c 										\
 		src/inventory_menu/destroy_menu.c			\
 		src/inventory_menu/display_char.c			\
 		src/inventory_menu/init_atk_def_txt.c		\
-		lib/my_strlen.c 							\
 		lib/my_int_to_str.c  						\
+		lib/my_putchar.c 							\
+		lib/my_putstr.c 							\
 		lib/my_revstr.c 							\
+		lib/my_strlen.c 							\
+		lib/my_strncmp.c 							\
 
 CC = gcc
 
