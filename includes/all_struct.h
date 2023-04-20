@@ -163,6 +163,9 @@ void init_button_quit(RPG_t *rpg);
 void init_txt_quit(RPG_t *rpg);
 void hover_quit(RPG_t *rpg);
 void click_quit(RPG_t *rpg);
+void init_button_resume(RPG_t *rpg);
+void init_txt_resume(RPG_t *rpg);
+void hover_resume(RPG_t *rpg);
 
 //MAPS.h//
 void init_maps(RPG_t *rpg);

@@ -66,10 +66,7 @@ void load_menu(RPG_t *rpg)
     load_option(rpg);
     create_txt_credit(rpg);
     create_rect_credit(rpg);
+    init_button_resume(rpg);
+    init_txt_resume(rpg);
     rpg->menu.clock = sfClock_create();
-}
-
-void load_history(RPG_t *rpg)
-{
-    rpg->history.clock_history = sfClock_create();
 }

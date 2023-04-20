@@ -25,6 +25,7 @@ typedef struct menu_s {
     sfText *credit;
     sfText *back;
     sfText *quit;
+    sfText *resume;
     sfMusic *back_music;
     int check_first_menu;
     sfVector2i mouse_menu;
@@ -35,6 +36,7 @@ typedef struct menu_s {
     sfSprite *button_credit_spr;
     sfSprite *button_back_spr;
     sfSprite *button_quit_spr;
+    sfSprite *button_resume_spr;
     sfIntRect menu_wdw;
     sfClock *clock;
     sfTexture *mute_txt;

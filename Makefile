@@ -30,6 +30,7 @@ SRC	=	main.c 										\
 		src/menu/credit/txt_credit.c				\
 		src/menu/destroy_menu.c 					\
 		src/menu/load.c 							\
+		src/menu/resume.c 							\
 		src/menu/option/draw_option_rect_text.c 	\
 		src/menu/main_menu.c						\
 		src/menu/option/select_mute.c				\

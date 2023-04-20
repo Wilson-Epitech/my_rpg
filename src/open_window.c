@@ -85,7 +85,7 @@ void open_wdw(RPG_t *rpg)
 {
     init_window(rpg);
     load_menu(rpg);
-    load_history(rpg);
+    rpg->history.clock_history = sfClock_create();
     init_maps(rpg);
     init_map1_3d(rpg);
     init_quest(rpg);

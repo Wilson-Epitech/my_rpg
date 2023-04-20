@@ -32,6 +32,8 @@ static void draw_sprite_text_snd(RPG_t *rpg)
         rpg->menu.button_back_spr, NULL);
     sfRenderWindow_drawSprite(rpg->window.wdw,
         rpg->menu.button_quit_spr, NULL);
+    sfRenderWindow_drawSprite(rpg->window.wdw,
+        rpg->menu.button_resume_spr, NULL);
     sfRenderWindow_drawText(rpg->window.wdw,rpg->menu.history, NULL);
     sfRenderWindow_drawText(rpg->window.wdw, rpg->menu.play, NULL);
     sfRenderWindow_drawText(rpg->window.wdw, rpg->menu.option, NULL);
@@ -44,11 +46,13 @@ void menu_snd_page(RPG_t *rpg)
 {
     if (rpg->menu.check_first_menu == 2) {
         draw_sprite_text_snd(rpg);
+        sfRenderWindow_drawText(rpg->window.wdw, rpg->menu.resume, NULL);
         hover_history(rpg);
         hover_play(rpg); hover_option(rpg);
         hover_credit(rpg);
         hover_back(rpg);
         hover_quit(rpg);
+        hover_resume(rpg);
         click_back(rpg);
         option_click(rpg);
         credit_click(rpg);

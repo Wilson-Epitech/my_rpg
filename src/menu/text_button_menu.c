@@ -21,12 +21,12 @@ void button_history_text(RPG_t *rpg)
 
 void button_play_text(RPG_t *rpg)
 {
-    sfVector2f pos = {925, 265};
+    sfVector2f pos = {845, 265};
 
     rpg->menu.play = sfText_create();
     sfText_setFont(rpg->menu.play, rpg->menu.game_name_font);
-    sfText_setString(rpg->menu.play, "Play");
-    sfText_setCharacterSize(rpg->menu.play, 45);
+    sfText_setString(rpg->menu.play, "New Game");
+    sfText_setCharacterSize(rpg->menu.play, 40);
     sfText_setPosition(rpg->menu.play, pos);
     sfText_setColor(rpg->menu.play, sfBlack);
 }
