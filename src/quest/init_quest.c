@@ -9,6 +9,10 @@
 
 void init_quest(RPG_t *rpg)
 {
+    rpg->menu.volume = 100.0;
+    rpg->player.def = 13;
+    rpg->player.atk = 47;
+    rpg->player.hp = 200;
     init_struct_sprite(rpg);
     init_grandma_sprite(rpg);
     init_shaolin_sprite(rpg);

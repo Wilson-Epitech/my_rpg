@@ -27,7 +27,8 @@ void init_grandma_sprite(RPG_t *rpg)
     rpg->struct_sprite.grandma_spt = sfSprite_create();
     sfSprite_setTexture(rpg->struct_sprite.grandma_spt,
     rpg->struct_sprite.grandma_txt, sfTrue);
-    sfSprite_setPosition(rpg->struct_sprite.grandma_spt, (sfVector2f){150, 150});
+    sfSprite_setPosition(rpg->struct_sprite.grandma_spt,
+    (sfVector2f){150, 150});
 }
 
 void init_shaolin_sprite(RPG_t *rpg)
@@ -37,5 +38,6 @@ void init_shaolin_sprite(RPG_t *rpg)
     rpg->struct_sprite.shaolin_spt = sfSprite_create();
     sfSprite_setTexture(rpg->struct_sprite.shaolin_spt,
     rpg->struct_sprite.shaolin_txt, sfTrue);
-    sfSprite_setPosition(rpg->struct_sprite.shaolin_spt, (sfVector2f){750, 380});
+    sfSprite_setPosition(rpg->struct_sprite.shaolin_spt,
+    (sfVector2f){750, 380});
 }

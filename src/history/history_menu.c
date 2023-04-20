@@ -15,7 +15,8 @@ void click_history(RPG_t *rpg)
             rpg->history.anim_finished1 = 2;
         }
     }
-    if (sfKeyboard_isKeyPressed(sfKeyLeft) && rpg->history.anim_finished1 == 3) {
+    if (sfKeyboard_isKeyPressed(sfKeyLeft)
+    && rpg->history.anim_finished1 == 3) {
         rpg->history.anim_finished2 = 2;
     }
 }

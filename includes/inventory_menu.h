@@ -16,6 +16,13 @@
         sfTexture *menu_texture;
         sfSprite *menu;
         int keyI_pressed;
+        sfRectangleShape *rect_char_menu;
+        sfText *stat;
+        sfText *health;
+        sfText *xp;
+        sfText *atk;
+        sfText *def;
+        sfText *level;
     } InventoryMenu_t;
 
 // void inventory_menu_func(sfRenderWindow *wdw, RPG_t *rpg);

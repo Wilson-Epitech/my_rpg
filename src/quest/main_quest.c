@@ -51,11 +51,6 @@ void talk_to_shaolin(RPG_t *rpg, sfRenderWindow *wdw)
         sfRectangleShape_setSize(rpg->quest.rect_help, size);
         sfRectangleShape_setPosition(rpg->quest.rect_help, pos_rect);
         sfRenderWindow_drawRectangleShape(wdw, rpg->quest.rect_help, NULL);
-        if (rpg->quest.main_quest == 1) {
-            sfRenderWindow_drawText(wdw, rpg->quest.main_quest_1, NULL);
-            press_enter_main(rpg);
-        }
-        if (rpg->quest.main_quest == 2)
-            sfRenderWindow_drawText(wdw, rpg->quest.main_quest_2, NULL);
+        is_shao(wdw, rpg);
     }
 }

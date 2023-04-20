@@ -28,10 +28,20 @@
 void inventory_menu_func(sfRenderWindow *wdw, RPG_t *rpg);
 void init_inventory_menu(RPG_t *rpg);
 void destroy_inventory_menu(RPG_t *rpg);
-void press_inventory(RPG_t *rpg);
+int press_inventory(RPG_t *rpg, int menu_game);
+void draw_inventory(sfRenderWindow *wdw, RPG_t *rpg);
+void init_rect_characteristic(RPG_t *rpg);
+void init_text_stat(RPG_t *rpg);
+void init_health_txt(RPG_t *rpg);
+void  init_xp_txt(RPG_t *rpg);
+void init_level_txt(RPG_t *rpg);
+void init_def_txt(RPG_t *rpg);
+void init_atk_txt(RPG_t *rpg);
 
 
-
+char *my_int_to_str(int nb);
+char *my_revstr(char *str);
+int my_strlen(char const *str);
 
 
 //SPRITE.H//
@@ -59,6 +69,8 @@ void init_text_talk_shao(RPG_t *rpg);
 void init_text_dragon(RPG_t *rpg);
 void destroy_quest(RPG_t *rpg);
 void draw_current_text(sfRenderWindow *wdw, RPG_t *rpg);
+void is_grandma(sfRenderWindow *wdw, RPG_t *rpg);
+void is_shao(sfRenderWindow *wdw, RPG_t *rpg);
 
 
 //MENU.h
@@ -148,6 +160,10 @@ void click_play(RPG_t *rpg);
 void click_history(RPG_t *rpg);
 void check_history(RPG_t *rpg);
 sfBool is_on_button(RPG_t *rpg, sfSprite *sprite);
+void init_button_quit(RPG_t *rpg);
+void init_txt_quit(RPG_t *rpg);
+void hover_quit(RPG_t *rpg);
+void click_quit(RPG_t *rpg);
 
 //MAPS.h//
 void init_maps(RPG_t *rpg);
@@ -170,6 +186,7 @@ void check_next_uncol(RPG_t *rpg);
 int check_color_col(RPG_t *rpg, sfImage *img);
 int uncollision_char(RPG_t *rpg, sfImage *img);
 void init_quest(RPG_t *rpg);
+void init_map1_3d(RPG_t *rpg);
 
 //MY.h//
 void open_wdw(RPG_t *rpg);

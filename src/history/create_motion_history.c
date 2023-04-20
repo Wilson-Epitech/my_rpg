@@ -23,7 +23,8 @@ int create_history(RPG_t *rpg)
     sfSprite_setTexture(rpg->history.sprite_history,
     rpg->history.texture_history, sfTrue);
     sfSprite_setScale(rpg->history.sprite_history, scale_book);
-    sfSprite_setTextureRect(rpg->history.sprite_history, rpg->history.menu_history);
+    sfSprite_setTextureRect(rpg->history.sprite_history,
+    rpg->history.menu_history);
     return 0;
 }
 
@@ -40,7 +41,8 @@ void motion_history(RPG_t *rpg)
         } else {
             rpg->history.anim_finished1 = 3;
         }
-        sfSprite_setTextureRect(rpg->history.sprite_history, rpg->history.menu_history);
+        sfSprite_setTextureRect(rpg->history.sprite_history,
+        rpg->history.menu_history);
         sfClock_restart(rpg->history.clock_history);
     }
 }

@@ -40,7 +40,6 @@ static int col_map3_map4(RPG_t *rpg, int check_black)
             check_black = check_color_col(rpg, rpg->map.map4);
         if (check_black == 0)
             check_black = uncollision_char(rpg, rpg->map.map4);
-
         return check_black;
     }
     return check_black;

@@ -13,8 +13,6 @@ int main(void)
 {
     RPG_t *rpg = malloc(sizeof(RPG_t));
     memset(rpg, 0, sizeof(RPG_t));
-    init_inventory_menu(rpg);
     open_wdw(rpg);
     return 0;
 }
-

@@ -20,7 +20,8 @@ int create_background_img(RPG_t *rpg)
     if (!rpg->menu.bk_menu_img)
         return (84);
     rpg->menu.bk_menu_img_sprite = sfSprite_create();
-    sfSprite_setTexture(rpg->menu.bk_menu_img_sprite, rpg->menu.bk_menu_img, sfTrue);
+    sfSprite_setTexture(rpg->menu.bk_menu_img_sprite,
+    rpg->menu.bk_menu_img, sfTrue);
     sfSprite_setScale(rpg->menu.bk_menu_img_sprite, scale);
     sfSprite_setTextureRect(rpg->menu.bk_menu_img_sprite, rpg->menu.menu_wdw);
     return 0;
@@ -39,7 +40,8 @@ void motion_menu_bk(RPG_t *rpg)
             rpg->menu.menu_wdw.top = 30;
         }
         sfClock_restart(rpg->menu.clock);
-        sfSprite_setTextureRect(rpg->menu.bk_menu_img_sprite, rpg->menu.menu_wdw);
+        sfSprite_setTextureRect(rpg->menu.bk_menu_img_sprite,
+        rpg->menu.menu_wdw);
     }
 }
 
@@ -72,7 +74,8 @@ void print_click_to_play(RPG_t *rpg)
 
 int load_menu_music(RPG_t *rpg)
 {
-    rpg->menu.back_music = sfMusic_createFromFile("textures/music/back_menu.ogg");
+    rpg->menu.back_music
+    = sfMusic_createFromFile("textures/music/back_menu.ogg");
     if (!rpg->menu.back_music)
         return 84;
     sfMusic_play(rpg->menu.back_music);

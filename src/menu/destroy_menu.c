@@ -27,8 +27,8 @@ void destroy_text_menu(RPG_t *rpg)
     sfText_destroy(rpg->menu.high_fps);
     sfText_destroy(rpg->menu.fps);
     sfText_destroy(rpg->menu.credit_name);
+    sfText_destroy(rpg->menu.quit);
     sfFont_destroy(rpg->menu.game_name_font);
-    sfFont_destroy(rpg->menu.game_number_font);
 }
 
 void destroy_rect_menu(RPG_t *rpg)
@@ -57,11 +57,13 @@ void destroy_menu(RPG_t *rpg)
     sfSprite_destroy(rpg->menu.button_option_spr);
     sfSprite_destroy(rpg->menu.button_credit_spr);
     sfSprite_destroy(rpg->menu.button_back_spr);
+    sfSprite_destroy(rpg->menu.button_quit_spr);
     sfSprite_destroy(rpg->menu.mute_spr);
     sfMusic_destroy(rpg->menu.back_music);
     sfClock_destroy(rpg->menu.clock);
     sfTexture_destroy(rpg->menu.mute_txt);
     destroy_text_menu(rpg);
+    sfFont_destroy(rpg->menu.game_number_font);
     destroy_rect_menu(rpg);
 }
 

@@ -16,7 +16,8 @@ void init_help_rect(RPG_t *rpg)
     rpg->quest.size_rect_help.y = 450;
 
     sfRectangleShape_setSize(rpg->quest.rect_help, rpg->quest.size_rect_help);
-    sfRectangleShape_setPosition(rpg->quest.rect_help, rpg->quest.pos_rect_help);
+    sfRectangleShape_setPosition(rpg->quest.rect_help,
+    rpg->quest.pos_rect_help);
     sfRectangleShape_setFillColor(rpg->quest.rect_help,
     sfColor_fromRGBA(15, 15, 15, 200));
 }
@@ -72,13 +73,6 @@ void talk_to_grandma(RPG_t *rpg, sfRenderWindow *wdw)
         sfRenderWindow_drawSprite(wdw, rpg->quest.exclam_quest_spr, NULL);
     if (rpg->quest.npc == GRANDMA) {
         sfRenderWindow_drawRectangleShape(wdw, rpg->quest.rect_help, NULL);
-        if (rpg->quest.help == 0) {
-            sfRenderWindow_drawText(wdw, rpg->quest.help_1, NULL);
-            press_enter_help(rpg);
-        }
-        if (rpg->quest.help == 1) {
-            rpg->quest.main_quest = 1;
-            sfRenderWindow_drawText(wdw, rpg->quest.help_2, NULL);
-        }
+        is_grandma(wdw, rpg);
     }
 }

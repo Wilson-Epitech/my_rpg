@@ -6,6 +6,7 @@
 */
 
 #include "my.h"
+#include "all_struct.h"
 
 char *my_revstr(char *str)
 {

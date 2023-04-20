@@ -6,6 +6,7 @@
 */
 
 #include "my.h"
+#include "all_struct.h"
 #include <stdio.h>
 #include <stdlib.h>
 

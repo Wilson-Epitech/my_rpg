@@ -33,9 +33,9 @@ void select_volume_effect(RPG_t *rpg)
                 sfVector2f new_pos =
                 {rpg->menu.mouse_menu.x, (rpg->menu.pos_effect_bar.y - 20)};
                 sfRectangleShape_setPosition(rpg->menu.slider_effect, new_pos);
-                float vol = (rpg->menu.mouse_menu.x - rpg->menu.pos_effect_bar.x) / 8;
+                float vol
+                = (rpg->menu.mouse_menu.x - rpg->menu.pos_effect_bar.x) / 8;
                 rpg->menu.volume_effect = vol;
-                //sfMusic_setVolume(menu->back_music, menu->volume);
             }
     }
 }

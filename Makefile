@@ -35,6 +35,7 @@ SRC	=	main.c 										\
 		src/menu/option/which_chosen_res.c			\
 		src/menu/click_play.c						\
 		src/menu/is_on_button.c						\
+		src/menu/quit.c								\
 		src/sprite/init_struct_sprite.c				\
 		src/sprite/move_sprite.c					\
 		src/sprite/get_pos_char.c					\
@@ -53,11 +54,17 @@ SRC	=	main.c 										\
 		src/quest/draw_text_current.c				\
 		src/quest/init_quest.c						\
 		src/quest/destroy_quest.c					\
+		src/quest/is_grandma_or_shao.c				\
 		src/history/create_motion_history.c			\
 		src/history/history_menu.c					\
 		src/inventory_menu/inventory_menu.c 		\
 		src/inventory_menu/init_inventory_struct.c	\
-		src/inventory_menu/destroy_menu.c
+		src/inventory_menu/destroy_menu.c			\
+		src/inventory_menu/display_char.c			\
+		src/inventory_menu/init_atk_def_txt.c		\
+		lib/my_strlen.c 							\
+		lib/my_int_to_str.c  						\
+		lib/my_revstr.c 							\
 
 CC = gcc
 

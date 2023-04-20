@@ -7,6 +7,23 @@
 
 #include "all_struct.h"
 
+static void destroy_txt_quest(RPG_t *rpg)
+{
+    sfText_destroy(rpg->quest.help_1);
+    sfText_destroy(rpg->quest.help_2);
+    sfText_destroy(rpg->quest.main_quest_1);
+    sfText_destroy(rpg->quest.main_quest_2);
+    sfText_destroy(rpg->quest.current_quest_shaolin);
+    sfText_destroy(rpg->quest.current_quest_grandma);
+    sfText_destroy(rpg->quest.current_quest_dragon);
+    sfText_destroy(rpg->inventory_menu.stat);
+    sfText_destroy(rpg->inventory_menu.health);
+    sfText_destroy(rpg->inventory_menu.xp);
+    sfText_destroy(rpg->inventory_menu.level);
+    sfText_destroy(rpg->inventory_menu.atk);
+    sfText_destroy(rpg->inventory_menu.def);
+}
+
 void destroy_quest(RPG_t *rpg)
 {
     sfSprite_destroy(rpg->struct_sprite.grandma_spt);
@@ -17,11 +34,5 @@ void destroy_quest(RPG_t *rpg)
     sfTexture_destroy(rpg->struct_sprite.texture_sprite);
     sfRectangleShape_destroy(rpg->quest.rect_help);
     sfRectangleShape_destroy(rpg->quest.rect_current_quest);
-    sfText_destroy(rpg->quest.help_1);
-    sfText_destroy(rpg->quest.help_2);
-    sfText_destroy(rpg->quest.main_quest_1);
-    sfText_destroy(rpg->quest.main_quest_2);
-    sfText_destroy(rpg->quest.current_quest_shaolin);
-    sfText_destroy(rpg->quest.current_quest_grandma);
-    sfText_destroy(rpg->quest.current_quest_dragon);
+    destroy_txt_quest(rpg);
 }

@@ -10,9 +10,12 @@
 void draw_current_text(sfRenderWindow *wdw, RPG_t *rpg)
 {
     if (rpg->quest.main_quest == 0)
-            sfRenderWindow_drawText(wdw, rpg->quest.current_quest_grandma, NULL);
+            sfRenderWindow_drawText(wdw,
+            rpg->quest.current_quest_grandma, NULL);
         if (rpg->quest.main_quest == 1)
-            sfRenderWindow_drawText(wdw, rpg->quest.current_quest_shaolin, NULL);
+            sfRenderWindow_drawText(wdw,
+            rpg->quest.current_quest_shaolin, NULL);
         if (rpg->quest.main_quest == 2)
-            sfRenderWindow_drawText(wdw, rpg->quest.current_quest_dragon, NULL);
+            sfRenderWindow_drawText(wdw,
+            rpg->quest.current_quest_dragon, NULL);
 }

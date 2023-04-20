@@ -34,7 +34,9 @@ typedef struct maps_s {
     int check_path_map;
     int on_map;
     sfView *view_combat;
-    float dezoom;;
+    float dezoom;
+    sfTexture *map1_3d_txr;
+    sfSprite *map1_3d_spr;
 } maps_t;
 
 enum map_checker {

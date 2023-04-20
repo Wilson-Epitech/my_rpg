@@ -16,7 +16,8 @@ void create_bar_effect(RPG_t *rpg)
     rpg->menu.pos_effect_bar.y = 300;
 
     sfRectangleShape_setSize(rpg->menu.effect_bar, rpg->menu.size_effect_bar);
-    sfRectangleShape_setPosition(rpg->menu.effect_bar, rpg->menu.pos_effect_bar);
+    sfRectangleShape_setPosition(rpg->menu.effect_bar,
+    rpg->menu.pos_effect_bar);
     sfRectangleShape_setFillColor(rpg->menu.effect_bar, sfYellow);
 }
 
@@ -28,8 +29,10 @@ void create_slider_effect(RPG_t *rpg)
     rpg->menu.pos_slider_effect.x = 1500;
     rpg->menu.pos_slider_effect.y = 280;
 
-    sfRectangleShape_setSize(rpg->menu.slider_effect, rpg->menu.size_slider_effect);
-    sfRectangleShape_setPosition(rpg->menu.slider_effect, rpg->menu.pos_slider_effect);
+    sfRectangleShape_setSize(rpg->menu.slider_effect,
+    rpg->menu.size_slider_effect);
+    sfRectangleShape_setPosition(rpg->menu.slider_effect,
+    rpg->menu.pos_slider_effect);
     sfRectangleShape_setFillColor(rpg->menu.slider_effect, sfBlack);
 }
 

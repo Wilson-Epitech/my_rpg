@@ -42,8 +42,10 @@ void create_slider_music(RPG_t *rpg)
     rpg->menu.pos_slider_music.x = 1500;
     rpg->menu.pos_slider_music.y = 180;
 
-    sfRectangleShape_setSize(rpg->menu.slider_music, rpg->menu.size_slider_music);
-    sfRectangleShape_setPosition(rpg->menu.slider_music, rpg->menu.pos_slider_music);
+    sfRectangleShape_setSize(rpg->menu.slider_music,
+    rpg->menu.size_slider_music);
+    sfRectangleShape_setPosition(rpg->menu.slider_music,
+    rpg->menu.pos_slider_music);
     sfRectangleShape_setFillColor(rpg->menu.slider_music, sfBlack);
 }
 

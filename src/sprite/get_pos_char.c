@@ -9,7 +9,8 @@
 
 void get_pos_char(RPG_t *rpg)
 {
-    rpg->struct_sprite.sprite_pos = sfSprite_getPosition(rpg->struct_sprite.sprite);
+    rpg->struct_sprite.sprite_pos
+    = sfSprite_getPosition(rpg->struct_sprite.sprite);
 }
 
 void tp_all_maps(RPG_t *rpg)
