@@ -36,6 +36,12 @@ void hover_resume(RPG_t *rpg)
 {
     if (is_on_button(rpg, rpg->menu.button_resume_spr)) {
         sfText_setColor(rpg->menu.resume, sfRed);
+        if (sfMouse_isButtonPressed(0)) {
+            parse_config_file(rpg);
+            sfSprite_setPosition(rpg->struct_sprite.sprite,
+            rpg->player.set_player_pos);
+            rpg->menu.check_first_menu = 6;
+        }
     } else {
         sfText_setColor(rpg->menu.resume, sfBlack);
     }

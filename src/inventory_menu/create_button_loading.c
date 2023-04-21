@@ -36,6 +36,11 @@ void hover_loading(RPG_t *rpg)
 {
     if (is_on_button(rpg, rpg->inventory_menu.button_loading)) {
         sfText_setColor(rpg->inventory_menu.loading, sfRed);
+        if (sfMouse_isButtonPressed(0)) {
+            parse_config_file(rpg);
+            sfSprite_setPosition(rpg->struct_sprite.sprite,
+            rpg->player.set_player_pos);
+        }
     } else {
         sfText_setColor(rpg->inventory_menu.loading, sfBlack);
     }

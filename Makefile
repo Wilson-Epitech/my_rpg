@@ -10,6 +10,8 @@ SRC	=	main.c 										\
 		src/init_window.c							\
 		src/open_window.c 							\
 		src/destroy.c 								\
+		src/load_and_save/parse_config_file.c 		\
+		src/load_and_save/stock_in_config_file.c 	\
 		src/menu/menu_name.c						\
 		src/menu/click_first_menu.c					\
 		src/menu/button_history_op_play.c			\
@@ -82,6 +84,9 @@ SRC	=	main.c 										\
 		lib/my_revstr.c 							\
 		lib/my_strlen.c 							\
 		lib/my_strncmp.c 							\
+		lib/my_getnbr.c 							\
+		lib/word_array_delimiter.c 					\
+		lib/word_array_delimiter2.c 				\
 
 CC = gcc
 
