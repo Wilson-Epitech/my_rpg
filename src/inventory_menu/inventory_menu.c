@@ -28,12 +28,9 @@ int press_inventory(RPG_t *rpg, int menu_game)
 
 void click_back_setting(RPG_t *rpg)
 {
-    if (is_on_button(rpg, rpg->inventory_menu.button_settings)) {
-        if (sfMouse_isButtonPressed(0)) {
+    if (is_on_button(rpg, rpg->menu.button_back_spr)) {
+        if (sfMouse_isButtonPressed(0))
             rpg->inventory_menu.keyI_pressed = 1;;
-        }
-        while (sfMouse_isButtonPressed(0)) {
-        }
     }
     if (sfKeyboard_isKeyPressed(sfKeyEscape)) {
             rpg->inventory_menu.keyI_pressed = 1;;

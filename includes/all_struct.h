@@ -245,6 +245,7 @@ void init_damage_text(RPG_t *rpg);
 void destroy_fight(RPG_t *rpg);
 void launch_fight(RPG_t *rpg);
 int animate_player(sfClock *spell_clock, sfIntRect *rect, int max_rect);
+void quit_fight(RPG_t *rpg);
 
 //MY.h//
 int check_error(int ac, char **env);

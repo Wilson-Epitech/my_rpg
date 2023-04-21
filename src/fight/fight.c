@@ -30,6 +30,7 @@ int end_fight(RPG_t *rpg, int end_it)
         &rpg->spells[EXPLOSION].animated_rect, rpg->spells[EXPLOSION].max_rect);
         sfSprite_setPosition(rpg->players_fighting.enemy_sprite, set_drake);
     }
+    quit_fight(rpg);
     return end_it;
 }
 

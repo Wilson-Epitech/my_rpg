@@ -76,6 +76,8 @@ void draw_inventory_stat(RPG_t *rpg)
     sfRenderWindow_drawRectangleShape(rpg->window.wdw,
         rpg->inventory_menu.rect_char_menu, NULL);
     sfRenderWindow_drawText(rpg->window.wdw,
+    rpg->inventory_menu.inventory, NULL);
+    sfRenderWindow_drawText(rpg->window.wdw,
         rpg->inventory_menu.stat, NULL);
     sfRenderWindow_drawText(rpg->window.wdw,
         rpg->inventory_menu.health, NULL);
