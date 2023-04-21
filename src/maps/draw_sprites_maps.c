@@ -59,22 +59,32 @@ static void draw_sprites_map2(RPG_t *rpg)
 static void draw_sprites_map3(RPG_t *rpg)
 {
     if (rpg->map.on_map == MAP3) {
-        sfRenderWindow_drawSprite(rpg->window.wdw, rpg->dimension.big_house_brick_map3, NULL);
-        sfRenderWindow_drawSprite(rpg->window.wdw, rpg->dimension.big_house_white_map3, NULL);
-        sfRenderWindow_drawSprite(rpg->window.wdw, rpg->dimension.long_tree_map3, NULL);
-        sfRenderWindow_drawSprite(rpg->window.wdw, rpg->dimension.red_house_map3, NULL);
-        sfRenderWindow_drawSprite(rpg->window.wdw, rpg->dimension.house_owl_map3, NULL);
-        sfRenderWindow_drawSprite(rpg->window.wdw, rpg->dimension.tree_map3, NULL);
+        sfRenderWindow_drawSprite(rpg->window.wdw,
+        rpg->dimension.big_house_brick_map3, NULL);
+        sfRenderWindow_drawSprite(rpg->window.wdw,
+        rpg->dimension.big_house_white_map3, NULL);
+        sfRenderWindow_drawSprite(rpg->window.wdw,
+        rpg->dimension.long_tree_map3, NULL);
+        sfRenderWindow_drawSprite(rpg->window.wdw,
+        rpg->dimension.red_house_map3, NULL);
+        sfRenderWindow_drawSprite(rpg->window.wdw,
+        rpg->dimension.house_owl_map3, NULL);
+        sfRenderWindow_drawSprite(rpg->window.wdw,
+        rpg->dimension.tree_map3, NULL);
     }
 }
 
 static void draw_sprites_map4(RPG_t *rpg)
 {
     if (rpg->map.on_map == MAP4) {
-        sfRenderWindow_drawSprite(rpg->window.wdw, rpg->dimension.blue_house_map4, NULL);
-        sfRenderWindow_drawSprite(rpg->window.wdw, rpg->dimension.well_mp4, NULL);
-        sfRenderWindow_drawSprite(rpg->window.wdw, rpg->dimension.easter_mp4, NULL);
-        sfRenderWindow_drawSprite(rpg->window.wdw, rpg->dimension.tent_mp4, NULL);
+        sfRenderWindow_drawSprite(rpg->window.wdw,
+        rpg->dimension.blue_house_map4, NULL);
+        sfRenderWindow_drawSprite(rpg->window.wdw,
+        rpg->dimension.well_mp4, NULL);
+        sfRenderWindow_drawSprite(rpg->window.wdw,
+        rpg->dimension.easter_mp4, NULL);
+        sfRenderWindow_drawSprite(rpg->window.wdw,
+        rpg->dimension.tent_mp4, NULL);
     }
 }
 

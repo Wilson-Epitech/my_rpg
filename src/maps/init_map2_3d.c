@@ -54,7 +54,8 @@ static void tent_map2(RPG_t *rpg)
     rpg->dimension.tree
     = sfTexture_createFromFile("textures/maps/tree.png", NULL);
     rpg->dimension.tree_top_map2 = sfSprite_create();
-    sfSprite_setTexture(rpg->dimension.tree_top_map2, rpg->dimension.tree, sfTrue);
+    sfSprite_setTexture(rpg->dimension.tree_top_map2,
+    rpg->dimension.tree, sfTrue);
     sfSprite_setPosition(rpg->dimension.tree_top_map2, tree_1);
     rpg->dimension.tree_bot_map2 = sfSprite_create();
     sfSprite_setTexture(rpg->dimension.tree_bot_map2,

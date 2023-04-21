@@ -33,6 +33,7 @@ static void init_map_to_three(RPG_t *rpg)
 
 void init_maps(RPG_t *rpg)
 {
+    rpg->history.clock_history = sfClock_create();
     init_map_to_three(rpg);
     rpg->map.map4
     = sfImage_createFromFile("textures/maps/map4_collision.png");
