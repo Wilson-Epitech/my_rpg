@@ -55,7 +55,7 @@ void get_color_map4(RPG_t *rpg)
         rpg->map.check_path_map = MAP_4_TO_3;
         rpg->map.on_map = MAP3;
     }
-    if (portal.r == 232 && portal.g == 192 && portal.b == 219) {
+    if (portal.r == 170 && portal.g == 77 && portal.b == 152) {
         rpg->map.check_path_map = MAP_4_TO_1;
         rpg->map.on_map = MAP1;
     }

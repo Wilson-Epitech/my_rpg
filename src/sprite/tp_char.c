@@ -11,7 +11,7 @@ void tp_map1(RPG_t *rpg)
 {
     sfVector2f from_map2 = {1850 , 0};
     sfVector2f from_map4 = {400, 800};
-    sfVector2f from_map5 = {-270 , -900};
+    sfVector2f from_map5 = {-270 , -830};
 
     if (rpg->map.check_path_map == MAP_2_TO_1UPPER) {
         rpg->map.check_path_map = NO_PATH_TAKEN;
@@ -82,7 +82,7 @@ void tp_map4(RPG_t *rpg)
 
 void tp_map5(RPG_t *rpg)
 {
-    sfVector2f from_map1 = {270, 900};
+    sfVector2f from_map1 = {270, 850};
 
     if (rpg->map.check_path_map == MAP_1_TO_DRAG) {
         rpg->map.check_path_map = NO_PATH_TAKEN;
