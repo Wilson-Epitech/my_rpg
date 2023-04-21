@@ -47,3 +47,11 @@ void init_maps(RPG_t *rpg)
     rpg->map.map5_spr = sfSprite_create();
     sfSprite_setTexture(rpg->map.map5_spr, rpg->map.map5_txr, sfTrue);
 }
+
+void init_map_3d(RPG_t *rpg)
+{
+    init_map1_3d(rpg);
+    init_map2_3d(rpg);
+    init_map3_3d(rpg);
+    init_map4_3d(rpg);
+}

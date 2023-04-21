@@ -18,13 +18,13 @@ void put_color_map5(RPG_t *rpg)
     }
     if (portal.r == 31 && portal.g == 18 && portal.b == 63) {
         rpg->map.spin = 1;
-        if (rpg->map.dezoom <= 1.9) {
+        if (rpg->map.dezoom < 1.05) {
             rpg->map.dezoom += 0.0001;
             sfView_rotate(rpg->map.view_combat, rpg->map.dezoom);
             sfView_zoom(rpg->map.view_combat, rpg->map.dezoom);
             sfRenderWindow_setView(rpg->window.wdw, rpg->map.view_combat);
         }
-        if (rpg->map.dezoom > 1.9) {
+        if (rpg->map.dezoom > 1.04) {
             rpg->map.check_path_map = MAP_5_TO_COMBAT;
             rpg->menu.check_first_menu = 7;
         }

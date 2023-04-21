@@ -44,7 +44,7 @@ static void button_quit_inventory(RPG_t *rpg)
     sfText_setPosition(rpg->menu.quit, pos_txt);
     sfSprite_setPosition(rpg->menu.button_quit_spr, pos);
     sfRenderWindow_drawSprite(rpg->window.wdw,
-       rpg->menu.button_quit_spr, NULL);
+    rpg->menu.button_quit_spr, NULL);
     sfRenderWindow_drawText(rpg->window.wdw,
     rpg->menu.quit, NULL);
     hover_quit(rpg);
