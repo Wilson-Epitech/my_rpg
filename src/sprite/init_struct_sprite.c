@@ -9,6 +9,8 @@
 
 void init_struct_sprite(RPG_t *rpg)
 {
+    sfVector2f scale = {1.7, 1.7};
+
     rpg->struct_sprite.texture_sprite =
         sfTexture_createFromFile("textures/characters/Fumiko.png", NULL);
     rpg->struct_sprite.sprite = sfSprite_create();
@@ -16,6 +18,7 @@ void init_struct_sprite(RPG_t *rpg)
     sfSprite_setTexture(rpg->struct_sprite.sprite,
         rpg->struct_sprite.texture_sprite, sfTrue);
     sfSprite_setTextureRect(rpg->struct_sprite.sprite, rpg->struct_sprite.rect);
+    sfSprite_setScale(rpg->struct_sprite.sprite, scale);
     sfSprite_setPosition(rpg->struct_sprite.sprite, (sfVector2f){950, 725});
     rpg->struct_sprite.clock = sfClock_create();
 }

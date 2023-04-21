@@ -18,7 +18,7 @@ static void event_wdw(int check_black, RPG_t *rpg)
         }
         if (rpg->menu.check_first_menu == 6
         && check_black == 1 && menu_game != 1
-        && menu_game != 2) {
+        && menu_game != 2 && rpg->map.spin != 1) {
             move_sprite(rpg);
             check_black = 1;
         }

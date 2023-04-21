@@ -35,6 +35,7 @@ typedef struct maps_s {
     int on_map;
     sfView *view_combat;
     float dezoom;
+    int spin;
 } maps_t;
 
 typedef struct dimension_s {

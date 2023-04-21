@@ -12,6 +12,8 @@ static void draw_sprites_map1(RPG_t *rpg)
 {
     if (rpg->map.on_map == MAP1) {
         sfRenderWindow_drawSprite(rpg->window.wdw,
+        rpg->dimension.bush_lt, NULL);
+        sfRenderWindow_drawSprite(rpg->window.wdw,
         rpg->dimension.bush_ld, NULL);
         sfRenderWindow_drawSprite(rpg->window.wdw,
         rpg->dimension.bush_rt, NULL);
@@ -35,8 +37,6 @@ static void draw_sprites_map1(RPG_t *rpg)
 static void draw_sprites_map2(RPG_t *rpg)
 {
     if (rpg->map.on_map == MAP2) {
-        sfRenderWindow_drawSprite(rpg->window.wdw,
-        rpg->dimension.bush_lt, NULL);
         sfRenderWindow_drawSprite(rpg->window.wdw,
         rpg->dimension.tent_map2, NULL);
         sfRenderWindow_drawSprite(rpg->window.wdw,

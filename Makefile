@@ -94,7 +94,7 @@ OBJ	=	$(SRC:.c=.o)
 
 CSFML = -lcsfml-system -lcsfml-graphics -lcsfml-audio -lcsfml-window -lm
 
-CFLAGS = -Wall -Wextra
+CFLAGS = -Wall -Wextra -g3
 
 CPPFLAGS = -iquote./includes
 
