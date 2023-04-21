@@ -251,6 +251,6 @@ int check_error(int ac, char **env);
 void open_wdw(RPG_t *rpg);
 void destroy_all(RPG_t *rpg);
 int stock_in_config_file(RPG_t *rpg, sfSprite *player_sprite, int map_nb);
-int parse_config_file(RPG_t *rpg);
+int parse_config_file(RPG_t *rpg, int check_save);
 
 #endif /* !ALL_STRUCT_H_ */

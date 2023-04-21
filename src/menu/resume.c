@@ -34,14 +34,19 @@ void init_txt_resume(RPG_t *rpg)
 
 void hover_resume(RPG_t *rpg)
 {
-    if (is_on_button(rpg, rpg->menu.button_resume_spr)) {
+    if (is_on_button(rpg, rpg->menu.button_resume_spr)
+    && parse_config_file(rpg, 1) == 0) {
         sfText_setColor(rpg->menu.resume, sfRed);
         if (sfMouse_isButtonPressed(0)) {
-            parse_config_file(rpg);
+            parse_config_file(rpg, 0);
             sfSprite_setPosition(rpg->struct_sprite.sprite,
             rpg->player.set_player_pos);
             rpg->menu.check_first_menu = 6;
         }
+    } else if (is_on_button(rpg, rpg->menu.button_resume_spr)
+    && parse_config_file(rpg, 1) == 84) {
+        sfText_setColor(rpg->menu.resume,
+        sfColor_fromRGB(158, 158, 158));
     } else {
         sfText_setColor(rpg->menu.resume, sfBlack);
     }

@@ -83,7 +83,7 @@ void fill_player_stats(RPG_t *rpg, char **array)
     }
 }
 
-int parse_config_file(RPG_t *rpg)
+int parse_config_file(RPG_t *rpg, int check_save)
 {
     static int has_been_open = 0;
     static char *buffer = NULL;
@@ -97,6 +97,8 @@ int parse_config_file(RPG_t *rpg)
         if (array == NULL)
             return (84);
     }
+    if (check_save == 1)
+        return (0);
     fill_infos_before(rpg, array);
     fill_player_stats(rpg, array);
     return (0);

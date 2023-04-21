@@ -34,13 +34,18 @@ void init_txt_loading(RPG_t *rpg)
 
 void hover_loading(RPG_t *rpg)
 {
-    if (is_on_button(rpg, rpg->inventory_menu.button_loading)) {
+    if (is_on_button(rpg, rpg->inventory_menu.button_loading)
+    && parse_config_file(rpg, 1) == 0) {
         sfText_setColor(rpg->inventory_menu.loading, sfRed);
         if (sfMouse_isButtonPressed(0)) {
-            parse_config_file(rpg);
+            parse_config_file(rpg, 0);
             sfSprite_setPosition(rpg->struct_sprite.sprite,
             rpg->player.set_player_pos);
         }
+    } else if (is_on_button(rpg, rpg->inventory_menu.button_loading)
+    && parse_config_file(rpg, 1) == 84) {
+        sfText_setColor(rpg->inventory_menu.loading,
+        sfColor_fromRGB(158, 158, 158));
     } else {
         sfText_setColor(rpg->inventory_menu.loading, sfBlack);
     }
