@@ -14,7 +14,7 @@ void init_struct_sprite(RPG_t *rpg)
     rpg->struct_sprite.texture_sprite =
         sfTexture_createFromFile("textures/characters/Fumiko.png", NULL);
     rpg->struct_sprite.sprite = sfSprite_create();
-    rpg->struct_sprite.rect = (sfIntRect){0, 0, 15, 30};
+    rpg->struct_sprite.rect = (sfIntRect){0, 0, 20, 30};
     sfSprite_setTexture(rpg->struct_sprite.sprite,
         rpg->struct_sprite.texture_sprite, sfTrue);
     sfSprite_setTextureRect(rpg->struct_sprite.sprite, rpg->struct_sprite.rect);
