@@ -79,6 +79,19 @@ SRC	=	main.c 										\
 		src/inventory_menu/create_button_settings.c	\
 		src/inventory_menu/inventory_settings.c   	\
 		src/inventory_menu/draw_inventory.c 		\
+		src/fight/init_fighting_players1.c			\
+		src/fight/init_fighting_players2.c 			\
+		src/fight/init_map_and_spells1.c 			\
+		src/fight/init_map_and_spells2.c 			\
+		src/fight/draw_fighting_elements1.c 		\
+		src/fight/draw_fighting_elements2.c 		\
+		src/fight/fight.c 							\
+		src/fight/manage_fighting_events.c 			\
+		src/fight/launch_spell.c 					\
+		src/fight/set_attack_on_sprite.c 			\
+		src/fight/player_attack.c 					\
+		src/fight/enemy_attack.c 					\
+		src/fight/destroy_fight.c 					\
 		lib/my_int_to_str.c  						\
 		lib/my_putchar.c 							\
 		lib/my_putstr.c 							\

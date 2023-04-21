@@ -14,6 +14,7 @@
     #include "quest.h"
     #include "sprite.h"
     #include "window.h"
+    #include "fighting.h"
 
     typedef struct {
         window_t window;
@@ -25,6 +26,10 @@
         player_t player;
         StructSprite struct_sprite;
         dimension_t dimension;
+        FightingMap fighting_map[NB_OF_SPELLS];
+        FightingSpells spells[NB_OF_SPELLS];
+        PlayersFighting players_fighting;
+        CountRounds count;
     } RPG_t;
 
 void init_window(RPG_t *rpg);
@@ -211,6 +216,35 @@ void init_map2_3d(RPG_t *rpg);
 void init_map3_3d(RPG_t *rpg);
 void init_map4_3d(RPG_t *rpg);
 void destroy_sprites_maps(RPG_t *rpg);
+void init_map_3d(RPG_t *rpg);
+
+//FIGHTING.h//
+void init_fighting_players(RPG_t *rpg);
+void init_map_and_spells(RPG_t *rpg);
+void init_spells1(RPG_t *rpg, int i, sfVector2f pos_sprite);
+void init_spells2(RPG_t *rpg, int i, sfVector2f pos_sprite);
+void init_spells3(RPG_t *rpg, int i, sfVector2f pos_sprite);
+void init_animated_spell(RPG_t *rpg, int i, int width, int height);
+void init_spell_selection(RPG_t *rpg, int i,
+char *path, sfVector2f pos_sprite);
+void draw_fighting_elements(RPG_t *rpg);
+void draw_players(RPG_t *rpg);
+void draw_spell_selections(RPG_t *rpg);
+void draw_text(RPG_t *rpg);
+void draw_spell(RPG_t *rpg, sfSprite *spell_sprite, sfIntRect spell_rect);
+void fight(RPG_t *rpg);
+void manage_fighting_event(RPG_t *rpg);
+int launch_spell(sfClock *spell_clock, sfIntRect *rect, int max_rect);
+void set_attack_on_player(FightingSpells *spells, int i);
+void set_attack_on_drake(FightingSpells *spells, int i);
+void player_attack1(RPG_t *rpg);
+void ennemy_attack1(RPG_t *rpg);
+void init_turn_text(RPG_t *rpg);
+void init_won_lost_text(RPG_t *rpg);
+void init_damage_text(RPG_t *rpg);
+void destroy_fight(RPG_t *rpg);
+void launch_fight(RPG_t *rpg);
+int animate_player(sfClock *spell_clock, sfIntRect *rect, int max_rect);
 
 //MY.h//
 int check_error(int ac, char **env);

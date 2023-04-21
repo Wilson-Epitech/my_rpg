@@ -90,18 +90,18 @@ void open_wdw(RPG_t *rpg)
     init_window(rpg);
     load_menu(rpg);
     init_maps(rpg);
-    init_map1_3d(rpg);
-    init_map2_3d(rpg);
-    init_map3_3d(rpg);
-    init_map4_3d(rpg);
+    init_map_3d(rpg);
     init_quest(rpg);
     init_inventory_menu(rpg);
+    init_fighting_players(rpg);
+    init_map_and_spells(rpg);
     draw_rect_setting_game(rpg);
     int check_black = 0;
     while (sfRenderWindow_isOpen(rpg->window.wdw)) {
         sfRenderWindow_clear(rpg->window.wdw, sfBlack);
         main_menu(rpg);
         main_game(rpg);
+        launch_fight(rpg);
         event_wdw(check_black, rpg);
         sfRenderWindow_display(rpg->window.wdw);
     }
