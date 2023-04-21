@@ -37,6 +37,20 @@ void draw_setting_inventory(RPG_t *rpg)
     }
 }
 
+static void button_quit_inventory(RPG_t *rpg)
+{
+    sfVector2f pos_txt = {130, 920};
+    sfVector2f pos = {90, 890};
+    sfText_setPosition(rpg->menu.quit, pos_txt);
+    sfSprite_setPosition(rpg->menu.button_quit_spr, pos);
+    sfRenderWindow_drawSprite(rpg->window.wdw,
+       rpg->menu.button_quit_spr, NULL);
+    sfRenderWindow_drawText(rpg->window.wdw,
+    rpg->menu.quit, NULL);
+    hover_quit(rpg);
+    click_quit(rpg);
+}
+
 void draw_buttons_inventory(RPG_t *rpg)
 {
     sfRenderWindow_drawSprite(rpg->window.wdw,
@@ -54,6 +68,7 @@ void draw_buttons_inventory(RPG_t *rpg)
     sfRenderWindow_drawText(rpg->window.wdw,
         rpg->inventory_menu.settings, NULL);
     hover_settings(rpg);
+    button_quit_inventory(rpg);
 }
 
 void draw_inventory_stat(RPG_t *rpg)
