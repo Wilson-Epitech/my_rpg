@@ -58,6 +58,7 @@ SRC	=	main.c 										\
 		src/maps/init_map4_3d.c 					\
 		src/maps/destroy_sprite_maps.c 				\
 		src/maps/draw_sprites_maps.c 				\
+		src/maps/put_colors_maps.c 					\
 		src/quest/help.c 							\
 		src/quest/press_enter.c						\
 		src/quest/main_quest.c						\

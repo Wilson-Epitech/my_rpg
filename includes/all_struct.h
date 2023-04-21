@@ -186,6 +186,8 @@ void hover_settings(RPG_t *rpg);
 void init_maps(RPG_t *rpg);
 void draw_all_sprites_maps(RPG_t *rpg);
 void draw_current_map(RPG_t *rpg);
+void put_color_map5(RPG_t *rpg);
+void put_color_map3(RPG_t *rpg);
 void get_color_map1(RPG_t *rpg);
 void get_color_map2(RPG_t *rpg);
 void get_color_map3(RPG_t *rpg);

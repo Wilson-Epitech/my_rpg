@@ -10,7 +10,6 @@
 
 static void draw_sprites_map1(RPG_t *rpg)
 {
-    if (rpg->map.on_map == MAP1) {
         sfRenderWindow_drawSprite(rpg->window.wdw,
         rpg->dimension.bush_lt, NULL);
         sfRenderWindow_drawSprite(rpg->window.wdw,
@@ -31,7 +30,6 @@ static void draw_sprites_map1(RPG_t *rpg)
         rpg->dimension.big_house_map1, NULL);
         sfRenderWindow_drawSprite(rpg->window.wdw,
         rpg->dimension.tent_map1, NULL);
-    }
 }
 
 static void draw_sprites_map2(RPG_t *rpg)
@@ -90,7 +88,8 @@ static void draw_sprites_map4(RPG_t *rpg)
 
 void draw_all_sprites_maps(RPG_t *rpg)
 {
-    draw_sprites_map1(rpg);
+    if (rpg->map.on_map == MAP1)
+        draw_sprites_map1(rpg);
     draw_sprites_map2(rpg);
     draw_sprites_map3(rpg);
     draw_sprites_map4(rpg);
