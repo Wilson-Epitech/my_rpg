@@ -33,6 +33,7 @@ typedef struct quest_s {
 } quest_t;
 
 typedef struct player_s {
+    sfVector2f set_player_pos;
     int hp;
     int xp;
     int level;

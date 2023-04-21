@@ -17,5 +17,10 @@ void my_putstr(char const *str);
 char *my_revstr(char *str);
 int my_strlen(char const *str);
 int my_strncmp(char const *s1, char const *s2);
+int my_getnbr(char const *str);
+char **word_array_delimiter(char const *str, char *delim);
 
+int is_delimiter(char c, char *delim);
+int cut_str(char const *str, char *delim);
+int check_character(char const *str, char *delim, int cut_here);
 #endif /* !MY_H_ */

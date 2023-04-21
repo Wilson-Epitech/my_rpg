@@ -36,6 +36,10 @@ void hover_saving(RPG_t *rpg)
 {
     if (is_on_button(rpg, rpg->inventory_menu.button_saving)) {
         sfText_setColor(rpg->inventory_menu.saving, sfRed);
+        if (sfMouse_isButtonPressed(0)) {
+            stock_in_config_file(rpg, rpg->struct_sprite.sprite,
+            rpg->map.on_map);
+        }
     } else {
         sfText_setColor(rpg->inventory_menu.saving, sfBlack);
     }
