@@ -32,10 +32,16 @@ static void use_selected_item(RPG_t *rpg, sfEvent event,
     sfVector2f mousePosition)
 {
     if (is_double_click(event) && is_valid_click(mousePosition)) {
-        if (is_on_button(rpg, rpg->item.item1))
+        if (is_on_button(rpg, rpg->item.item1)
+        && rpg->item.display_item1 != 1) {
             rpg->item.display_item1 = 1;
-        if (is_on_button(rpg, rpg->item.item2))
+            rpg->player.def = rpg->player.def + 70;
+        }
+        if (is_on_button(rpg, rpg->item.item2)
+        && rpg->item.display_item2 != 1) {
             rpg->item.display_item2 = 1;
+            rpg->player.atk = rpg->player.atk + 50;
+        }
     }
 }
 
