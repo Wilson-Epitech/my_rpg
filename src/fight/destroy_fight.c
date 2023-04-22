@@ -16,7 +16,6 @@ static void free_players(RPG_t *rpg)
 
 static void free_map_and_spells(RPG_t *rpg)
 {
-
     sfSprite_destroy(rpg->spells[0].animated_sprite);
     sfTexture_destroy(rpg->spells[0].animated_texture);
     for (int i = 1; i != NB_OF_SPELLS; i++) {
@@ -25,9 +24,14 @@ static void free_map_and_spells(RPG_t *rpg)
         sfTexture_destroy(rpg->spells[i].animated_texture);
         sfTexture_destroy(rpg->spells[i].select_texture);
     }
-
     sfSprite_destroy(rpg->fighting_map->map_sprite);
     sfTexture_destroy(rpg->fighting_map->map_texture);
+    sfMusic_destroy(rpg->fighting_map->ennemy_encoutered);
+    sfMusic_destroy(rpg->fighting_map->fight_music);
+    sfMusic_destroy(rpg->fighting_map->select_spell);
+    sfMusic_destroy(rpg->fighting_map->won_sound);
+    sfMusic_destroy(rpg->fighting_map->won_song);
+    sfMusic_destroy(rpg->fighting_map->lost_song);
 }
 
 void destroy_fight(RPG_t *rpg)

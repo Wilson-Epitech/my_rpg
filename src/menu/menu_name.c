@@ -81,5 +81,14 @@ int load_menu_music(RPG_t *rpg)
     sfMusic_play(rpg->menu.back_music);
     sfMusic_setLoop(rpg->menu.back_music, sfTrue);
     sfMusic_setVolume(rpg->menu.back_music, rpg->menu.volume);
+    rpg->menu.save_sound
+    = sfMusic_createFromFile("textures/music/save_sound.ogg");
+    sfMusic_setVolume(rpg->menu.save_sound, rpg->menu.volume_effect);
+    rpg->menu.load_sound
+    = sfMusic_createFromFile("textures/music/load_sound.ogg");
+    sfMusic_setVolume(rpg->menu.load_sound, rpg->menu.volume_effect);
+    rpg->menu.new_game_sound
+    = sfMusic_createFromFile("textures/music/new_game_sound.ogg");
+    sfMusic_setVolume(rpg->menu.new_game_sound, rpg->menu.volume_effect);
     return 0;
 }

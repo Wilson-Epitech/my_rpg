@@ -57,7 +57,7 @@ static void load_buttons(RPG_t *rpg)
 
 void load_menu(RPG_t *rpg)
 {
-    rpg->menu.volume = 100;
+    rpg->menu.volume = 100; rpg->menu.volume_effect = 100;
     load_menu_music(rpg);
     create_background_img(rpg);
     create_history(rpg);

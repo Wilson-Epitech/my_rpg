@@ -47,6 +47,13 @@ void destroy_rect_menu(RPG_t *rpg)
     sfRectangleShape_destroy(rpg->menu.rect_name);
 }
 
+void destroy_game_sounds(RPG_t *rpg)
+{
+    sfMusic_destroy(rpg->menu.save_sound);
+    sfMusic_destroy(rpg->menu.load_sound);
+    sfMusic_destroy(rpg->menu.new_game_sound);
+}
+
 void destroy_menu(RPG_t *rpg)
 {
     sfTexture_destroy(rpg->menu.bk_menu_img);
@@ -61,6 +68,7 @@ void destroy_menu(RPG_t *rpg)
     sfSprite_destroy(rpg->menu.button_resume_spr);
     sfSprite_destroy(rpg->menu.mute_spr);
     sfMusic_destroy(rpg->menu.back_music);
+    destroy_game_sounds(rpg);
     sfClock_destroy(rpg->menu.clock);
     sfTexture_destroy(rpg->menu.mute_txt);
     destroy_text_menu(rpg);

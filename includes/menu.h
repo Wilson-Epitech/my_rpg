@@ -27,6 +27,9 @@ typedef struct menu_s {
     sfText *quit;
     sfText *resume;
     sfMusic *back_music;
+    sfMusic *save_sound;
+    sfMusic *load_sound;
+    sfMusic *new_game_sound;
     int check_first_menu;
     sfVector2f mouse_menu;
     sfTexture *button_history_txt;

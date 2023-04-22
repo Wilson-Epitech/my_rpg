@@ -39,6 +39,8 @@ void hover_saving(RPG_t *rpg)
         if (sfMouse_isButtonPressed(0)) {
             stock_in_config_file(rpg, rpg->struct_sprite.sprite,
             rpg->map.on_map);
+            sfMusic_play(rpg->menu.save_sound);
+            sfMusic_play(rpg->menu.save_sound);
         }
     } else {
         sfText_setColor(rpg->inventory_menu.saving, sfBlack);

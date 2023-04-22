@@ -40,6 +40,8 @@ int launched, sfEvent event)
     for (int spell = 1; spell != NB_OF_SPELLS; spell++) {
         if (is_spell_selected(rpg, rpg->spells[spell].select_sprite,
             rpg->spells[spell].select_border, event)) {
+            sfMusic_play(rpg->fighting_map->select_spell);
+            sfMusic_play(rpg->fighting_map->select_spell);
             rpg->spells[spell].spell_state = 1;
             launched = spell;
         }

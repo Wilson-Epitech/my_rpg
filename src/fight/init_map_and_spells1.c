@@ -55,7 +55,9 @@ void init_animated_spell(RPG_t *rpg, int i, int width, int height)
 void init_map_and_spells(RPG_t *rpg)
 {
     init_fighting_map(rpg);
-    sfVector2f pos_sprite = {790, 930};
+    init_fight_music1(rpg);
+    init_fight_music2(rpg);
+    sfVector2f pos_sprite = {720, 930};
 
     for (int i = 0; i != NB_OF_SPELLS; i++) {
         rpg->spells[i].spell_state = -1;

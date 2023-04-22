@@ -70,3 +70,33 @@ void init_spells3(RPG_t *rpg, int i, sfVector2f pos_sprite)
     }
 
 }
+
+void init_fight_music1(RPG_t *rpg)
+{
+    rpg->fighting_map->fight_music
+    = sfMusic_createFromFile("textures/music/fight_song.ogg");
+    sfMusic_setVolume(rpg->fighting_map->fight_music, rpg->menu.volume);
+    sfMusic_setLoop(rpg->fighting_map->fight_music, sfTrue);
+    rpg->fighting_map->won_sound
+    = sfMusic_createFromFile("textures/music/won_sound.ogg");
+    sfMusic_setVolume(rpg->fighting_map->won_sound, rpg->menu.volume);
+    rpg->fighting_map->won_song
+    = sfMusic_createFromFile("textures/music/won_song.ogg");
+    sfMusic_setVolume(rpg->fighting_map->won_song, rpg->menu.volume);
+    sfMusic_setLoop(rpg->fighting_map->won_song, sfTrue);
+    rpg->fighting_map->lost_song
+    = sfMusic_createFromFile("textures/music/lost_song.ogg");
+    sfMusic_setVolume(rpg->fighting_map->lost_song, rpg->menu.volume);
+    sfMusic_setLoop(rpg->fighting_map->lost_song, sfTrue);
+}
+
+void init_fight_music2(RPG_t *rpg)
+{
+    rpg->fighting_map->select_spell
+    = sfMusic_createFromFile("textures/music/spell_selected.ogg");
+    sfMusic_setVolume(rpg->fighting_map->select_spell, rpg->menu.volume_effect);
+    rpg->fighting_map->ennemy_encoutered
+    = sfMusic_createFromFile("textures/music/ennemy_encountered.ogg");
+    sfMusic_setVolume(rpg->fighting_map->ennemy_encoutered,
+    rpg->menu.volume_effect);
+}

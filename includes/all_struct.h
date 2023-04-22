@@ -230,6 +230,8 @@ void init_map_3d(RPG_t *rpg);
 //FIGHTING.h//
 void init_fighting_players(RPG_t *rpg);
 void init_map_and_spells(RPG_t *rpg);
+void init_fight_music1(RPG_t *rpg);
+void init_fight_music2(RPG_t *rpg);
 void init_spells1(RPG_t *rpg, int i, sfVector2f pos_sprite);
 void init_spells2(RPG_t *rpg, int i, sfVector2f pos_sprite);
 void init_spells3(RPG_t *rpg, int i, sfVector2f pos_sprite);
@@ -244,6 +246,8 @@ void draw_spell(RPG_t *rpg, sfSprite *spell_sprite, sfIntRect spell_rect);
 void fight(RPG_t *rpg);
 void manage_fighting_event(RPG_t *rpg);
 int launch_spell(sfClock *spell_clock, sfIntRect *rect, int max_rect);
+int animate_player(sfClock *spell_clock, sfIntRect *rect, int max_rect);
+int animate_explosion(sfClock *spell_clock, sfIntRect *rect, int max_rect);
 void set_attack_on_player(FightingSpells *spells, int i);
 void set_attack_on_drake(FightingSpells *spells, int i);
 void player_attack1(RPG_t *rpg);
@@ -253,7 +257,8 @@ void init_won_lost_text(RPG_t *rpg);
 void init_damage_text(RPG_t *rpg);
 void destroy_fight(RPG_t *rpg);
 void launch_fight(RPG_t *rpg);
-int animate_player(sfClock *spell_clock, sfIntRect *rect, int max_rect);
+int end_fight(RPG_t *rpg, int end_it);
+void launch_end_song(RPG_t *rpg);
 void quit_fight(RPG_t *rpg);
 
 //MY.h//

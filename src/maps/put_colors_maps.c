@@ -7,10 +7,20 @@
 
 #include "all_struct.h"
 
+void launch_ennemy_encountered_sound(RPG_t *rpg)
+{
+    static int launch_new_sound = 0;
+
+    if (launch_new_sound == 0) {
+        sfMusic_stop(rpg->menu.back_music);
+        sfMusic_play(rpg->fighting_map->ennemy_encoutered);
+        launch_new_sound += 1;
+    }
+}
+
 void put_color_map5(RPG_t *rpg)
 {
-    sfColor portal;
-    portal = sfImage_getPixel(rpg->map.map5,
+    sfColor portal = sfImage_getPixel(rpg->map.map5,
     rpg->struct_sprite.sprite_pos.x, rpg->struct_sprite.sprite_pos.y);
     if (portal.r == 158 && portal.g == 132 && portal.b == 209) {
         rpg->map.check_path_map = MAP_DRAG_TO_0;
@@ -19,10 +29,11 @@ void put_color_map5(RPG_t *rpg)
     if (portal.r == 31 && portal.g == 18 && portal.b == 63) {
         rpg->map.spin = 1;
         if (rpg->map.dezoom < 1.05) {
-            rpg->map.dezoom += 0.0001;
+            rpg->map.dezoom += 0.0003;
             sfView_rotate(rpg->map.view_combat, rpg->map.dezoom);
             sfView_zoom(rpg->map.view_combat, rpg->map.dezoom);
             sfRenderWindow_setView(rpg->window.wdw, rpg->map.view_combat);
+            launch_ennemy_encountered_sound(rpg);
         }
         if (rpg->map.dezoom > 1.04) {
             rpg->map.check_path_map = MAP_5_TO_COMBAT;

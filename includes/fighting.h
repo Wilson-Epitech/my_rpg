@@ -7,12 +7,19 @@
 
 #ifndef STRUCT_H_
     #define STRUCT_H_
+    #include <SFML/Audio.h>
     #include <SFML/Graphics.h>
 
 typedef struct {
     sfTexture *map_texture;
     sfSprite *map_sprite;
     sfClock *spell_clock;
+    sfMusic *ennemy_encoutered;
+    sfMusic *fight_music;
+    sfMusic *select_spell;
+    sfMusic *won_sound;
+    sfMusic *won_song;
+    sfMusic *lost_song;
 } FightingMap;
 
 typedef struct {

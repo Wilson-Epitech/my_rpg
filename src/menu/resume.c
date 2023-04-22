@@ -42,6 +42,8 @@ void hover_resume(RPG_t *rpg)
             sfSprite_setPosition(rpg->struct_sprite.sprite,
             rpg->player.set_player_pos);
             rpg->menu.check_first_menu = 6;
+            sfMusic_play(rpg->menu.load_sound);
+            sfMusic_play(rpg->menu.load_sound);
         }
     } else if (is_on_button(rpg, rpg->menu.button_resume_spr)
     && parse_config_file(rpg, 1) == 84) {

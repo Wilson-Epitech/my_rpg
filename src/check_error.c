@@ -21,7 +21,7 @@ int check_env(char **env)
         }
     }
     write(2, error, my_strlen(error));
-    return (0);
+    return (84);
 }
 
 int check_error(int ac, char **env)

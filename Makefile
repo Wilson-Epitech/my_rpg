@@ -98,7 +98,7 @@ SRC	=	main.c 										\
 		src/fight/player_attack.c 					\
 		src/fight/enemy_attack.c 					\
 		src/fight/destroy_fight.c 					\
-		src/fight/quit.c 							\
+		src/fight/end_fight.c 						\
 		lib/my_int_to_str.c  						\
 		lib/my_putchar.c 							\
 		lib/my_putstr.c 							\
