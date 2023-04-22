@@ -24,7 +24,7 @@ bool is_valid_click(sfVector2f click_pos) {
     return false;
 }
 
-int enorme(RPG_t *rpg, sfEvent event)
+int move_items(RPG_t *rpg, sfEvent event)
 {
     sfVector2f mousePosition;
 
@@ -80,6 +80,7 @@ static void event_wdw(int check_black, RPG_t *rpg)
         && rpg->menu.check_first_menu == 6) {
             menu_game = press_inventory(rpg, menu_game);
         }
+        move_items(rpg, event);
     }
 }
 
@@ -166,6 +167,19 @@ void init_inventory_item(RPG_t *rpg)
     sfSprite_setScale(rpg->item.item2, item_scale);
 }
 
+
+void fix_item_to_mouse(RPG_t *rpg)
+{
+    if (rpg->item.display == 1) {
+        sfVector2i mousePositionPixels = sfMouse_getPositionRenderWindow(rpg->window.wdw);
+        sfVector2f mousePosition = sfRenderWindow_mapPixelToCoords(rpg->window.wdw, mousePositionPixels, NULL);
+        mousePosition.x = mousePosition.x - 20;
+        mousePosition.y = mousePosition.y - 20;
+        sfSprite_setPosition(rpg->item.item_selected, mousePosition);
+        rpg->item.item_in_hand = 1;
+    }
+}
+
 void open_wdw(RPG_t *rpg)
 {
     init_window(rpg);
@@ -184,6 +198,7 @@ void open_wdw(RPG_t *rpg)
         main_menu(rpg);
         main_game(rpg);
         launch_fight(rpg);
+        fix_item_to_mouse(rpg);
         event_wdw(check_black, rpg);
         sfRenderWindow_display(rpg->window.wdw);
     }
