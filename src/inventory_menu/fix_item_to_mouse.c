@@ -19,5 +19,5 @@ void fix_item_to_mouse(RPG_t *rpg)
         sfSprite_setPosition(rpg->item.item_selected, mousePosition);
         rpg->item.item_in_hand = 1;
     }
-    mreset_player_stats(rpg);
+    reset_player_stats(rpg);
 }
