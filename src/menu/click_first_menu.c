@@ -9,7 +9,10 @@
 
 void get_mouse_pos_menu(RPG_t *rpg)
 {
-    rpg->menu.mouse_menu = sfMouse_getPositionRenderWindow(rpg->window.wdw);
+    sfVector2i mouse_temp = sfMouse_getPositionRenderWindow(rpg->window.wdw);
+    rpg->menu.mouse_menu = sfRenderWindow_mapPixelToCoords(rpg->window.wdw,
+    mouse_temp, NULL);
+
 }
 
 void hover_click_to_play(RPG_t *rpg)

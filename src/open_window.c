@@ -49,9 +49,7 @@ static void main_game(RPG_t *rpg)
 {
     int check_black = 1;
     if (rpg->menu.check_first_menu == 6) {
-        rpg->map.mouse_img =
-        sfRenderWindow_mapPixelToCoords(rpg->window.wdw,
-            rpg->menu.mouse_menu, NULL);
+        rpg->map.mouse_img = rpg->menu.mouse_menu;
         tp_all_maps(rpg);
         get_pos_char(rpg);
         check_black = col_which_map(rpg, check_black);
