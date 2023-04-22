@@ -15,7 +15,36 @@ sfVector2f get_mouse_position(RPG_t *rpg)
     return click_pos;
 }
 
+bool is_valid_click(sfVector2f click_pos)
+{
+    sfVector2i mousePosition = {(int) click_pos.x, (int) click_pos.y};
+    if (mousePosition.x <= 547 && mousePosition.x >= 335
+        && mousePosition.y <= 607 && mousePosition.y >= 287) {
+        return true;
+    }
+    return false;
+}
 
+sfBool isDoubleClick(const sfEvent event)
+{
+    static sfClock* clock = NULL;
+    static sfVector2i lastClickPos = {0, 0};
+    static sfBool doubleClick = sfFalse;
+
+    clock = sfClock_create();
+    if (event.type == sfEvtMouseButtonPressed && event.mouseButton.button == sfMouseLeft) {
+        sfVector2i clickPos = {event.mouseButton.x, event.mouseButton.y};
+        sfTime elapsed = sfClock_getElapsedTime(clock);
+        sfInt32 elapsedTimeMs = sfTime_asMilliseconds(elapsed);
+        if (clickPos.x == lastClickPos.x && clickPos.y == lastClickPos.y && elapsedTimeMs < 500) {
+            return true;
+        } else {
+            lastClickPos = clickPos;
+            sfClock_restart(clock);
+            return false;
+        }
+    }
+}
 
 int move_items(RPG_t *rpg, sfEvent event)
 {
@@ -48,6 +77,12 @@ int move_items(RPG_t *rpg, sfEvent event)
                         }
                     }
                 }
+            if (isDoubleClick(event) && is_valid_click(mousePosition)) {
+                if (is_on_button(rpg, rpg->item.item1))
+                    rpg->item.display_item1 = 1;
+                if (is_on_button(rpg, rpg->item.item2))
+                    rpg->item.display_item2 = 1;
+            }
         }
     }
     return 0;
