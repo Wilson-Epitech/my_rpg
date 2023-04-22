@@ -19,7 +19,25 @@ int launch_spell(sfClock *spell_clock, sfIntRect *rect, int max_rect)
     while (rect->top < max_rect + 300) {
         time = sfClock_getElapsedTime(spell_clock);
         seconds = time.microseconds / 1000000.0;
-        if (seconds > 0.05) {
+        if (seconds > 0.04) {
+            rect->top += rect->height;
+            sfClock_restart(spell_clock);
+            return (1);
+        }
+    }
+    rect->top = 0;
+    return (-1);
+}
+
+int animate_explosion(sfClock *spell_clock, sfIntRect *rect, int max_rect)
+{
+    sfTime time;
+    float seconds;
+
+    while (rect->top < max_rect + 300) {
+        time = sfClock_getElapsedTime(spell_clock);
+        seconds = time.microseconds / 1000000.0;
+        if (seconds > 0.08) {
             rect->top += rect->height;
             sfClock_restart(spell_clock);
             return (1);
