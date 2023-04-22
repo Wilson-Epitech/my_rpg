@@ -15,14 +15,7 @@ sfVector2f get_mouse_position(RPG_t *rpg)
     return click_pos;
 }
 
-bool is_valid_click(sfVector2f click_pos) {
-    sfVector2i mousePosition = {(int) click_pos.x, (int) click_pos.y};
-    if (mousePosition.x <= 547 && mousePosition.x >= 335
-        && mousePosition.y <= 607 && mousePosition.y >= 287) {
-        return true;
-    }
-    return false;
-}
+
 
 int move_items(RPG_t *rpg, sfEvent event)
 {
