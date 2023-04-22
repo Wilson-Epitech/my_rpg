@@ -7,6 +7,14 @@
 
 #include "all_struct.h"
 
+void init_map_3d(RPG_t *rpg)
+{
+    init_map1_3d(rpg);
+    init_map2_3d(rpg);
+    init_map3_3d(rpg);
+    init_map4_3d(rpg);
+}
+
 static void init_map_to_three(RPG_t *rpg)
 {
     sfVector2f scale = {1, 0.96};
@@ -46,12 +54,5 @@ void init_maps(RPG_t *rpg)
     = sfTexture_createFromFile("textures/maps/map5.png", NULL);
     rpg->map.map5_spr = sfSprite_create();
     sfSprite_setTexture(rpg->map.map5_spr, rpg->map.map5_txr, sfTrue);
-}
-
-void init_map_3d(RPG_t *rpg)
-{
-    init_map1_3d(rpg);
-    init_map2_3d(rpg);
-    init_map3_3d(rpg);
-    init_map4_3d(rpg);
+    init_map_3d(rpg);
 }

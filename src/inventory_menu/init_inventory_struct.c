@@ -6,7 +6,6 @@
 */
 
 #include "all_struct.h"
-// #include "inventory_menu.h"
 
 void init_inventory_menu(RPG_t *rpg)
 {
@@ -26,4 +25,5 @@ void init_inventory_menu(RPG_t *rpg)
     init_def_txt(rpg);
     init_atk_txt(rpg);
     init_inventory_txt(rpg);
+    init_inventory_item(rpg);
 }

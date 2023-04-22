@@ -5,8 +5,6 @@
 ** check_collision_map1
 */
 
-// #include <SFML/Audio.h>
-// #include <SFML/Graphics.h>
 #include "all_struct.h"
 
 void check_next_col(RPG_t *rpg)

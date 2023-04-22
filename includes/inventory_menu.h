@@ -40,8 +40,6 @@
         sfTexture *item1_texture;
         sfTexture *item2_texture;
         sfSprite *item_selected;
-        sfVector2f item1_old_pos;
-        sfVector2f item2_old_pos;
         sfVector2f item_position;
         sfRectangleShape *rect_case;
         sfClock *clock;

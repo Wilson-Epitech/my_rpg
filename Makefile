@@ -71,6 +71,7 @@ SRC	=	main.c 										\
 		src/history/history_menu.c					\
 		src/inventory_menu/init_inventory_item.c    \
 		src/inventory_menu/move_item.c				\
+		src/inventory_menu/fix_item_to_mouse.c		\
 		src/inventory_menu/inventory_menu.c 		\
 		src/inventory_menu/init_inventory_struct.c	\
 		src/inventory_menu/destroy_menu.c			\
@@ -81,6 +82,8 @@ SRC	=	main.c 										\
 		src/inventory_menu/create_button_settings.c	\
 		src/inventory_menu/inventory_settings.c   	\
 		src/inventory_menu/draw_inventory.c 		\
+		src/inventory_menu/is_valid_click.c			\
+		src/inventory_menu/is_double_click.c		\
 		src/fight/init_fighting_players1.c			\
 		src/fight/init_fighting_players2.c 			\
 		src/fight/init_map_and_spells1.c 			\

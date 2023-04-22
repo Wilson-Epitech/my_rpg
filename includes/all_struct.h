@@ -5,6 +5,8 @@
 ** all_struct
 */
 
+#include <stdbool.h>
+
 #ifndef ALL_STRUCT_H_
     #define ALL_STRUCT_H_
     #include "inventory_menu.h"
@@ -56,6 +58,9 @@ void init_inventory_txt(RPG_t *rpg);
 void draw_rect_setting_game(RPG_t *rpg);
 void init_inventory_item(RPG_t *rpg);
 int move_items(RPG_t *rpg, sfEvent event);
+void fix_item_to_mouse(RPG_t *rpg);
+bool is_valid_click(sfVector2f click_pos);
+sfBool is_double_click(const sfEvent event);
 
 //SPRITE.H//
 void init_struct_sprite(RPG_t *rpg);

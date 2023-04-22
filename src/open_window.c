@@ -86,27 +86,13 @@ static void main_menu(RPG_t *rpg)
     }
 }
 
-void fix_item_to_mouse(RPG_t *rpg)
-{
-    if (rpg->item.display == 1) {
-        sfVector2i mousePositionPixels = sfMouse_getPositionRenderWindow(rpg->window.wdw);
-        sfVector2f mousePosition = sfRenderWindow_mapPixelToCoords(rpg->window.wdw, mousePositionPixels, NULL);
-        mousePosition.x = mousePosition.x - 20;
-        mousePosition.y = mousePosition.y - 20;
-        sfSprite_setPosition(rpg->item.item_selected, mousePosition);
-        rpg->item.item_in_hand = 1;
-    }
-}
-
 void open_wdw(RPG_t *rpg)
 {
     init_window(rpg);
     load_menu(rpg);
     init_maps(rpg);
-    init_map_3d(rpg);
     init_quest(rpg);
     init_inventory_menu(rpg);
-    init_inventory_item(rpg);
     init_fighting_players(rpg);
     init_map_and_spells(rpg);
     draw_rect_setting_game(rpg);
