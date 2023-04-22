@@ -54,6 +54,8 @@ void init_def_txt(RPG_t *rpg);
 void init_atk_txt(RPG_t *rpg);
 void init_inventory_txt(RPG_t *rpg);
 void draw_rect_setting_game(RPG_t *rpg);
+void init_inventory_item(RPG_t *rpg);
+int move_items(RPG_t *rpg, sfEvent event);
 
 //SPRITE.H//
 void init_struct_sprite(RPG_t *rpg);

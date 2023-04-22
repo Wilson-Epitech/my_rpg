@@ -69,6 +69,8 @@ SRC	=	main.c 										\
 		src/quest/is_grandma_or_shao.c				\
 		src/history/create_motion_history.c			\
 		src/history/history_menu.c					\
+		src/inventory_menu/init_inventory_item.c    \
+		src/inventory_menu/move_item.c				\
 		src/inventory_menu/inventory_menu.c 		\
 		src/inventory_menu/init_inventory_struct.c	\
 		src/inventory_menu/destroy_menu.c			\
