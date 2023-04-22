@@ -33,4 +33,22 @@
         sfText *settings;
     } InventoryMenu_t;
 
+    typedef struct {
+        int value;
+        sfSprite *item1;
+        sfSprite *item2;
+        sfTexture *item1_texture;
+        sfTexture *item2_texture;
+        sfSprite *item_selected;
+        sfVector2f item1_old_pos;
+        sfVector2f item2_old_pos;
+        sfVector2f item_position;
+        sfRectangleShape *rect_case;
+        sfClock *clock;
+        int display;
+        int display_item1;
+        int display_item2;
+        int item_in_hand;
+    } Item_t;
+
 #endif /* !INVENTORY_MENU_H_ */

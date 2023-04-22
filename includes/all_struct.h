@@ -19,6 +19,7 @@
     typedef struct {
         window_t window;
         InventoryMenu_t inventory_menu;
+        Item_t item;
         maps_t  map;
         menu_t  menu;
         history_t history;
