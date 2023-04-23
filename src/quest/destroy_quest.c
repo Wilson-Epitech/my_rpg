@@ -16,15 +16,6 @@ static void destroy_txt_quest(RPG_t *rpg)
     sfText_destroy(rpg->quest.current_quest_shaolin);
     sfText_destroy(rpg->quest.current_quest_grandma);
     sfText_destroy(rpg->quest.current_quest_dragon);
-    sfText_destroy(rpg->inventory_menu.stat);
-    sfText_destroy(rpg->inventory_menu.health);
-    sfText_destroy(rpg->inventory_menu.xp);
-    sfText_destroy(rpg->inventory_menu.level);
-    sfText_destroy(rpg->inventory_menu.atk);
-    sfText_destroy(rpg->inventory_menu.def);
-    sfText_destroy(rpg->inventory_menu.inventory);
-    sfRectangleShape_destroy(rpg->inventory_menu.xp_fullbar);
-    sfRectangleShape_destroy(rpg->inventory_menu.xp_bar);
 }
 
 void destroy_quest(RPG_t *rpg)

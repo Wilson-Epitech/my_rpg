@@ -65,6 +65,7 @@ void fix_item_to_mouse(RPG_t *rpg);
 bool is_valid_click(sfVector2f click_pos);
 sfBool is_double_click(const sfEvent event);
 void reset_player_stats(RPG_t *rpg);
+void destroy_inventory_item(RPG_t *rpg);
 
 //SPRITE.H//
 void init_struct_sprite(RPG_t *rpg);
