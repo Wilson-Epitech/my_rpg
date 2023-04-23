@@ -84,5 +84,8 @@ void draw_fighting_elements(RPG_t *rpg)
     draw_text(rpg);
     draw_enemy_lifebar(rpg);
     draw_player_lifebar(rpg);
-    draw_spell_text(rpg);
+    if (rpg->players_fighting.player_life_points > 0
+    && rpg->players_fighting.enemy_life_points > 0) {
+        draw_spell_text(rpg);
+    }
 }

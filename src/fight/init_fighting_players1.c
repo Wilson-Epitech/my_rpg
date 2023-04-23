@@ -88,7 +88,7 @@ void init_fighting_enemy(RPG_t *rpg)
     rpg->players_fighting.enemy_rect.height = 384;
     rpg->players_fighting.enemy_max_rect = 12288;
     rpg->players_fighting.enemy_attack = 40;
-    rpg->players_fighting.enemy_def = 15;
+    rpg->players_fighting.enemy_def = 5;
     rpg->players_fighting.enemy_life_points = 200;
 }
 
