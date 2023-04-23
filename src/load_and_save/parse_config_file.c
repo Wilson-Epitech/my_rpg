@@ -58,10 +58,10 @@ void fill_map_infos(RPG_t *rpg, char **array)
         if (my_strncmp("quest:", array[x]) == 0) {
             rpg->quest.main_quest = my_getnbr(array[x]);
         }
-        if (my_strncmp("item1_status:", array[x]) == 0) {
+        if (my_strncmp("first_item_status:", array[x]) == 0) {
             rpg->item.display_item1 = my_getnbr(array[x]);
         }
-        if (my_strncmp("item2_status:", array[x]) == 0) {
+        if (my_strncmp("second_item_status:", array[x]) == 0) {
             rpg->item.display_item2 = my_getnbr(array[x]);
         }
     }

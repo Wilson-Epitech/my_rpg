@@ -56,12 +56,12 @@ void write_map_infos(int fd, RPG_t *rpg, int map_nb)
 
 void write_inventory_items_status(int fd, RPG_t *rpg)
 {
-    char *item1_status = my_int_to_str(rpg->item.display_item1);
-    write(fd, "\nitem1_status:", my_strlen("\nitem1_status:"));
-    write(fd, item1_status, my_strlen(item1_status));
-    char *item2_status = my_int_to_str(rpg->item.display_item2);
-    write(fd, "\nitem2_status:", my_strlen("\nitem2_status:"));
-    write(fd, item2_status, my_strlen(item2_status));
+    char *first_item_status = my_int_to_str(rpg->item.display_item1);
+    write(fd, "\nfirst_item_status:", my_strlen("\nfirst_item_status:"));
+    write(fd, first_item_status, my_strlen(first_item_status));
+    char *second_item_status = my_int_to_str(rpg->item.display_item2);
+    write(fd, "\nsecond_item_status:", my_strlen("\nsecond_item_status:"));
+    write(fd, second_item_status, my_strlen(second_item_status));
 }
 
 int stock_in_config_file(RPG_t *rpg, sfSprite *player_sprite, int map_nb)
