@@ -10,6 +10,13 @@
 #include <stdbool.h>
 #include "all_struct.h"
 
+void refresh_stats(RPG_t *rpg)
+{
+    rpg->players_fighting.player_attack = rpg->player.atk;
+    rpg->players_fighting.player_def = rpg->player.def;
+    rpg->players_fighting.player_life_points = rpg->player.hp;
+}
+
 void gain_experience(RPG_t *rpg)
 {
     static int gain_xp = 0;
@@ -63,6 +70,7 @@ void launch_fight(RPG_t *rpg)
             sfView_zoom(rpg->map.view_combat, 0.93);
             sfRenderWindow_setView(rpg->window.wdw, rpg->map.view_combat);
             sfMusic_play(rpg->fighting_map->fight_music);
+            refresh_stats(rpg);
             has_been_reset += 1;
         }
         fight(rpg);

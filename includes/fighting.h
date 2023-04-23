@@ -31,6 +31,11 @@ typedef struct {
     sfIntRect animated_rect;
     int max_rect;
     int spell_state;
+    char *efficiency;
+    int max_launch_nb;
+    sfText *spell_score;
+    sfText *remaining_uses;
+    sfText *max_launch_text;
 } FightingSpells;
 
 typedef struct {

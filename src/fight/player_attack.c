@@ -45,17 +45,34 @@ int player_attack2(RPG_t *rpg)
     return (-1);
 }
 
+int check_spell_launched(RPG_t *rpg)
+{
+    int max_attack = 1;
+
+    for (int i = 1; i != NB_OF_SPELLS; i++) {
+        if (rpg->spells[i].spell_state == 1) {
+            max_attack = rpg->players_fighting.player_attack *
+            my_getnbr(rpg->spells[i].efficiency);
+            return max_attack;
+        }
+    }
+    return (-1);
+}
+
 void player_attack1(RPG_t *rpg)
 {
     static int damage = 0;
-
+    int max_attack = 0;
     if (rpg->count.player_rounds == 0) {
-        rpg->count.rand_attack = rand() % rpg->players_fighting.player_attack;
-        damage = damage_causen(rpg->count.rand_attack,
-        rpg->players_fighting.enemy_def);
-        sfText_setString(rpg->players_fighting.player_damage_text,
-        my_int_to_str(damage));
-        rpg->count.player_rounds += 1;
+        max_attack = check_spell_launched(rpg);
+        if (max_attack != -1) {
+            rpg->count.rand_attack = rand() % max_attack;
+            damage = damage_causen(rpg->count.rand_attack,
+            rpg->players_fighting.enemy_def);
+            sfText_setString(rpg->players_fighting.player_damage_text,
+            my_int_to_str(damage));
+            rpg->count.player_rounds += 1;
+        }
     }
     sfText_setString (rpg->players_fighting.turn_text, "Your turn");
     rpg->count.rand_spell = player_attack2(rpg);

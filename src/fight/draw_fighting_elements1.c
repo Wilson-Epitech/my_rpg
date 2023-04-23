@@ -55,6 +55,26 @@ void draw_player_lifebar(RPG_t *rpg)
     }
 }
 
+void draw_spell_text(RPG_t *rpg)
+{
+    for (int spell = 1; spell != NB_OF_SPELLS; spell++) {
+        if (is_on_button(rpg, rpg->spells[spell].select_sprite)) {
+                sfRenderWindow_drawText(rpg->window.wdw,
+                rpg->spells[spell].spell_score, NULL);
+                sfRenderWindow_drawText(rpg->window.wdw,
+                rpg->spells[spell].remaining_uses, NULL);
+                sfText_setString(rpg->spells[spell].max_launch_text,
+                my_int_to_str(rpg->spells[spell].max_launch_nb));
+                sfRenderWindow_drawText(rpg->window.wdw,
+                rpg->spells[spell].max_launch_text, NULL);
+        }
+        if (rpg->spells[spell].max_launch_nb <= 0) {
+            sfRectangleShape_setOutlineColor(rpg->spells[spell].select_border,
+            sfTransparent);
+        }
+    }
+}
+
 void draw_fighting_elements(RPG_t *rpg)
 {
     sfRenderWindow_drawSprite(rpg->window.wdw,
@@ -64,4 +84,5 @@ void draw_fighting_elements(RPG_t *rpg)
     draw_text(rpg);
     draw_enemy_lifebar(rpg);
     draw_player_lifebar(rpg);
+    draw_spell_text(rpg);
 }

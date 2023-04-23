@@ -46,7 +46,7 @@ void fill_player_pos(RPG_t *rpg, char *str)
     }
 }
 
-void fill_infos_before(RPG_t *rpg, char **array)
+void fill_map_infos(RPG_t *rpg, char **array)
 {
     for (int x = 0; array[x] != NULL; x++) {
         if (my_strncmp("player_pos:", array[x]) == 0) {
@@ -58,13 +58,18 @@ void fill_infos_before(RPG_t *rpg, char **array)
         if (my_strncmp("quest:", array[x]) == 0) {
             rpg->quest.main_quest = my_getnbr(array[x]);
         }
+        if (my_strncmp("item1_status:", array[x]) == 0) {
+            rpg->item.display_item1 = my_getnbr(array[x]);
+        }
+        if (my_strncmp("item2_status:", array[x]) == 0) {
+            rpg->item.display_item2 = my_getnbr(array[x]);
+        }
     }
 }
 
 void fill_player_stats(RPG_t *rpg, char **array)
 {
     for (int x = 0; array[x] != NULL; x++) {
-
         if (my_strncmp("atk:", array[x]) == 0) {
             rpg->player.atk = my_getnbr(array[x]);
         }
@@ -99,7 +104,7 @@ int parse_config_file(RPG_t *rpg, int check_save)
     }
     if (check_save == 1)
         return (0);
-    fill_infos_before(rpg, array);
+    fill_map_infos(rpg, array);
     fill_player_stats(rpg, array);
     return (0);
 }

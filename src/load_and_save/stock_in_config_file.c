@@ -54,6 +54,16 @@ void write_map_infos(int fd, RPG_t *rpg, int map_nb)
     write(fd, actual_quest, my_strlen(actual_quest));
 }
 
+void write_inventory_items_status(int fd, RPG_t *rpg)
+{
+    char *item1_status = my_int_to_str(rpg->item.display_item1);
+    write(fd, "\nitem1_status:", my_strlen("\nitem1_status:"));
+    write(fd, item1_status, my_strlen(item1_status));
+    char *item2_status = my_int_to_str(rpg->item.display_item2);
+    write(fd, "\nitem2_status:", my_strlen("\nitem2_status:"));
+    write(fd, item2_status, my_strlen(item2_status));
+}
+
 int stock_in_config_file(RPG_t *rpg, sfSprite *player_sprite, int map_nb)
 {
     int fd = open(".config", O_CREAT | O_RDWR | O_TRUNC, 00644);
@@ -62,6 +72,7 @@ int stock_in_config_file(RPG_t *rpg, sfSprite *player_sprite, int map_nb)
     write_player_pos(fd, player_sprite);
     write_player_stats(fd, rpg);
     write_map_infos(fd, rpg, map_nb);
+    write_inventory_items_status(fd, rpg);
     if ((close(fd)) == -1)
         return 84;
     return (0);

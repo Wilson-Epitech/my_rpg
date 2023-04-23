@@ -10,7 +10,7 @@
 void init_player_stats(RPG_t *rpg)
 {
     rpg->player.def = 8;
-    rpg->player.atk = 28;
+    rpg->player.atk = 14;
     rpg->player.hp = 200;
     rpg->player.level = 1;
     rpg->player.level_xp = rpg->player.level * 100;

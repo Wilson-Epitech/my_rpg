@@ -34,16 +34,25 @@ sfRectangleShape *border, sfEvent event)
     return false;
 }
 
-int check_spells_selection(RPG_t *rpg,
-int launched, sfEvent event)
+int check_spells_selection2(RPG_t *rpg, int launched, sfEvent event, int spell)
 {
+    if (is_spell_selected(rpg, rpg->spells[spell].select_sprite,
+        rpg->spells[spell].select_border, event)) {
+        sfMusic_play(rpg->fighting_map->select_spell);
+        sfMusic_play(rpg->fighting_map->select_spell);
+        rpg->spells[spell].spell_state = 1;
+        rpg->spells[spell].max_launch_nb -= 1;
+        launched = spell;
+    }
+    return launched;
+}
+
+int check_spells_selection(RPG_t *rpg, int launched, sfEvent event)
+{
+
     for (int spell = 1; spell != NB_OF_SPELLS; spell++) {
-        if (is_spell_selected(rpg, rpg->spells[spell].select_sprite,
-            rpg->spells[spell].select_border, event)) {
-            sfMusic_play(rpg->fighting_map->select_spell);
-            sfMusic_play(rpg->fighting_map->select_spell);
-            rpg->spells[spell].spell_state = 1;
-            launched = spell;
+        if (rpg->spells[spell].max_launch_nb > 0) {
+            launched = check_spells_selection2(rpg, launched, event, spell);
         }
     }
     return launched;

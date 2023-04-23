@@ -11,6 +11,8 @@
 void init_spells1(RPG_t *rpg, int i, sfVector2f pos_sprite)
 {
     if (i == FIREFLOWER) {
+        rpg->spells[i].efficiency = "Efficiency : 1/3";
+        rpg->spells[i].max_launch_nb = 15;
         init_spell_selection(rpg, i,
         "textures/fight/select_fireflower.png", pos_sprite);
         rpg->spells[i].animated_texture = sfTexture_createFromFile
@@ -19,6 +21,8 @@ void init_spells1(RPG_t *rpg, int i, sfVector2f pos_sprite)
         rpg->spells[i].max_rect = 2628;
     }
     if (i == TORNADO) {
+        rpg->spells[i].efficiency = "Efficiency : 2/3";
+        rpg->spells[i].max_launch_nb = 6;
         init_spell_selection(rpg, i,
         "textures/fight/select_tornado.png", pos_sprite);
         rpg->spells[i].animated_texture = sfTexture_createFromFile
@@ -31,6 +35,8 @@ void init_spells1(RPG_t *rpg, int i, sfVector2f pos_sprite)
 void init_spells2(RPG_t *rpg, int i, sfVector2f pos_sprite)
 {
     if (i == ROCK) {
+        rpg->spells[i].efficiency = "Efficiency : 1/3";
+        rpg->spells[i].max_launch_nb = 15;
         init_spell_selection(rpg, i,
         "textures/fight/select_rock.png", pos_sprite);
         rpg->spells[i].animated_texture = sfTexture_createFromFile
@@ -39,6 +45,8 @@ void init_spells2(RPG_t *rpg, int i, sfVector2f pos_sprite)
         rpg->spells[i].max_rect = 1521;
     }
     if (i == THUNDERBOLT) {
+        rpg->spells[i].efficiency = "Efficiency : 2/3";
+        rpg->spells[i].max_launch_nb = 6;
         init_spell_selection(rpg, i,
         "textures/fight/select_thunderbolt.png", pos_sprite);
         rpg->spells[i].animated_texture = sfTexture_createFromFile
@@ -51,6 +59,8 @@ void init_spells2(RPG_t *rpg, int i, sfVector2f pos_sprite)
 void init_spells3(RPG_t *rpg, int i, sfVector2f pos_sprite)
 {
     if (i == OCTOPUS) {
+        rpg->spells[i].efficiency = "Efficiency : 3/3";
+        rpg->spells[i].max_launch_nb = 2;
         init_spell_selection(rpg, i,
         "textures/fight/select_octopus.png", pos_sprite);
         rpg->spells[i].animated_texture = sfTexture_createFromFile
@@ -68,7 +78,6 @@ void init_spells3(RPG_t *rpg, int i, sfVector2f pos_sprite)
         sfVector2f scale = {2, 2};
         sfSprite_setScale(rpg->spells[i].animated_sprite, scale);
     }
-
 }
 
 void init_fight_music1(RPG_t *rpg)

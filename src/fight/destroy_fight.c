@@ -23,6 +23,9 @@ static void free_map_and_spells(RPG_t *rpg)
         sfSprite_destroy(rpg->spells[i].select_sprite);
         sfTexture_destroy(rpg->spells[i].animated_texture);
         sfTexture_destroy(rpg->spells[i].select_texture);
+        sfText_destroy(rpg->spells[i].spell_score);
+        sfText_destroy(rpg->spells[i].remaining_uses);
+        sfText_destroy(rpg->spells[i].max_launch_text);
     }
     sfSprite_destroy(rpg->fighting_map->map_sprite);
     sfTexture_destroy(rpg->fighting_map->map_texture);
