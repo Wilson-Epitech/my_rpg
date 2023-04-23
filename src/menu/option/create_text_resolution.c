@@ -35,11 +35,11 @@ void create_1300_txt(RPG_t *rpg)
 
 void create_300_txt(RPG_t *rpg)
 {
-    sfVector2f pos = {1310, 425};
+    sfVector2f pos = {1300, 425};
 
     rpg->menu.small_screen = sfText_create();
     sfText_setFont(rpg->menu.small_screen, rpg->menu.game_number_font);
-    sfText_setString(rpg->menu.small_screen, "360x640");
+    sfText_setString(rpg->menu.small_screen, "Fullscreen");
     sfText_setCharacterSize(rpg->menu.small_screen, 47);
     sfText_setPosition(rpg->menu.small_screen, pos);
     sfText_setColor(rpg->menu.small_screen, sfBlack);

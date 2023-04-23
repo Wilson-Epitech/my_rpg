@@ -174,7 +174,7 @@ void menu_option_page(RPG_t *rpg);
 void credit_page(RPG_t *rpg);
 void choosen_high(RPG_t *rpg);
 void choosen_med(RPG_t *rpg);
-void choosen_small(RPG_t *rpg);
+void choosen_fullscreen(RPG_t *rpg);
 void click_play(RPG_t *rpg);
 void click_history(RPG_t *rpg);
 void check_history(RPG_t *rpg);

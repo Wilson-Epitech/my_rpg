@@ -13,7 +13,7 @@ int create_background_img(RPG_t *rpg)
     rpg->menu.menu_wdw.left = 0;
     rpg->menu.menu_wdw.height = 700;
     rpg->menu.menu_wdw.width = 2000;
-    sfVector2f scale = {1.5, 1.5};
+    sfVector2f scale = {1.6, 1.6};
 
     rpg->menu.bk_menu_img =
     sfTexture_createFromFile("textures/menu/spritesheet.png",NULL);

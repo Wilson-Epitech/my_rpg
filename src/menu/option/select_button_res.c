@@ -48,7 +48,7 @@ void select_button_small(RPG_t *rpg)
 
 void check_choosen_res(RPG_t *rpg)
 {
-    choosen_small(rpg);
-    choosen_med(rpg);
     choosen_high(rpg);
+    choosen_med(rpg);
+    choosen_fullscreen(rpg);
 }
