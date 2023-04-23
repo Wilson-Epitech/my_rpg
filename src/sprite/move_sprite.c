@@ -21,7 +21,7 @@ static void move_rect(sfIntRect *rect, sfClock *clock)
         sfClock_restart(clock);
     }
     if (rect->left >= max_value) {
-        rect->left = 48;
+        rect->left = 72;
     }
 }
 
