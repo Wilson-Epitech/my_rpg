@@ -21,6 +21,7 @@ void init_inventory_menu(RPG_t *rpg)
     init_text_stat(rpg);
     init_health_txt(rpg);
     init_xp_txt(rpg);
+    init_experience_bar(rpg);
     init_level_txt(rpg);
     init_def_txt(rpg);
     init_atk_txt(rpg);

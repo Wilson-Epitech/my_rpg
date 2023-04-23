@@ -10,6 +10,17 @@
 #include <stdbool.h>
 #include "all_struct.h"
 
+void gain_experience(RPG_t *rpg)
+{
+    static int gain_xp = 0;
+
+    if (gain_xp == 0) {
+        rpg->player.xp += 200;
+        manage_player_levels(rpg);
+        gain_xp += 1;
+    }
+}
+
 void fight2(RPG_t *rpg)
 {
     sfTime time = sfClock_getElapsedTime(rpg->fighting_map->spell_clock);
@@ -34,6 +45,7 @@ void fight(RPG_t *rpg)
         fight2(rpg);
         manage_fighting_event(rpg);
     } else {
+        gain_experience(rpg);
         launch_end_song(rpg);
         draw_fighting_elements(rpg);
         end_it = end_fight(rpg, end_it);

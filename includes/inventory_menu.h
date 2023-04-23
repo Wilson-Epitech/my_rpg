@@ -22,6 +22,8 @@
         sfText *stat;
         sfText *health;
         sfText *xp;
+        sfRectangleShape *xp_bar;
+        sfRectangleShape *xp_fullbar;
         sfText *atk;
         sfText *def;
         sfText *level;

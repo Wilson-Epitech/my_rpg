@@ -7,12 +7,20 @@
 
 #include "all_struct.h"
 
+void init_player_stats(RPG_t *rpg)
+{
+    rpg->player.def = 8;
+    rpg->player.atk = 28;
+    rpg->player.hp = 200;
+    rpg->player.level = 1;
+    rpg->player.level_xp = rpg->player.level * 100;
+    rpg->player.xp = 0;
+}
+
 void init_quest(RPG_t *rpg)
 {
     rpg->menu.volume = 100.0;
-    rpg->player.def = 13;
-    rpg->player.atk = 47;
-    rpg->player.hp = 200;
+    init_player_stats(rpg);
     init_struct_sprite(rpg);
     init_grandma_sprite(rpg);
     init_shaolin_sprite(rpg);

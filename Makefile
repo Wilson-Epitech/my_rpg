@@ -85,6 +85,7 @@ SRC	=	main.c 										\
 		src/inventory_menu/is_valid_click.c			\
 		src/inventory_menu/is_double_click.c		\
 		src/inventory_menu/reset_player_stats.c		\
+		src/inventory_menu/draw_experience_bar.c 	\
 		src/fight/init_fighting_players1.c			\
 		src/fight/init_fighting_players2.c 			\
 		src/fight/init_map_and_spells1.c 			\

@@ -43,6 +43,7 @@ typedef struct {
     sfRectangleShape *player_fullbar;
     int player_max_rect;
     int player_attack;
+    int player_def;
     int player_life_points;
     sfText *player_damage_text;
     sfTexture *enemy_texture;
@@ -52,6 +53,7 @@ typedef struct {
     sfRectangleShape *enemy_fullbar;
     int enemy_max_rect;
     int enemy_attack;
+    int enemy_def;
     int enemy_life_points;
     sfText *enemy_damage_text;
 } PlayersFighting;

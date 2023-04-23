@@ -35,12 +35,12 @@ static void use_selected_item(RPG_t *rpg, sfEvent event,
         if (is_on_button(rpg, rpg->item.item1)
         && rpg->item.display_item1 != 1) {
             rpg->item.display_item1 = 1;
-            rpg->player.def = rpg->player.def + 70;
+            rpg->player.def = rpg->player.def + 6;
         }
         if (is_on_button(rpg, rpg->item.item2)
         && rpg->item.display_item2 != 1) {
             rpg->item.display_item2 = 1;
-            rpg->player.atk = rpg->player.atk + 50;
+            rpg->player.atk = rpg->player.atk + 11;
         }
     }
 }

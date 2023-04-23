@@ -23,6 +23,8 @@ static void destroy_txt_quest(RPG_t *rpg)
     sfText_destroy(rpg->inventory_menu.atk);
     sfText_destroy(rpg->inventory_menu.def);
     sfText_destroy(rpg->inventory_menu.inventory);
+    sfRectangleShape_destroy(rpg->inventory_menu.xp_fullbar);
+    sfRectangleShape_destroy(rpg->inventory_menu.xp_bar);
 }
 
 void destroy_quest(RPG_t *rpg)

@@ -37,6 +37,7 @@ typedef struct player_s {
     int hp;
     int xp;
     int level;
+    int level_xp;
     int def;
     int atk;
 } player_t;

@@ -88,6 +88,7 @@ void draw_inventory_stat(RPG_t *rpg)
         rpg->inventory_menu.atk, NULL);
     sfRenderWindow_drawText(rpg->window.wdw,
         rpg->inventory_menu.def, NULL);
+    draw_experience_bar(rpg);
     if (rpg->item.display_item1 == 0)
         sfRenderWindow_drawSprite(rpg->window.wdw, rpg->item.item1, NULL);
     if (rpg->item.display_item2 == 0)

@@ -23,8 +23,8 @@ void init_text_stat(RPG_t *rpg)
 {
     sfVector2f pos = {650, 250};
 
-    char *str = "\n                          stat\n\n\n\n Health \n\n\n XP "
-    "\n\n\n Level \n\n\n Defense \n\n\n Attack \n\n";
+    char *str = "\n                          stats\n\n\n\n Level \n\n\n XP "
+    "\n\n\n Heath \n\n\n Attack \n\n\n Defense \n\n";
     rpg->inventory_menu.stat = sfText_create();
     sfText_setFont(rpg->inventory_menu.stat, rpg->menu.game_name_font);
     sfText_setString(rpg->inventory_menu.stat, str);
@@ -36,7 +36,7 @@ void init_text_stat(RPG_t *rpg)
 void init_health_txt(RPG_t *rpg)
 {
     char *str_health = my_int_to_str(rpg->player.hp);
-    sfVector2f pos_health = {900, 350};
+    sfVector2f pos_health = {900, 500};
 
     rpg->inventory_menu.health = sfText_create();
     sfText_setFont(rpg->inventory_menu.health, rpg->menu.game_number_font);
@@ -62,7 +62,7 @@ void init_xp_txt(RPG_t *rpg)
 void init_level_txt(RPG_t *rpg)
 {
     char *str_level = my_int_to_str(rpg->player.level);
-    sfVector2f pos_level = {900, 500};
+    sfVector2f pos_level = {900, 350};
 
     rpg->inventory_menu.level = sfText_create();
     sfText_setFont(rpg->inventory_menu.level, rpg->menu.game_number_font);

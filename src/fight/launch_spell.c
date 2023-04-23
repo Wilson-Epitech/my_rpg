@@ -11,6 +11,15 @@
 #include <time.h>
 #include "all_struct.h"
 
+int damage_causen(int player_attack, int enemy_def)
+{
+    int damage = player_attack - enemy_def;
+
+    if (damage < 0)
+        damage = 0;
+    return damage;
+}
+
 int launch_spell(sfClock *spell_clock, sfIntRect *rect, int max_rect)
 {
     sfTime time;

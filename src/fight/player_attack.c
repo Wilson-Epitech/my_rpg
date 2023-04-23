@@ -47,16 +47,20 @@ int player_attack2(RPG_t *rpg)
 
 void player_attack1(RPG_t *rpg)
 {
+    static int damage = 0;
+
     if (rpg->count.player_rounds == 0) {
         rpg->count.rand_attack = rand() % rpg->players_fighting.player_attack;
+        damage = damage_causen(rpg->count.rand_attack,
+        rpg->players_fighting.enemy_def);
         sfText_setString(rpg->players_fighting.player_damage_text,
-        my_int_to_str(rpg->count.rand_attack));
+        my_int_to_str(damage));
         rpg->count.player_rounds += 1;
     }
     sfText_setString (rpg->players_fighting.turn_text, "Your turn");
     rpg->count.rand_spell = player_attack2(rpg);
     if (rpg->count.rand_spell != -1) {
-        rpg->players_fighting.enemy_life_points -= rpg->count.rand_attack;
+        rpg->players_fighting.enemy_life_points -= damage;
         rpg->count.enemy_rounds = 0;
         rpg->count.rounds += 1;
     }

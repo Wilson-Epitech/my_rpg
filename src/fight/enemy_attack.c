@@ -34,16 +34,20 @@ void enemy_attack2(RPG_t *rpg)
 
 void ennemy_attack1(RPG_t *rpg)
 {
+    static int damage = 0;
+
     if (rpg->count.enemy_rounds == 0) {
         rpg->count.rand_attack = rand() % rpg->players_fighting.enemy_attack;
+        damage = damage_causen(rpg->count.rand_attack,
+        rpg->players_fighting.player_def);
         sfText_setString(rpg->players_fighting.enemy_damage_text,
-        my_int_to_str(rpg->count.rand_attack));
+        my_int_to_str(damage));
         rpg->count.enemy_rounds += 1;
     }
     sfText_setString (rpg->players_fighting.turn_text, "Enemy turn");
     enemy_attack2(rpg);
     if (rpg->count.rounds % 2 == 0) {
-        rpg->players_fighting.player_life_points -= rpg->count.rand_attack;
+        rpg->players_fighting.player_life_points -= damage;
         rpg->count.player_rounds = 0;
     }
 }
