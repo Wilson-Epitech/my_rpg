@@ -39,4 +39,3 @@ void destroy_inventory_menu(RPG_t *rpg)
     sfSprite_destroy(rpg->inventory_menu.button_settings);
     sfText_destroy(rpg->inventory_menu.settings);
 }
-
