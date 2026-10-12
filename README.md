@@ -14,7 +14,7 @@
 
 <p align="center"><img src=".github/assets/my_rpg.gif" alt="Dragon Burden" width="820"/></p>
 
-## En deux mots
+## Le projet en quelques mots
 
 Notre premier gros jeu : un RPG complet en C avec la CSFML, fait à quatre en un mois. Un village à explorer, une grand-mère qui donne la première quête, des combats au tour par tour avec des sorts, un inventaire, et toutes les options qu'on attend d'un vrai jeu.
 
@@ -33,10 +33,6 @@ Notre premier gros jeu : un RPG complet en C avec la CSFML, fait à quatre en un
 <p align="center"><img src=".github/assets/my_rpg-2.png" alt="Le menu principal" width="760"/></p>
 <p align="center"><sub>Le menu principal</sub></p>
 
-## Sous le capot
-
-Tout l'état du jeu tient dans une structure globale découpée par module (fenêtre, menus, cartes, inventaire, combat…). Chaque scène a ses fonctions d'init, d'events, d'update et de destroy, et la boucle principale aiguille selon la scène active.
-
 ## Lancer le projet
 
 ```bash
@@ -51,4 +47,4 @@ make
 
 Eva Legrand, Yanis Harkouk, Wilson Bordichon, Amytis Vaea
 
-**Ma part :** J'ai monté la **structure globale** du jeu et la gestion de la fenêtre, l'**inventaire** complet (affichage, glisser-déposer, double-clic pour utiliser un objet, effets sur les stats), le **menu principal** et les **options**, le déplacement et l'animation du personnage, et l'aide des quêtes.
+**Ma partition :** J'ai monté la **structure globale** du jeu et la gestion de la fenêtre, l'**inventaire** complet (affichage, glisser-déposer, double-clic pour utiliser un objet, effets sur les stats), le **menu principal** et les **options**, le déplacement et l'animation du personnage, et l'aide des quêtes.
