@@ -46,4 +46,4 @@ make
 
 Eva Legrand, Yanis Harkouk, Wilson Bordichon, Amytis Vaea
 
-**Ma partition :** J'ai monté la **structure globale** du jeu et la gestion de la fenêtre, l'**inventaire** complet (affichage, glisser-déposer, double-clic pour utiliser un objet, effets sur les stats), le **menu principal** et les **options**, le déplacement et l'animation du personnage, et l'aide des quêtes.
+**Ma partition :** J'ai monté la **structure globale** du jeu et la fenêtre, les **menus** (principal, options, chargement, histoire), l'**inventaire** complet (glisser-déposer, double-clic pour utiliser un objet, effets sur les stats), le déplacement et l'animation du personnage, une partie des **cartes et des collisions**, et les **quêtes**.
