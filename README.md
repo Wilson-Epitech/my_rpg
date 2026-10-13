@@ -38,7 +38,6 @@ Notre premier gros jeu : un RPG complet en C avec la CSFML, fait à quatre en un
 ```bash
 make
 ./my_rpg
-# flèches pour se déplacer, la souris pour les menus et l'inventaire
 ```
 
 ## L'équipe
